@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario Figurita</title>
+</head>
+<body>
+    <h1>Formulario para Nueva Figurita</h1>
+    <form action="p" method="POST">
+        <label for="numero_jugador">Número de Jugador:</label>
+        <input type="number"  name="numero_jugador" required min="0"><br>
+
+        <label for="on_fire">Es On Fire</label>
+        <input type="checkbox" name="on_fire"><br>
+
+        <label for="nivel_impresion">Nivel de Impresión:</label>
+        <select  name="nivel_impresion">
+            <option value="bajo">Bajo</option>
+            <option value="medio">Medio</option>
+            <option value="alto">Alto</option>
+        </select><br>
+
+        <label for="url_imagen">URL de la Imagen:</label>
+        <input type="url" name="url_imagen" required><br>
+
+        <label for="valoracion_base">Valoración Base:</label>
+
+        <label for="valoracion_total">Valoración Total:</label>
+
+        <button class="secondary-button">Volver</button>
+        <button class="primary-button" >Guardar</button>
+    </form>
+</body>
+</html>
