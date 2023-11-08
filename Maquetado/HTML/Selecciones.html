@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Formulario Figurita</title>
+    <link rel="stylesheet" href="../CSS/button.css">
+    <link rel="stylesheet" href="../CSS/general.css">
+    <link rel="stylesheet" href="../CSS/form.css">
+    <link rel="stylesheet" href="../CSS/input.css">
 </head>
+
 <body>
     <h1>Formulario para Nueva Figurita</h1>
-    <form action="p" method="POST">
-        <label for="nombre_jugador">Nombre del Jugador:</label>
-        <input type="text" name="nombre_jugador" required><br>
+    <main class="main-container">
+        <section class="sub-main-container">
+            <div class="formulario">
+                <form action="p" method="POST">
+                    <label for="nombre_jugador">Nombre del Jugador:</label>
+                    <input type="text" name="nombre_jugador" required>
 
-        <label for="confederacion">Confederación:</label>
-        <select  name="confederacion">
-            <option value="CONMEBOL">CONMEBOL</option>
-            <option value="UEFA">UEFA</option>
-            <option value="CAF">CAF</option>
-            <option value="AFC">AFC</option>
-            <option value="CONCACAF">CONCACAF</option>
-            <option value="OFC">OFC</option>
-        </select><br>
+                    <label for="confederacion">Confederación:</label>
+                    <select class="select">
+                        <option value="CONMEBOL">CONMEBOL</option>
+                        <option value="UEFA">UEFA</option>
+                        <option value="CAF">CAF</option>
+                        <option value="AFC">AFC</option>
+                        <option value="CONCACAF">CONCACAF</option>
+                        <option value="OFC">OFC</option>
+                    </select>
 
-        <label for="copas_mundo">Cantidad de Copas del Mundo:</label>
-        <input type="number" name="copas_mundo" required min="0"><br>
+                    <label for="copas_mundo">Cantidad de Copas del Mundo:</label>
+                    <input type="number" name="copas_mundo" required min="0">
 
-        <button class="secondary-button">Volver</button>
-        <button class="primary-button" >Guardar</button>    </form>
+                    <button class="secondary-button">Volver</button>
+                    <button class="primary-button">Guardar</button>
+            </div>
+            </form>
+        </section>
+    </main>
 </body>
+
 </html>
