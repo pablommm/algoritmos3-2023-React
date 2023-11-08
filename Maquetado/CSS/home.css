@@ -22,5 +22,14 @@ body {
 #id_footer {
     font-size: 5em;
     padding-right: 20px; 
-    color: #e91818;
+}
+#id_footer3 {
+    color: red;
+    font-size: 5em;
+    padding-right: 20px; 
+}
+#id_footer2 {
+    font-size: 5em;
+    padding-right: 20px; 
+    color: rgb(24, 159, 203);
 }
