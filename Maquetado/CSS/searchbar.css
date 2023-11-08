@@ -1,0 +1,40 @@
+.searchbar-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2.8rem;
+	
+	height: 4rem;
+}
+
+.searchbar {
+	display: flex;
+	align-items: center;
+	border: 0.1em solid var(--fifth-color);
+	border-radius: var(--border-radius);
+	width: 80%;
+}
+
+.searchbar input[type="text"] {
+	border: none;
+	border-radius: 1em;
+	padding: 1em;
+	width: 100%;
+}
+
+.searchbar button[type="submit"] {
+	background-color: var(--fourth-color);
+	border: none;
+	border-radius: 0 var(--border-radius) var(--border-radius) 0;
+	height: 4em;
+	width: 4em;
+	padding: 1em 1em;
+}
+
+.searchbar button[type="submit"] i {
+	font-size: 2em;
+}
+
+#id_lupa{
+    color: white
+}
