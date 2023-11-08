@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario Punto de Venta</title>
+    <link rel="stylesheet" href="../CSS/button.css">
+    <link rel="stylesheet" href="../CSS/general.css">
+    <link rel="stylesheet" href="../CSS/input.css">
+    <link rel="stylesheet" href="../CSS/form.css">
+    <link rel="stylesheet" href="../CSS/general.css">
+</head>
+
+<body>
+    <main class="main-container">
+        <title>Formulario Punto de Venta</title>
+        <section class="sub-main-container">
+            <div class="formulario">
+                <form action="p" method="POST">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" required><br>
+
+                    <label for="nombre">Apellido:</label>
+                    <input type="text" name="nombre" required><br>
+
+                    <label for="nombre">Fecha de nacimiento:</label>
+                    <input type="date" name="nombre" required>
+
+                    <label for="coordenada_x">Altura:</label>
+                    <input type="number" name="coordenada_x" step="any" required><br>
+
+                    <label for="coordenada_y">Peso:</label>
+                    <input type="number" name="coordenada_y" step="any" required><br>
+
+                    <label for="sobres_disponibles">Nro Camiseta:</label>
+                    <input type="number" name="sobres_disponibles" required min="0"><br>
+
+                    <label for="pedidos_pendientes">Seleccion :</label>
+                    <input type="number" name="pedidos_pendientes" required min="0"><br>
+
+                    <label for="nombre">Año de debut en la seleccion:</label>
+                    <input type="date" name="nombre" required>
+
+                    <label for="tipo_negocio">Posicion:</label>
+                    <select name="tipo_negocio" class="select">
+                        <option value="Kiosko">Defensor</option>
+                        <option value="Supermercado">Delantero</option>
+                    </select><br>
+
+                    <label for="on_fire">Es On Fire:</label>
+                    <input type="checkbox" name="on_fire"><br>
+
+                    <label for="pedidos_pendientes">Cotización :</label>
+                    <input type="number" name="pedidos_pendientes" required min="0"><br>
+
+
+
+                    <button class="secondary-button">Volver</button>
+                    <button class="primary-button">Guardar</button>
+            </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
