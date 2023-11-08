@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Formulario Punto de Venta</title>
+    <link rel="stylesheet" href="../CSS/button.css">
+    <link rel="stylesheet" href="../CSS/general.css">
+    <link rel="stylesheet" href="../CSS/form.css">
+    <link rel="stylesheet" href="../CSS/input.css">
 </head>
+
 <body>
-    <h1>Formulario para Nuevo Punto de Venta</h1>
-    <form action="p" method="POST">
-        <label for="nombre">Nombre del Punto de Venta:</label>
-        <input type="text" name="nombre" required><br>
+    <main class="main-container">
+        <section class="sub-main-container">
+            <div class="formulario"></div>
+            <form action="p" method="POST">
+                <label for="nombre">Nombre del Punto de Venta:</label>
+                <input type="text" name="nombre" required><br>
 
-        <label for="direccion">Dirección:</label>
-        <input type="text" name="direccion" required><br>
+                <label for="direccion">Dirección:</label>
+                <input type="text" name="direccion" required><br>
 
-        <label for="coordenada_x">Coordenada X:</label>
-        <input type="number" name="coordenada_x" step="any" required><br>
+                <label for="coordenada_x">Coordenada X:</label>
+                <input type="number" name="coordenada_x" step="any" required><br>
 
-        <label for="coordenada_y">Coordenada Y:</label>
-        <input type="number" name="coordenada_y" step="any" required><br>
+                <label for="coordenada_y">Coordenada Y:</label>
+                <input type="number" name="coordenada_y" step="any" required><br>
 
-        <label for="sobres_disponibles">Sobres Disponibles:</label>
-        <input type="number" name="sobres_disponibles" required min="0"><br>
+                <label for="sobres_disponibles">Sobres Disponibles:</label>
+                <input type="number" name="sobres_disponibles" required min="0"><br>
 
-        <label for="pedidos_pendientes">Pedidos Pendientes:</label>
-        <input type="number" name="pedidos_pendientes" required min="0"><br>
+                <label for="pedidos_pendientes">Pedidos Pendientes:</label>
+                <input type="number" name="pedidos_pendientes" required min="0"><br>
 
-        <label for="tipo_negocio">Tipo de Negocio:</label>
-        <select name="tipo_negocio">
-            <option value="Kiosko">Kiosko</option>
-            <option value="Supermercado">Supermercado</option>
-        </select><br>
+                <label for="tipo_negocio">Tipo de Negocio:</label>
+                <select name="tipo_negocio" class="select">
+                    <option value="Kiosko">Kiosko</option>
+                    <option value="Supermercado">Supermercado</option>
+                </select><br>
 
-        <button class="secondary-button">Volver</button>
-        <button class="primary-button" >Guardar</button>
-        </form>
+                <button class="secondary-button">Volver</button>
+                <button class="primary-button">Guardar</button>
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
+
 </html>
