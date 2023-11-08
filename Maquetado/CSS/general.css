@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* font-family: ; */
+}
+
+:root {
+	/* Variables generales, tales como paleta de colores, fuente default, fondo, padding, etc */
+	--primary-color: #f6f1f1;
+	--secondary-color: #b6c5cc;
+	--third-color: #66aabd;
+	--fourth-color: #146c94;
+	--fifth-color: #65b6cc;
+	--text-color: #000;
+	--fire-color: #ff0000;
+	--grey-color: #6e6e6e;
+	--button-radius: 0.3rem;
+	--border-radius: 0.5rem;
+	--border-radius-interno: 0.2rem;
+}
+
+html {
+	font-size: 13px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.main-container,
+.sub-main-container {
+	background-color: var(--secondary-color);
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.main-container {
+	margin-top: 2.5rem;
+}
+
+.sub-main-container {
+	flex-wrap: wrap;
+	gap: 1.2em;
+	align-self: flex-start;
+}
+
+@media (min-width: 401px) {
+	html {
+		font-size: 15px;
+	}
+
+	.sub-main-container {
+		justify-content: flex-start;
+		margin-left: 2em;
+	}
+}

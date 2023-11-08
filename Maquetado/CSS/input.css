@@ -1,0 +1,27 @@
+.login-input {
+    width: 15em;
+    height: 2.5em;
+    border: .3em var(--fourth-color) solid .3em var(--fourth-color) solid .3em var(--fourth-color) solid 0; 
+    padding-left: .5em;
+}
+
+input:focus {
+    outline: none;
+}
+
+.formulario input,
+.select {
+  width: 100%;
+  border: .1rem solid var(--primary-color);
+  margin: 0.5rem 0;
+  box-shadow: 0.5em 0.5em 0.1em rgba(0, 0, 0, 0.2); 
+  padding: 1rem;
+  border-radius: .5rem; 
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  box-shadow: 0.5em 0.5em 0.15em rgba(0, 0, 0, 0.7); 
+  border: 0.2em solid var(--fourth-color); 
+  outline: none; 
+}
