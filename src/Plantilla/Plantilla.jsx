@@ -1,5 +1,4 @@
 import "./Plantilla.css"
-impo from "react"
 
 
 
