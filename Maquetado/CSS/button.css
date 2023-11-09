@@ -23,8 +23,8 @@
     background-color: var(--secondary-color);
 }
 
-.primary-button:hover, .secondary-button:hover {
+/* .primary-button:hover, .secondary-button:hover {
     border-color: var(--fourth-color);
     font-size: 1.4em;  
-}
+} */
 

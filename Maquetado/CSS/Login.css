@@ -45,18 +45,3 @@
     border-radius:  0   var(--border-radius) var(--border-radius) 0;
 }
 
-@media (min-width:401px){
-    .sub-main-container {
-        flex: 0;
-        padding: 5em;
-        background-color: var(--secondary-color);
-        border: solid .3em var(--fourth-color);
-        border-radius: var(--border-radius);
-        margin-left: 0;
-    }
-
-    .login-info {
-        
-        border: none;
-    }
-}

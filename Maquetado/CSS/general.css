@@ -6,7 +6,7 @@
 }*/
 
 :root {
-	/* Variables generales, tales como paleta de colores, fuente default, fondo, padding, etc */
+	
 	--primary-color: #f6f1f1;
 	--secondary-color: #b6c5cc;
 	--third-color: #66aabd;
@@ -42,21 +42,15 @@ body {
 
 .main-container {
 	margin-top: 2.5rem;
+	width: 100%;
 }
 
 .sub-main-container {
 	flex-wrap: wrap;
 	gap: 1.2em;
 	align-self: flex-start;
+	padding-left: 3em;
+	
 }
 
-@media (min-width: 401px) {
-	html {
-		font-size: 15px;
-	}
 
-	.sub-main-container {
-		justify-content: flex-start;
-		margin-left: 2em;
-	}
-}

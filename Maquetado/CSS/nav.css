@@ -34,14 +34,3 @@ a {
     font-family: 'Exo', sans-serif;
 }
 
-@media (min-width:769px) {
-    .burger {
-        display: none;
-    }
-
-    .navbar-list {
-        display: flex;
-        gap: 3rem;
-        font-size: 2rem;
-    }
-}
