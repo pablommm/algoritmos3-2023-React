@@ -1,9 +1,9 @@
-* {
+/* {
 	margin: 0;
 	padding: 0.9em;
 	box-sizing: border-box;
-	/* font-family: ; */
-}
+	 font-family: ; 
+}*/
 
 :root {
 	/* Variables generales, tales como paleta de colores, fuente default, fondo, padding, etc */
