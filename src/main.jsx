@@ -5,12 +5,13 @@ import './index.css'
 //import Login from './Login/Login.jsx'
 import Home from './Home/Home.jsx'
 import Login from './Login/Login.jsx'
+import JugadorForm from './JugadorForm/JugadorForm.jsx'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <Login /> */}
-    <Login />
+    <JugadorForm />
   </React.StrictMode>,
 )
