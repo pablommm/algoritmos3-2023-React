@@ -1,10 +1,8 @@
+/* eslint-disable react/jsx-no-undef */
 import '../../Maquetado/CSS/input.css'
 import '../../Maquetado/CSS/button.css'
 import '../../Maquetado/CSS/general.css'
 import '../../Maquetado/CSS/login.css'
-
-
-
 
 function Login() {
     
@@ -33,7 +31,6 @@ function Login() {
                                 <input type="text" placeholder="Usuario" className="login-input" />
                             </div>
                         </div>
-
                         <div className="login-item">
                             <label>Contraseña</label>
                             <div className="login-info">
