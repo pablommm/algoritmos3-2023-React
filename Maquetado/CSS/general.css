@@ -1,9 +1,6 @@
-/* {
-	margin: 0;
-	padding: 0.9em;
-	box-sizing: border-box;
-	 font-family: ; 
-}*/
+ * {
+	color:black;
+}
 
 :root {
 	
@@ -37,6 +34,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	height: 100vh;
+
 }
 
 .main-container {
@@ -47,8 +46,7 @@ body {
 .sub-main-container {
 	flex-wrap: wrap;
 	gap: 1.2em;
-	align-self: flex-start;
-	padding-left: 3em;
+	align-self:center;
 	
 }
 

@@ -8,12 +8,12 @@ import '../../Maquetado/CSS/login.css'
 import '../../Maquetado/CSS/home.css'
 
 function template() {
-  return ( 
-    
+  return (
 
-    
 
-      <><link rel="stylesheet" href="../CSS/general.css" /><link rel="stylesheet" href="../CSS/nav.css" /><link rel="stylesheet" href="../CSS/home.css" /><link rel="stylesheet"
+
+
+    <><link rel="stylesheet" href="../CSS/general.css" /><link rel="stylesheet" href="../CSS/nav.css" /><link rel="stylesheet" href="../CSS/home.css" /><link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /><script src="https://kit.fontawesome.com/e0d6dd6321.js" crossOrigin="anonymous"></script><title>Home</title><h1>Home</h1><div className="dashboard">
         <div className="box">
           <span id="id_footer2" className="material-symbols-outlined">account_box</span>
@@ -44,7 +44,7 @@ function template() {
           </div>
         </div>
       </div></>
-      
+
 
 
   )
