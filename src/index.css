@@ -28,6 +28,9 @@ body {
   display: flex;
   flex-direction:row;
 }
+input,select{
+  background-color: antiquewhite;
+}
 
 
 h1 {
