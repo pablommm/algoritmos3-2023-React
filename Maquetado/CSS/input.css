@@ -11,7 +11,7 @@ input:focus {
 
 .formulario input,
 .select {
-  width: 100%;
+  width: 90%;
   border: .1rem solid var(--primary-color);
   margin: 0.5rem 0;
   box-shadow: 0.5em 0.5em 0.1em rgba(0, 0, 0, 0.2); 
