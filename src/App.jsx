@@ -1,18 +1,20 @@
 import './App.css'
+import SeleccionForm from './SeleccionForm/SeleccionForm'
 /* import Login from "./Login/Login"
 import Home from "./Home/Home"
 import JugadorForm from './JugadorForm/JugadorForm' */
-import PuntoDeVentaForm from './PuntoDeVentaForm/PuntoDeVentaForm'
+//import PuntoDeVentaForm from './PuntoDeVentaForm/PuntoDeVentaForm'
+
 function App() {
   return (
-    /*  <div className="Login">
-       <Login />
-     </div> */
-
+      <div className="SeleccionForm">
+       <SeleccionForm />
+     </div> 
+  /*
     <div>
-      <PuntoDeVentaForm />
+      <SeleccionForm />
     </div>
-
+*/
 
 
   )

@@ -1,50 +1,39 @@
-import "./Plantilla.css"
+import '../../Maquetado/CSS/general.css'
+import '../../Maquetado/CSS/form.css'
+import '../../Maquetado/CSS/button.css'
+import '../../Maquetado/CSS/input.css'
 
-
-
-function template() {
+function SeleccionForm() {
   
-  return (
-    
+  return (      
+  <section className="sub-main-container">
+      <div className="formulario">
+          <form action="p" method="POST">
+              <label htmlFor="nombre_jugador">Nombre del Jugador:</label>
+              <input type="text" name="nombre_jugador" required></input>
 
-    <><head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>plantilla</title>
-      <link rel="stylesheet" href="/Maquetado/CSS/general.css" />
-      <link rel="stylesheet" href="../CSS/nav.css" />
-      <link rel="stylesheet" href="/Maquetado/CSS/searchbar.css" />
-      <link rel="stylesheet" href="/Maquetado/CSS/jugadores.css" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-      <script src="https://kit.fontawesome.com/e0d6dd6321.js" crossOrigin="anonymous"></script>
-    </head><body>
-        <div className="navbar-container">
-          <span className="navbar-title">titulo plantilla</span>
-        </div>
+              <label htmlFor="confederacion">Confederación:</label>
+              <select className="select">
+                  <option value="CONMEBOL">CONMEBOL</option>
+                  <option value="UEFA">UEFA</option>
+                  <option value="CAF">CAF</option>
+                  <option value="AFC">AFC</option>
+                  <option value="CONCACAF">CONCACAF</option>
+                  <option value="OFC">OFC</option>
+              </select>
 
-        <section className="searchbar-container">
-          <div className="searchbar">
-            <input type="text" placeholder="Buscar..." />
-            <button type="submit"><i id="id_lupa" className="fa fa-search sarasa"></i></button>
-          </div>
-        </section>
+              <label htmlFor="copas_mundo">Cantidad de Copas del Mundo:</label>
+              <input type="number" name="copas_mundo" required min="0"> </input>
 
-        <main>
-
-          <span id="id_add" className="material-symbols-outlined plus-icon">add</span>
-        </main>
-        <footer className="footer">
-
-          <span id="id_footer" className="material-symbols-outlined">home</span>
-          <span id="id_footer" className="material-symbols-outlined">account_box</span>
-          <span id="id_footer" className="material-symbols-outlined">directions_run</span>
-          <span id="id_footer" className="material-symbols-outlined">storefront</span>
-          <span id="id_footer" className="material-symbols-outlined">logout</span>
-        </footer>
-      </body></>
-
+              <button className="secondary-button">Volver</button>
+              <button className="primary-button">Guardar</button>
+        
+        </form>
+      </div>
+  </section>
+  
   )
   
 }
 
-export default template
+export default SeleccionForm
