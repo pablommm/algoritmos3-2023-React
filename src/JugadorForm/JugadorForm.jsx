@@ -1,14 +1,16 @@
 import '../../Maquetado/CSS/button.css'
-import '../../Maquetado/CSS/general.css'
 import '../../Maquetado/CSS/jugador.css'
 import '../../Maquetado/CSS/input.css'
 import '../../Maquetado/CSS/form.css'
+import '../../Maquetado/CSS/general.css'
 
 function JugadorForm() {
   return (
-    <section className="sub-main-container">
-      <main className="main-container">
+    <div className="main-container">
+      <div className="sub-main-container">
+
         <title>Formulario Punto de Venta</title>
+
         <div className="formulario">
           <form action="p" method="POST">
 
@@ -52,8 +54,8 @@ function JugadorForm() {
             <button className="primary-button">Guardar</button>
           </form>
         </div>
-      </main>
-    </section>
+      </div >
+    </div >
   )
 }
 
