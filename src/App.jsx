@@ -7,12 +7,15 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Home from "./Home/Home"*/
 import JugadorForm from './JugadorForm/JugadorForm'
 import PuntoDeVentaForm from './PuntoDeVentaForm/PuntoDeVentaForm'
+import { Login } from './Login/Login'
 
 function App() {
   return (
-    <ChakraProvider>
-      <JugadorForm />
-    </ChakraProvider>
+    /* <ChakraProvider> */
+    /*  </ChakraProvider> */
+    <>
+      <Login />
+    </>
   )
   /*
     <div>
