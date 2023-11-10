@@ -1,14 +1,12 @@
 import './App.css'
-import Plantilla from "./Plantilla"
-
+import Login from "./Login/Login"
 function App() {
   return (
-    <>
-      {/* <Login /> */}
-      {/* <Home />  */}
-      <Plantilla /> 
-      {/* <Figuritas /> */}
-    </>
+    <div className="App">
+      <Login />
+    </div >
+
+
   )
 }
 
