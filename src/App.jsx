@@ -1,7 +1,8 @@
 import './App.css'
-import Login from "./Login/Login"
+/* import Login from "./Login/Login"
 import Home from "./Home/Home"
-import JugadorForm from './JugadorForm/JugadorForm'
+import JugadorForm from './JugadorForm/JugadorForm' */
+import PuntoDeVentaForm from './PuntoDeVentaForm/PuntoDeVentaForm'
 function App() {
   return (
     /*  <div className="Login">
@@ -9,7 +10,7 @@ function App() {
      </div> */
 
     <div>
-      <JugadorForm />
+      <PuntoDeVentaForm />
     </div>
 
 
