@@ -3,19 +3,22 @@ import "../../Maquetado/CSS/input.css"
 import "../../Maquetado/CSS/button.css"
 import "../../Maquetado/CSS/general.css"
 import "../../Maquetado/CSS/login.css"
+import loginService from "../Services/login.service"
+import { UsuarioLogin } from '../dominio/usuarioLogin'
 
 export const Login = () => {
   const [usuario, setUsuario] = useState("")
   const [password, setPassword] = useState("")
-
   
-  const loguear = () => {
-    // eslint-disable-next-line no-alert
-    alert("Se esta logueando")
+  const getLoginUser = async () => {
+    const usuarioLogin = new UsuarioLogin(usuario, password)
+    const codigoLogin = await loginService.getUsuarioLogin(usuarioLogin)
+    console.log(codigoLogin)
   }
+
   useEffect(() => {
 
-    loguear()
+    getLoginUser()
   }, [])
 
   return (
@@ -48,7 +51,7 @@ export const Login = () => {
             </div>
           </div>
           <div>
-            <button onClick={loguear} className="primary-button">
+            <button onClick={getLoginUser} className="primary-button">
               Ingresar
             </button>
           </div>
