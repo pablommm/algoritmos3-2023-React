@@ -8,6 +8,7 @@ import Home from "./Home/Home"*/
 import JugadorForm from './JugadorForm/JugadorForm'
 import PuntoDeVentaForm from './PuntoDeVentaForm/PuntoDeVentaForm'
 import { Login } from './Login/Login'
+import { Footer } from './components/footer/footer'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     /*  </ChakraProvider> */
     <>
       <Login />
+      <Footer />
     </>
   )
   /*

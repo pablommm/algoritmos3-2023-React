@@ -5,21 +5,30 @@ import "../../Maquetado/CSS/general.css"
 import "../../Maquetado/CSS/login.css"
 import loginService from "../Services/login.service"
 import { UsuarioLogin } from '../dominio/usuarioLogin'
+import { mostrarMensajeError } from "../util/error-handling"
+import { Snackbar, Alert } from '@mui/material'
 
 export const Login = () => {
   const [usuario, setUsuario] = useState("")
   const [password, setPassword] = useState("")
+  const [errorMessage, setErrorMessage] = useState('')
   
   const getLoginUser = async () => {
     const usuarioLogin = new UsuarioLogin(usuario, password)
-    const codigoLogin = await loginService.getUsuarioLogin(usuarioLogin)
-    console.log(codigoLogin)
+    try{
+      await loginService.getUsuarioLogin(usuarioLogin)
+    }
+    catch(error){
+      mostrarMensajeError(error, setErrorMessage)
+    }
   }
 
   useEffect(() => {
 
     getLoginUser()
   }, [])
+
+  const snackbarOpen = !!errorMessage // O se puede usar Boolean(errorMessage)
 
   return (
     <>
@@ -56,6 +65,12 @@ export const Login = () => {
             </button>
           </div>
         </div>
+        <Snackbar
+         open={snackbarOpen}
+         variant="error"
+         autoHideDuration={4}>
+        <Alert severity="error">{errorMessage}</Alert>
+        </Snackbar>       
       </div>
     </>
   )
