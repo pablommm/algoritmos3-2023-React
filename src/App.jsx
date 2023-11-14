@@ -30,6 +30,7 @@ import JugadorForm from "./components/JugadorForm/JugadorForm.jsx"
 import Home from "./components/Home/Home.jsx"
 import Plantilla from "./components/Plantilla/Plantilla.jsx"
 import Login from "./Login/Login.jsx"
+import CardSobre from "./components/CardPtoDeVenta/CardPtoDeVenta.js"
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/jugador-form" element={<JugadorForm />} />
         <Route path="Home" element={<Home />} />
         <Route path="/plantilla" element={<Plantilla />} />
+        <Route path="/Card" element={<CardSobre />} />
         <Route path="*" element={<h1>404</h1>} />
         
       </Routes>
