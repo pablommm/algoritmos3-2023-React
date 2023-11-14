@@ -26,9 +26,10 @@ function Seleccion() {
 
             <label htmlFor="copas_mundo">Cantidad de Copas del Mundo:</label>
             <input type="number" name="copas_mundo" required min="0" />
-
-            <button className="secondary-button">Volver</button>
-            <button className="primary-button">Guardar</button>
+            <div className="buttonContainer">
+              <button className="secondary-button">Volver</button>
+              <button className="primary-button">Guardar</button>
+            </div>
           </form>
         </div>
       </div>

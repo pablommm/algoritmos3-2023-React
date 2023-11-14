@@ -1,4 +1,3 @@
-import React from "react"
 import "./PuntoDeVentaForm.css"
 import '../../Maquetado/CSS/button.css'
 import '../../Maquetado/CSS/jugador.css'

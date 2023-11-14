@@ -15,7 +15,7 @@ function App() {
     /* <ChakraProvider> */
     /*  </ChakraProvider> */
     <>
-      <Login />
+      <SeleccionForm />
       <Footer />
     </>
   )
