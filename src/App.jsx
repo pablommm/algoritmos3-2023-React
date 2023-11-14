@@ -4,12 +4,13 @@ import './App.css'
 
 //import Login from "./Login/Login"
 
-import Home from "../src/Components/Home/Home"
-import JugadorForm from '../src/Components/JugadorForm/JugadorForm'
+//import Home from "../src/Components/Home/Home"
+//import JugadorForm from '../src/Components/JugadorForm/JugadorForm'
 //import PuntoDeVentaForm from './PuntoDeVentaForm/PuntoDeVentaForm'
 //import { Login } from './Login/Login'
 //import { Footer } from './components/footer/footer'
-import Plantilla from '../src/Components/Plantilla/Plantilla'
+//import Plantilla from '../src/Components/Plantilla/Plantilla'
+import {cardJugador} from './Components/CardJugador/CardJugador'
 function App() {
   return (
     /* <ChakraProvider> */
@@ -18,15 +19,11 @@ function App() {
       {/* <SeleccionForm /> */}
       {/* <Login /> */}
       {/* < Plantilla/>  */}
-      <JugadorForm/>
+      {/*  <JugadorForm/> */}
       {/* <Home/> */}
+      <cardJugador />
     </>
   )
-  /*
-    <div>
-      <SeleccionForm />
-    </div>
-*/
 
 
 
