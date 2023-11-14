@@ -1,2 +1,2 @@
-import JugadorForm from "./JugadorForm";
-export default JugadorForm;
+import JugadorForm from "./JugadorForm"
+export default JugadorForm

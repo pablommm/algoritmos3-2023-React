@@ -5,11 +5,11 @@ import './App.css'
 //import Login from "./Login/Login"
 /*
 import Home from "./Home/Home"*/
-//import JugadorForm from './JugadorForm/JugadorForm'
+//import JugadorForm from '../src/Components/JugadorForm/JugadorForm'
 //import PuntoDeVentaForm from './PuntoDeVentaForm/PuntoDeVentaForm'
 //import { Login } from './Login/Login'
 //import { Footer } from './components/footer/footer'
-import {Plantilla} from './Components/Plantilla/Plantilla'
+import Plantilla from '../src/Components/Plantilla/Plantilla'
 function App() {
   return (
     /* <ChakraProvider> */
@@ -17,7 +17,8 @@ function App() {
     <>
       {/* <SeleccionForm /> */}
       {/* <Login /> */}
-      < Plantilla/>
+      < Plantilla/> 
+      {/* <JugadorForm/> */}
     </>
   )
   /*
