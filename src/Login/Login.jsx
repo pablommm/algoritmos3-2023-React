@@ -61,7 +61,7 @@ export const Login = () => {
             </div>
           </div>
           <div>
-            <button onClick={getLoginUser} className="primary-button">
+            <button onClick={getLoginUser} className="primary-button" data-testid="login">
               Ingresar
             </button>
           </div>
