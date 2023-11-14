@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState/* , useEffect */ } from "react"
 import "../../Maquetado/CSS/input.css"
 import "../../Maquetado/CSS/button.css"
 import "../../Maquetado/CSS/general.css"
@@ -17,16 +17,17 @@ export const Login = () => {
     const usuarioLogin = new UsuarioLogin(usuario, password)
     try{
       await loginService.getUsuarioLogin(usuarioLogin)
+      console.log(await loginService.getUsuarioLogin(usuarioLogin))
     }
     catch(error){
       mostrarMensajeError(error, setErrorMessage)
     }
   }
 
-  useEffect(() => {
+  /* useEffect(() => {
 
     getLoginUser()
-  }, [])
+  }, []) */
 
   const snackbarOpen = !!errorMessage // O se puede usar Boolean(errorMessage)
 
@@ -68,7 +69,8 @@ export const Login = () => {
         <Snackbar
          open={snackbarOpen}
          variant="error"
-         autoHideDuration={4}>
+         autoHideDuration={1800}
+         onClose={() => setErrorMessage(false)}>
         <Alert severity="error">{errorMessage}</Alert>
         </Snackbar>       
       </div>
