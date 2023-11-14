@@ -22,29 +22,30 @@
 
 // }
 
-// export default App
 import React from "react"
 import "./App.css"
-//import { Login } from "./Login/Login"
-//import { Footer } from "./components/footer/footer"
-//import Plantilla from "./Components/Plantilla/Plantilla"
-import { Home } from "./components/Home/Home"
-import { BrowserRouter as Router, Route } from "react-router-dom"
-//import Nav from "./components/Nav/Nav"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import JugadorForm from "./components/JugadorForm/JugadorForm.jsx"
+import Home from "./components/Home/Home.jsx"
+import Plantilla from "./components/Plantilla/Plantilla.jsx"
+import Login from "./Login/Login.jsx"
 
 export default function App() {
   return (
     <Router>
-      <Route path="/" component={home} />
-      <Route path="/about" component={About} />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/jugador-form" element={<JugadorForm />} />
+        <Route path="Home" element={<Home />} />
+        <Route path="/plantilla" element={<Plantilla />} />
+        <Route path="*" element={<h1>404</h1>} />
+        
+      </Routes>
     </Router>
   )
 }
 
-function home() {
-  return <Home/>
-}
 
-function About() {
-  return <>about</>
-}
+
+
+

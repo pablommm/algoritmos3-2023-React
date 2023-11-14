@@ -8,7 +8,7 @@ import '../../../Maquetado/CSS/login.css'
 import '../../../Maquetado/CSS/home.css'
 
 
-function template() {
+function Home(){
   return (
 
 
@@ -51,4 +51,4 @@ function template() {
   )
 }
 
-export default template
+export default Home
