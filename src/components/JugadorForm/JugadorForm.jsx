@@ -4,7 +4,7 @@ import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
 import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/footer.css'
-
+import './JugadorForm.css'
 function JugadorForm() {
   return (
     <div className="main-container">
@@ -50,9 +50,10 @@ function JugadorForm() {
 
             <label htmlFor="pedidos_pendientes">Cotización :</label>
             <input type="number" name="pedidos_pendientes" required min="0" />
-
+            <div className='buttonConteiner'>
             <button className="secondary-button">Volver</button>
             <button className="primary-button">Guardar</button>
+            </div>
           </form>
         </div>
       </div >
