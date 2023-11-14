@@ -8,7 +8,10 @@
     position: fixed;
     width: 100vw;
     z-index: 1;
+    top:0;
+    left: 0;
 }
+
 
 
 .navbar-list {
@@ -29,8 +32,8 @@ a {
 }
 
 .navbar-title{
-    font-size: 0.8em;
+    font-size: 2.8rem;
     color: var(--text-color);
-    font-family: 'Exo', sans-serif;
+    font-family:  sans-serif;
 }
 

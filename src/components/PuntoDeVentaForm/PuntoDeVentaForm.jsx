@@ -1,9 +1,11 @@
-import "./PuntoDeVentaForm.css"
-import '../../Maquetado/CSS/button.css'
-import '../../Maquetado/CSS/jugador.css'
-import '../../Maquetado/CSS/input.css'
-import '../../Maquetado/CSS/form.css'
-import '../../Maquetado/CSS/general.css'
+//import React from "react"
+
+import '../../../Maquetado/CSS/button.css'
+import '../../../Maquetado/CSS/jugador.css'
+import '../../../Maquetado/CSS/input.css'
+import '../../../Maquetado/CSS/form.css'
+import '../../../Maquetado/CSS/general.css'
+
 
 function PuntoDeVentaForm() {
   return (

@@ -1,25 +1,5 @@
-.footer{
-    background-color: var(--fifth-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.4em;    
-    height: 5em;   
-    width: 100%; 
-    bottom: 0;
-    position: absolute;
-}
+
 #id_footer{
     font-size: 3.5em;
 }
 
-#id_add {
-    color: white;
-    background-color: var(--fifth-color);
-    position: fixed;
-    font-size: 4em;
-    bottom: 1.8em;
-    right: 0.2em;
-    border-radius: 5em;
-  }
-  

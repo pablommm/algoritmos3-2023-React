@@ -1,23 +1,17 @@
 import "./Figuritas.css"
-import React from "react"
+//import React from "react"
 
 
-import "../../Maquetado/CSS/button.css"
-import  "../../Maquetado/CSS/general.css"
-import "../../Maquetado/CSS/form.css"
-import "../../Maquetado/CSS/input.css"
+import "../../../Maquetado/CSS/button.css"
+import "../../../Maquetado/CSS/general.css"
+import "../../../Maquetado/CSS/form.css"
+import "../../../Maquetado/CSS/input.css"
 
 
-function template() {
+function FiguritasForm() {
   return (
     <>
-      <head>
-        <title>Formulario Figurita</title>
-        <link rel="stylesheet" href="../CSS/button.css" />
-        <link rel="stylesheet" href="../CSS/general.css" />
-        <link rel="stylesheet" href="../CSS/form.css" />
-        <link rel="stylesheet" href="../CSS/input.css" />
-      </head>
+     
       <main className="main-container">
         <section className="sub-main-container">
           <div className="formulario">
@@ -57,4 +51,4 @@ function template() {
   )
 }
 
-export default template
+export default FiguritasForm

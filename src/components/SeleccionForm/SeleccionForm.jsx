@@ -1,8 +1,8 @@
-import '../../Maquetado/CSS/button.css'
-import '../../Maquetado/CSS/jugador.css'
-import '../../Maquetado/CSS/input.css'
-import '../../Maquetado/CSS/form.css'
-import '../../Maquetado/CSS/general.css'
+import '../../../Maquetado/CSS/button.css'
+import '../../../Maquetado/CSS/jugador.css'
+import '../../../Maquetado/CSS/input.css'
+import '../../../Maquetado/CSS/form.css'
+import '../../../Maquetado/CSS/general.css'
 
 function Seleccion() {
   return (
@@ -27,8 +27,8 @@ function Seleccion() {
             <label htmlFor="copas_mundo">Cantidad de Copas del Mundo:</label>
             <input type="number" name="copas_mundo" required min="0" />
             <div className="buttonContainer">
-              <button className="secondary-button">Volver</button>
-              <button className="primary-button">Guardar</button>
+            <button className="secondary-button">Volver</button>
+            <button className="primary-button">Guardar</button>
             </div>
           </form>
         </div>

@@ -1,11 +1,12 @@
 import "./Home.css"
 // eslint-disable-next-line no-unused-vars
 import React from "react"
-import '../../Maquetado/CSS/input.css'
-import '../../Maquetado/CSS/button.css'
-import '../../Maquetado/CSS/general.css'
-import '../../Maquetado/CSS/login.css'
-import '../../Maquetado/CSS/home.css'
+import '../../../Maquetado/CSS/input.css'
+import '../../../Maquetado/CSS/button.css'
+import '../../../Maquetado/CSS/general.css'
+import '../../../Maquetado/CSS/login.css'
+import '../../../Maquetado/CSS/home.css'
+
 
 function template() {
   return (

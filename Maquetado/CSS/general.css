@@ -24,11 +24,13 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	background-color: var(--secondary-color);
 }
 
 .main-container,
 .sub-main-container {
-	background-color: var(--secondary-color);
+	
 	display: flex;
 	flex: 1;
 	align-items: center;
@@ -41,6 +43,8 @@ body {
 .main-container {
 	margin-top: 2.5rem;
 	width: 100%;
+	
+	
 }
 
 .sub-main-container {

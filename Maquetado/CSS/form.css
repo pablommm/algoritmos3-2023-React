@@ -12,7 +12,16 @@
 
 .formulario {
   width: 400px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;  
   height: 100%;
+  
+
+}
+
+form{
+  padding: 1em;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
 }
