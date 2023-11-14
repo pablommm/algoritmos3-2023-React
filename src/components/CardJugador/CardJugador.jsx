@@ -1,4 +1,4 @@
-import "./cardJugador.css"
+import "./CardJugador.css"
 //import React from "react"
 
 function template() {
