@@ -6,9 +6,11 @@ import "../../../Maquetado/CSS/Home.css"
 import "../../../Maquetado/CSS/Footer.css"
 import "../../../Maquetado/CSS/button.css"
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'
+import { useNavigate } from "react-router-dom"
 
 
-function template() {
+function Template() {
+  const navigate = useNavigate()
 
   return (
 
@@ -33,11 +35,11 @@ function template() {
       </main>
       <footer className="footer">
 
-        <span id="id_footer" className="material-symbols-outlined">home</span>
-        <span id="id_footer" className="material-symbols-outlined">account_box</span>
-        <span id="id_footer" className="material-symbols-outlined">directions_run</span>
-        <span id="id_footer" className="material-symbols-outlined">storefront</span>
-        <span id="id_footer" className="material-symbols-outlined">logout</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/Home")} >home</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/Home")} >account_box</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/Home")} >directions_run</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/Home")} >storefront</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/")} >logout</span>
       </footer>
     </>
 
@@ -45,4 +47,4 @@ function template() {
 
 }
 
-export default template
+export default Template

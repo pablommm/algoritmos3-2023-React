@@ -7,8 +7,10 @@ import loginService from "../Services/login.service"
 import { UsuarioLogin } from '../dominio/usuarioLogin'
 import { mostrarMensajeError } from "../util/error-handling"
 import { Snackbar, Alert } from '@mui/material'
+import { useNavigate } from "react-router-dom"
 
 export const Login = () => {
+  const navigate = useNavigate()
   const [usuario, setUsuario] = useState("")
   const [password, setPassword] = useState("")
   const [errorMessage, setErrorMessage] = useState('')
@@ -18,6 +20,7 @@ export const Login = () => {
     try{
       await loginService.getUsuarioLogin(usuarioLogin)
       console.log(await loginService.getUsuarioLogin(usuarioLogin))
+      navigate("/Home")
     }
     catch(error){
       mostrarMensajeError(error, setErrorMessage)
@@ -61,7 +64,7 @@ export const Login = () => {
             </div>
           </div>
           <div>
-            <button onClick={getLoginUser} className="primary-button" data-testid="login">
+            <button onClick={getLoginUser} className="primary-button" data-testid="login" >
               Ingresar
             </button>
           </div>
