@@ -22,12 +22,12 @@ function Template() {
         <span className="navbar-title">titulo plantilla</span>
       </div>
 
-      <section className="searchbar-container">
+       {/* <section className="searchbar-container">
         <div className="searchbar">
           <input type="text" placeholder="Buscar..." />
           <button type="submit"><i id="id_lupa" className="fa fa-search sarasa"></i></button>
         </div>
-      </section>
+      </section>  */}
 
       <main className="main-container">
         <Outlet></Outlet>

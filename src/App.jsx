@@ -23,7 +23,7 @@
 
 // }
 
-import React from "react"
+//import React from "react"
 import "./App.css"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import JugadorForm from "./components/JugadorForm/JugadorForm.jsx"
@@ -31,6 +31,7 @@ import Home from "./components/Home/Home.jsx"
 import Plantilla from "./components/Plantilla/Plantilla.jsx"
 import Login from "./Login/Login.jsx"
 import CardSobre from "./components/CardPtoDeVenta/CardPtoDeVenta.js"
+import Searchbar from "./components/Searchbar/Searchbar.jsx"
 
 export default function App() {
   return (
@@ -40,13 +41,17 @@ export default function App() {
         <Route path="/jugador-form" element={<JugadorForm />} />
         <Route path="Home" element={<Home />} />
         <Route path="/plantilla" element={<Plantilla />}>
-            <Route path="Home" element={<Home />} />
+            <Route path="Searchbar" element={<Searchbar />} >        {/*  se abre nuevamente el componente para que contenga hijos  */}
+                <Route path="jugador-form" element={<JugadorForm />} >  {/*  -- se rompe y no levanta nada, se puede anidar?? */}
+                </Route>
+            </Route>
+          <Route path="Home" element={<Home />} />
         </Route>
         <Route path="/Card" element={<CardSobre />} />
         <Route path="*" element={<h1>404</h1>} />
-        <Route path="/plantilla2" element={<Plantilla />}>
-            <Route path="search" element={<Home />} />
-        </Route>
+        {/* <Route path="/plantilla2" element={<Plantilla />}>
+            <Route path="" element={<Home />} />
+        </Route> */}
         
         
       </Routes>
