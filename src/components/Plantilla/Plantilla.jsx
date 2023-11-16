@@ -6,7 +6,7 @@ import "../../../Maquetado/CSS/Home.css"
 import "../../../Maquetado/CSS/Footer.css"
 import "../../../Maquetado/CSS/button.css"
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'
-import { useNavigate } from "react-router-dom"
+import { Outlet, useNavigate } from "react-router-dom"
 
 
 function Template() {
@@ -30,7 +30,7 @@ function Template() {
       </section>
 
       <main className="main-container">
-        
+        <Outlet></Outlet>
         <span id="id_add" className="material-symbols-outlined plus-icon">add</span>
       </main>
       <footer className="footer">

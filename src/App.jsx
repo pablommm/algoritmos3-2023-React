@@ -39,9 +39,15 @@ export default function App() {
         <Route path="/" element={<Login />} />
         <Route path="/jugador-form" element={<JugadorForm />} />
         <Route path="Home" element={<Home />} />
-        <Route path="/plantilla" element={<Plantilla />} />
+        <Route path="/plantilla" element={<Plantilla />}>
+            <Route path="Home" element={<Home />} />
+        </Route>
         <Route path="/Card" element={<CardSobre />} />
         <Route path="*" element={<h1>404</h1>} />
+        <Route path="/plantilla2" element={<Plantilla />}>
+            <Route path="search" element={<Home />} />
+        </Route>
+        
         
       </Routes>
     </Router>
