@@ -32,7 +32,7 @@ function Template() {
    
         <Outlet></Outlet>
         
-        <span id="id_add" className="material-symbols-outlined plus-icon">add</span>
+    
       
       <footer className="footer">
 
