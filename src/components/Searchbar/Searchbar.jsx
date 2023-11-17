@@ -1,8 +1,10 @@
 import "./Searchbar.css"
 import { Outlet, useOutletContext } from "react-router-dom"
-
+import { useNavigate, useLoaderData, useLocation } from "react-router-dom"
 
 function template() {
+  const navigate = useNavigate()
+  const location = useLocation() 
   const [dataBusquedaFigurita] = useOutletContext()
 
   return (
@@ -15,7 +17,7 @@ function template() {
     <div>
       <span>{dataBusquedaFigurita.realizar()}</span>
       <Outlet></Outlet>
-      <span id="id_add" className="material-symbols-outlined plus-icon">add</span>
+      <span id="id_add" className="material-symbols-outlined plus-icon" onClick={() => navigate("/plantilla/Home")}  >add</span>
     </div>
 
     </>
@@ -23,3 +25,8 @@ function template() {
 }
 
 export default template
+
+
+function subRuta(){
+  location
+}
