@@ -2,6 +2,16 @@ import "./Searchbar.css"
 import { Outlet, useOutletContext } from "react-router-dom"
 import { useNavigate, useLoaderData, useLocation } from "react-router-dom"
 
+
+const titleMap = [
+  
+  { path: "/plantilla/searchbar/figu", subRuta: "/plantilla/searchbar/figu/Figuritas" },
+  { path: "/plantilla/searchbar/jugador", subRuta: "/plantilla/searchbar/jugador/jugadorFrom" },
+  { path: "/plantilla/searchbar/ptdeventa", subRuta: "/plantilla/searchbar/ptdeventa/CardPtoVenta" },
+  { path: "/plantilla/searchbar/seleccionMenu", subRuta: "/plantilla/searchbar/seleccionMenu" },
+];
+
+
 function template() {
   const navigate = useNavigate()
   const location = useLocation() 
