@@ -31,6 +31,7 @@ function Template() {
 
       <main className="main-container">
         <Outlet></Outlet>
+        <Outlet></Outlet>
         <span id="id_add" className="material-symbols-outlined plus-icon">add</span>
       </main>
       <footer className="footer">
