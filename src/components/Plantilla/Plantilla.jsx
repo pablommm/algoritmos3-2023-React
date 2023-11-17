@@ -21,16 +21,11 @@ function Template() {
       <div className="navbar-container">
         <span className="navbar-title">titulo plantilla</span>
       </div>
-
-       {/* <section className="searchbar-container">
-        <div className="searchbar">
-          <input type="text" placeholder="Buscar..." />
-          <button type="submit"><i id="id_lupa" className="fa fa-search sarasa"></i></button>
-        </div>
-      </section>  */}
-
-   
+        
         <Outlet></Outlet>
+       
+        
+    
         
     
       
@@ -40,6 +35,7 @@ function Template() {
         <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/plantilla/searchbar/figu")} >account_box</span>
         <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/plantilla/searchbar/jugador")} >directions_run</span>
         <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/plantilla/searchbar/ptdeventa")} >storefront</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/plantilla/searchbar/seleccionMenu")} >flag</span>
         <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/")} >logout</span>
       </footer>
     </>

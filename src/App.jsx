@@ -9,6 +9,7 @@ import Searchbar from "./components/Searchbar/Searchbar.jsx"
 import CardPtoDeVenta from "./components/CardPtoDeVenta/CardPtoDeVenta.js"
 import CardJugador from './components/CardJugador/CardJugador.jsx'
 import CardFigu from "./components/CardFigu/CardFigu.jsx"
+import SeleccionMenu from "./components/SeleccionMenu/SeleccionMenu.jsx"
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
                   <Route path="jugador" element={<CardJugador />} />
                   <Route path="ptdeventa" element={<CardPtoDeVenta />} />
                   <Route path="figu" element={<CardFigu />} />
+                  <Route path="seleccionMenu" element={<SeleccionMenu />} />
             </Route>
           <Route path="Home" element={<Home />} />
         </Route>
