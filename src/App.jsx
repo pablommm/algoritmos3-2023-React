@@ -30,13 +30,15 @@ export default function App() {
         <Route path="*" element={<h1>404</h1>} />
         {/* <Route path="/plantilla2" element={<Plantilla />}>
             <Route path="" element={<Home />} />
-        </Route> */}
-        
-        
+        </Route> */}  
       </Routes>
     </Router>
   )
+
+  
 }
+
+
 
 
 

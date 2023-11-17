@@ -1,8 +1,10 @@
 import "./Searchbar.css"
-import { Outlet } from "react-router-dom"
+import { Outlet, useOutletContext } from "react-router-dom"
 
 
 function template() {
+  const [dataBusquedaFigurita] = useOutletContext()
+
   return (
     <><section className="searchbar-container">
       <div className="searchbar">
@@ -11,8 +13,9 @@ function template() {
       </div>
     </section>
     <div>
-    <Outlet></Outlet>
-    <span id="id_add" className="material-symbols-outlined plus-icon">add</span>
+      <span>{dataBusquedaFigurita.realizar()}</span>
+      <Outlet></Outlet>
+      <span id="id_add" className="material-symbols-outlined plus-icon">add</span>
     </div>
 
     </>

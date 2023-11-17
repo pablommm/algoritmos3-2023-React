@@ -6,11 +6,14 @@ import "../../../Maquetado/CSS/Home.css"
 import "../../../Maquetado/CSS/Footer.css"
 import "../../../Maquetado/CSS/button.css"
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'
-import { Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useNavigate, useLoaderData } from "react-router-dom"
+import { useState } from "react"
 
 
 function Template() {
   const navigate = useNavigate()
+  /* const [prueba, setPrueba] = useState("messi") */
+
 
   return (
 
@@ -22,7 +25,7 @@ function Template() {
         <span className="navbar-title">titulo plantilla</span>
       </div>
         
-        <Outlet></Outlet>
+        <Outlet context={[dataBusquedaFigurita]}></Outlet>
        
         
     
@@ -44,4 +47,9 @@ function Template() {
 
 }
 
+export const dataBusquedaFigurita = {
+  realizar: ()=>"hola"
+}
+
 export default Template
+
