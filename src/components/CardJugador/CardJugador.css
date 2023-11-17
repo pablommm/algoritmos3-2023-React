@@ -1,9 +1,12 @@
 .cardJugador{
     background-color: var(--primary-color);
     border-radius: var(--border-radius);
-    font-size: 2em;
-    
+    font-size: 1em;
+    height: 50%;
+    width: 80%;
+    margin: 3em;
     border: 0.2em solid var(--fourth-color);
+    overflow: visible;
 }
 
 .nombre{

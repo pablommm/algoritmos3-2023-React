@@ -9,7 +9,7 @@ import '../../../Maquetado/CSS/general.css'
 
 function PuntoDeVentaForm() {
   return (
-    <div className="main-container">
+  
       <div className="sub-main-container">
         <div className="formulario">
           <form action="p" method="POST">
@@ -42,7 +42,6 @@ function PuntoDeVentaForm() {
           </form>
         </div>
       </div>
-    </div>
   )
 }
 

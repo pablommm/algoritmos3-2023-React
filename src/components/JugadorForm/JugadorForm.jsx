@@ -7,7 +7,7 @@ import '../../../Maquetado/CSS/footer.css'
 import './JugadorForm.css'
 function JugadorForm() {
   return (
-    <div className="main-container">
+
       <div className="sub-main-container">
 
         <title>Formulario Punto de Venta</title>
@@ -57,7 +57,6 @@ function JugadorForm() {
           </form>
         </div>
       </div >
-    </div >
   )
 }
 

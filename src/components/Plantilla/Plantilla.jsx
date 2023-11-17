@@ -29,17 +29,17 @@ function Template() {
         </div>
       </section>  */}
 
-      <main className="main-container">
+   
         <Outlet></Outlet>
-        <Outlet></Outlet>
+        
         <span id="id_add" className="material-symbols-outlined plus-icon">add</span>
-      </main>
+      
       <footer className="footer">
 
-        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/Home")} >home</span>
-        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/Home")} >account_box</span>
-        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/Home")} >directions_run</span>
-        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/Home")} >storefront</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/plantilla/Home")} >home</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/plantilla/searchbar/figu")} >account_box</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/plantilla/searchbar/jugador")} >directions_run</span>
+        <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/plantilla/searchbar/ptdeventa")} >storefront</span>
         <span id="id_footer" className="material-symbols-outlined" onClick={() => navigate("/")} >logout</span>
       </footer>
     </>
