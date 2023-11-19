@@ -1,2 +1,2 @@
-import CardPtoDeVenta from "./CardPtoDeVenta";
-export default CardPtoDeVenta;
+import CardPtoDeVenta from "./CardPtoDeVenta"
+export default CardPtoDeVenta

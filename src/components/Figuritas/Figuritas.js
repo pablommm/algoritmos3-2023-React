@@ -1,4 +1,4 @@
-import React    from "react"
+import React from "react"
 import template from "./Figuritas.jsx"
 
 class Figuritas extends React.Component {

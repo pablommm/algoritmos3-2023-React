@@ -1,10 +1,10 @@
-import React    from "react";
-import template from "./CardFigu.jsx";
+import React from "react"
+import template from "./CardFigu.jsx"
 
 class CardFigu extends React.Component {
   render() {
-    return template.call(this);
+    return template.call(this)
   }
 }
 
-export default CardFigu;
+export default CardFigu

@@ -1,10 +1,10 @@
-import React    from "react";
-import template from "./PuntoDeVentaForm.jsx";
+import React from "react"
+import template from "./PuntoDeVentaForm.jsx"
 
 class PuntoDeVentaForm extends React.Component {
   render() {
-    return template.call(this);
+    return template.call(this)
   }
 }
 
-export default PuntoDeVentaForm;
+export default PuntoDeVentaForm

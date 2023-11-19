@@ -1,2 +1,2 @@
-import SeleccionMenu from "./SeleccionMenu";
-export default SeleccionMenu;
+import SeleccionMenu from "./SeleccionMenu"
+export default SeleccionMenu

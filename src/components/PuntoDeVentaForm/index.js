@@ -1,2 +1,2 @@
-import PuntoDeVentaForm from "./PuntoDeVentaForm";
-export default PuntoDeVentaForm;
+import PuntoDeVentaForm from "./PuntoDeVentaForm"
+export default PuntoDeVentaForm
