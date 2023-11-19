@@ -3,7 +3,7 @@ import "../../Maquetado/CSS/input.css"
 import "../../Maquetado/CSS/button.css"
 import "../../Maquetado/CSS/general.css"
 import "../../Maquetado/CSS/login.css"
-import loginService from "../Services/login.service"
+import loginService from "../services/login.service"
 import { UsuarioLogin } from '../dominio/usuarioLogin'
 import { mostrarMensajeError } from "../util/error-handling"
 import { Snackbar, Alert } from '@mui/material'
@@ -20,7 +20,7 @@ export const Login = () => {
     try{
       await loginService.getUsuarioLogin(usuarioLogin)
       console.log(await loginService.getUsuarioLogin(usuarioLogin))
-      navigate("/Home")
+      navigate("/home")
     }
     catch(error){
       mostrarMensajeError(error, setErrorMessage)
