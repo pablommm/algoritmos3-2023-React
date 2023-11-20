@@ -20,7 +20,7 @@ export const Login = () => {
     try{
       await loginService.getUsuarioLogin(usuarioLogin)
       console.log(await loginService.getUsuarioLogin(usuarioLogin))
-      navigate("/home")
+      navigate("/plantilla/home")
     }
     catch(error){
       mostrarMensajeError(error, setErrorMessage)
