@@ -1,6 +1,8 @@
 import './Searchbar.css'
 import { Outlet, useOutletContext } from 'react-router-dom'
 import { useNavigate, useLoaderData, useLocation } from 'react-router-dom'
+import '../../App.jsx'
+
 
 const titleMap = [
   {
@@ -21,9 +23,9 @@ const titleMap = [
   },
 ]
 
-function template() {
-  const navigate = useNavigate()
-  const location = useLocation()
+function template({data}) {
+/*   const navigate = useNavigate()
+  const location = useLocation() */
   const [dataBusquedaFigurita] = useOutletContext()
 
   return (
@@ -42,7 +44,7 @@ function template() {
         <span
           id="id_add"
           className="material-symbols-outlined plus-icon"
-          onClick={() => navigate('/plantilla/Home')}
+          onClick={() => data}
         >
           add
         </span>

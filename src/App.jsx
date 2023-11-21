@@ -4,7 +4,6 @@ import JugadorForm from './components/JugadorForm/JugadorForm.jsx'
 import Home from './components/Home/Home.jsx'
 import Plantilla from './components/Plantilla/Plantilla.jsx'
 import Login from './Login/Login.jsx'
-import CardSobre from './components/CardPtoDeVenta/CardPtoDeVenta.js'
 import Searchbar from './components/Searchbar/Searchbar.jsx'
 import CardPtoDeVenta from './components/CardPtoDeVenta/CardPtoDeVenta.js'
 import CardJugador from './components/CardJugador/CardJugador.jsx'
@@ -13,6 +12,10 @@ import SeleccionMenu from './components/SeleccionMenu/SeleccionMenu.jsx'
 import PuntoDeVentaForm from './components/PuntoDeVentaForm/PuntoDeVentaForm.jsx'
 import FiguritasForm from './components/Figuritas/Figuritas.jsx'
 import Seleccion from './components/SeleccionForm/SeleccionForm.jsx'
+
+const dataJugador = {accion: ()=> navigate ("plantilla/jugador-form")}
+
+
 
 export default function App() {
   return (
@@ -24,7 +27,7 @@ export default function App() {
           <Route path="Searchbar" element={<Searchbar />}>
             {' '}
             {/*  se abre nuevamente el componente para que contenga hijos  */}
-            <Route path="jugador" element={<CardJugador />} />  
+            <Route path="jugador" element={<CardJugador data={dataJugador}/>} />  
             <Route path="ptdeventa" element={<CardPtoDeVenta />} />
             <Route path="figu" element={<CardFigu />} />
             <Route path="seleccionMenu" element={<SeleccionMenu />} />
@@ -35,11 +38,9 @@ export default function App() {
           <Route path="puntoVenta-form" element={<PuntoDeVentaForm />} />
            <Route path="Seleccion" element={<Seleccion />} /> 
         </Route>
-        <Route path="/Card" element={<CardSobre />} />
+      
         <Route path="*" element={<h1>404</h1>} />
-        {/* <Route path="/plantilla2" element={<Plantilla />}>
-            <Route path="" element={<Home />} />
-        </Route> */}
+    
       </Routes>
     </Router>
   )
