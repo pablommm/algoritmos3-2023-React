@@ -15,13 +15,18 @@ import Seleccion from './components/SeleccionForm/SeleccionForm.jsx'
 
 const dataJugador = {accion: ()=> navigate ("plantilla/jugador-form")}
 
+const dataLogin = {accion: ()=> "prueba"}
 
+const dataBusquedaFigurita = {
+  accion: async (figuritaService, filtro) =>
+    figuritaService.todasLasFiguritas(filtro)
+}
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login data={dataLogin}/>} />
 
         <Route path="/plantilla" element={<Plantilla />}>
           <Route path="Searchbar" element={<Searchbar />}>
@@ -34,7 +39,7 @@ export default function App() {
           </Route>
           <Route path="Home" element={<Home />} />
           <Route path="jugador-form" element={<JugadorForm />} />
-          <Route path="figu-form"    element={<FiguritasForm />} />
+          <Route path="figu-form"    element={<FiguritasForm data={dataBusquedaFigurita}/>} />
           <Route path="puntoVenta-form" element={<PuntoDeVentaForm />} />
            <Route path="Seleccion" element={<Seleccion />} /> 
         </Route>

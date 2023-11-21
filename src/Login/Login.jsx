@@ -9,7 +9,7 @@ import { mostrarMensajeError } from "../util/error-handling"
 import { Snackbar, Alert } from '@mui/material'
 import { useNavigate } from "react-router-dom"
 
-export const Login = () => {
+export const Login = ({data}) => {
   const navigate = useNavigate()
   const [usuario, setUsuario] = useState("")
   const [password, setPassword] = useState("")
@@ -51,6 +51,7 @@ export const Login = () => {
               />
             </div>
           </div>
+          {data.accion()} 
           <div className="login-item">
             <div className="login-info">
               <i className="fa-solid fa-key login-icon"></i>
