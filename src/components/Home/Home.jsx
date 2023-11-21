@@ -1,13 +1,27 @@
-import './Home.css'
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
 import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/button.css'
 import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/login.css'
 import '../../../Maquetado/CSS/home.css'
+import { homeService } from '../../services/homeService'
+import { HomeDominio } from '../../dominio/home'
+import { mostrarMensajeError } from '../../util/error-handling'
 
-function Home() {
+export const Home = () => {
+  const [cantidadesHome, setCantidadesHome] = useState([])
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const traerDatosHome = async () => {
+    try {
+      const cantidadesHome = await homeService.getCantidadesHome()
+      setCantidadesHome(cantidadesHome)
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
+  }
+
+  useOnInit(traerDatosHome)
+
   return (
     <>
       <title>Home</title>
@@ -17,7 +31,8 @@ function Home() {
             account_box
           </span>
           <div>
-            <h2>13</h2>
+            <h2>{cantidadesHome.traerDatosHome.cantidadPuntosDeVentas}</h2>
+            {/* <h2>13</h2> */}
             <p>Figuritas Faltantes</p>
           </div>
         </div>
@@ -52,5 +67,3 @@ function Home() {
     </>
   )
 }
-
-export default Home
