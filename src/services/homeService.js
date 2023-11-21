@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { REST_SERVER_URL } from '../services/configuration.js'
-import { Home } from '../dominio/home.js'
+import { REST_SERVER_URL } from './configuration.js'
+import { HomeDominio } from '../dominio/home'
 
-const homeAsJson = (homeJSON) => Home.fromJson(homeJSON)
+const homeAsJson = (homeJSON) => HomeDominio.fromJson(homeJSON)
 
 class HomeService {
   async getCantidadesHome() {
