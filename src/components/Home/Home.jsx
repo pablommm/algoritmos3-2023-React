@@ -8,19 +8,19 @@ import { HomeDominio } from '../../dominio/home'
 import { mostrarMensajeError } from '../../util/error-handling'
 
 export const Home = () => {
-  const [cantidadesHome, setCantidadesHome] = useState([])
-  const [errorMessage, setErrorMessage] = useState('')
+/*   const [cantidadesHome, setCantidadesHome] = useState([])
+  const [errorMessage, setErrorMessage] = useState('') */
 
-  const traerDatosHome = async () => {
+/*   const traerDatosHome = async () => {
     try {
       const cantidadesHome = await homeService.getCantidadesHome()
       setCantidadesHome(cantidadesHome)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
-  }
-
-  useOnInit(traerDatosHome)
+  } */
+/* 
+  useOnInit(traerDatosHome) */
 
   return (
     <>
@@ -31,7 +31,7 @@ export const Home = () => {
             account_box
           </span>
           <div>
-            <h2>{cantidadesHome.traerDatosHome.cantidadPuntosDeVentas}</h2>
+            {/* <h2>{cantidadesHome.traerDatosHome.cantidadPuntosDeVentas}</h2> */}
             {/* <h2>13</h2> */}
             <p>Figuritas Faltantes</p>
           </div>
