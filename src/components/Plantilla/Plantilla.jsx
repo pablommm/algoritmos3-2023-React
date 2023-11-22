@@ -8,40 +8,23 @@ import '../../../Maquetado/CSS/button.css'
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'
 import {
   Outlet,
-  useNavigate,
-  useLoaderData,
-  useLocation,
+  useNavigate
 } from 'react-router-dom'
 import { useState } from 'react'
 
-const titleMap = [
-  { path: '/plantilla/Home', title: 'Home' },
-  { path: '/plantilla/searchbar/figu', title: 'Figuritas' },
-  { path: '/plantilla/searchbar/jugador', title: 'Jugadores' },
-  { path: '/plantilla/searchbar/ptdeventa', title: 'Puntos de Venta' },
-  { path: '/plantilla/searchbar/seleccionMenu', title: 'Selecciones' },
-]
 
-function Template() {
+function Template({data}) {
   const navigate = useNavigate()
-  const location = useLocation()
 
-  const getPageTitle = () => {
-    const currentTitle = titleMap.find(
-      (item) => item.path === location.pathname,
-    )
-    return currentTitle ? currentTitle.title : 'Home'
-  }
-  /* const [prueba, setPrueba] = useState("messi") */
 
   return (
     <>
       <div className="navbar-container">
-        <span className="navbar-title">{getPageTitle()}</span>
+        <span className="navbar-title">{data.title()}</span>
       </div>
 
-      <Outlet context={[dataBusquedaFigurita]}></Outlet>
-
+      <Outlet context={[dataBusquedaFigurita]} ></Outlet>
+      
       <footer className="footer">
         <span
           id="id_footer"

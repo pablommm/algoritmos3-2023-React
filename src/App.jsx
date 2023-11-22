@@ -13,7 +13,9 @@ import PuntoDeVentaForm from './components/PuntoDeVentaForm/PuntoDeVentaForm.jsx
 import FiguritasForm from './components/Figuritas/Figuritas.jsx'
 import Seleccion from './components/SeleccionForm/SeleccionForm.jsx'
 
-const dataJugador = { accion: () => navigate('plantilla/jugador-form') }
+const dataJugador = { navegacion: () => navigate('plantilla/jugador-form'), title : () => 'Jugador'}
+const dataPtoDeVenta = { navegacion: () => navigate('plantilla/jugador-form'), title : () => 'Punto de venta', component : () => CardPtoDeVenta}
+
 
 const dataLogin = { accion: () => 'prueba' }
 
@@ -33,23 +35,13 @@ export default function App() {
         <Route path="/" element={<Login data={dataLogin} />} />
 
         <Route path="/plantilla" element={<Plantilla />}>
-          <Route path="Searchbar" element={<Searchbar />}>
-            {' '}
-            {/*  se abre nuevamente el componente para que contenga hijos  */}
-            <Route
-              path="jugador"
-              element={<CardJugador data={dataJugador} />}
-            />
-            <Route path="ptdeventa" element={<CardPtoDeVenta />} />
-            <Route path="figu" element={<CardFigu />} />
-            <Route path="seleccionMenu" element={<SeleccionMenu />} />
-          </Route>
+          <Route path="Searchbar" element={<Searchbar data='cosa'/>}/>
+          <Route path="Searchbar" element={<Searchbar data='cosa'/>}/>
+          <Route path="Searchbar" element={<Searchbar data='cosa'/>}/>
+          <Route path="Searchbar" element={<Searchbar data= {dataPtoDeVenta} />}/>
           <Route path="Home" element={<Home data={dataHome} />} />
           <Route path="jugador-form" element={<JugadorForm />} />
-          <Route
-            path="figu-form"
-            element={<FiguritasForm data={dataBusquedaFigurita} />}
-          />
+          <Route path="figu-form" element={<FiguritasForm data={dataBusquedaFigurita} />}/>
           <Route path="puntoVenta-form" element={<PuntoDeVentaForm />} />
           <Route path="Seleccion" element={<Seleccion />} />
         </Route>
