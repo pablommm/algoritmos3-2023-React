@@ -12,10 +12,20 @@ import SeleccionMenu from './components/SeleccionMenu/SeleccionMenu.jsx'
 import PuntoDeVentaForm from './components/PuntoDeVentaForm/PuntoDeVentaForm.jsx'
 import FiguritasForm from './components/Figuritas/Figuritas.jsx'
 import Seleccion from './components/SeleccionForm/SeleccionForm.jsx'
+import Card from './components/Card/card.jsx'
+import cardJugador from './components/CardJugador/CardJugador.js'
 
-const dataJugador = { navegacion: () => navigate('plantilla/jugador-form'), title : () => 'Jugador'}
-const dataPtoDeVenta = { navegacion: () => navigate('plantilla/jugador-form'), title : () => 'Punto de venta', component : () => CardPtoDeVenta}
+const dataJugador = {
+  /* navegacion: () => navigate('plantilla/jugador-form'), */
+  title: () => 'Jugador',
+  /* component: cardJugador, */
+}
 
+const dataPtoDeVenta = {
+  navegacion: () => navigate('plantilla/jugador-form'),
+  title: () => 'Punto de venta',
+  component: () => CardPtoDeVenta,
+}
 
 const dataLogin = { accion: () => 'prueba' }
 
@@ -34,14 +44,20 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login data={dataLogin} />} />
 
-        <Route path="/plantilla" element={<Plantilla />}>
-           <Route path="cardJugador" element={<Searchbar data={CardJugador}/>}/>
-          <Route path="cardfigu" element={<Searchbar data={CardFigu}/>}/>
-          <Route path="seleccionmenu" element={<Searchbar data={SeleccionMenu}/>}/> 
-          <Route path="ptoDeVenta" element={<Searchbar data= {CardPtoDeVenta} />}/>
+        <Route path="/plantilla" element={<Plantilla data={dataJugador} />}>
+          <Route path="figuritas" element={<Searchbar />} />
+          <Route path="jugadores" element={<Searchbar data={dataJugador} />} />
+          <Route path="selecciones" element={<Searchbar data="cosa" />} />
+          <Route
+            path="puntosDeVenta"
+            element={<Searchbar data={dataPtoDeVenta} />}
+          />
           <Route path="Home" element={<Home data={dataHome} />} />
           <Route path="jugador-form" element={<JugadorForm />} />
-          <Route path="figu-form" element={<FiguritasForm data={dataBusquedaFigurita} />}/>
+          <Route
+            path="figu-form"
+            element={<FiguritasForm data={dataBusquedaFigurita} />}
+          />
           <Route path="puntoVenta-form" element={<PuntoDeVentaForm />} />
           <Route path="Seleccion" element={<Seleccion />} />
         </Route>
