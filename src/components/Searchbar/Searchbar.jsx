@@ -3,7 +3,6 @@ import './Searchbar.css'
 import { Outlet, useOutletContext } from 'react-router-dom'
 import { useNavigate, useLoaderData, useLocation } from 'react-router-dom'
 import '../../App.jsx'
-import Card from '../Card/card.jsx'
 
 const titleMap = [
   {
