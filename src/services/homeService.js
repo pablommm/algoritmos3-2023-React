@@ -5,7 +5,7 @@ import { HomeDominio } from '../dominio/home'
 const homeAsJson = (homeJSON) => HomeDominio.fromJson(homeJSON)
 
 class HomeService {
-  async getCantidadesHome() {
+  async allInstances() {
     const cantidadesHomeJSON = await axios.get(`${REST_SERVER_URL}/Home/`)
     return homeAsJson(cantidadesHomeJSON.data)
   }
