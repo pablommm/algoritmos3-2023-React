@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { REST_SERVER_URL } from './configuration.js'
-import { HomeDominio } from '../dominio/home'
+import { HomeDominio } from '../dominio/home.js'
 
 const homeAsJson = (homeJSON) => HomeDominio.fromJson(homeJSON)
 

@@ -4,13 +4,15 @@ import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/login.css'
 import '../../../Maquetado/CSS/home.css'
 import { mostrarMensajeError } from '../../util/error-handling'
-import { homeService } from '../../services/homeService'
+import { homeService } from '../../services/home.service'
 import { useOnInit } from '../../customHooks/hooks'
 import { useState } from 'react'
 import './Home.css'
+import { jugadorService } from '../../services/jugador.service'
 
 export const Home = () => {
   const [datos, setDatos] = useState([])
+  const [jugadores, setJugadores] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
   const traerDatos = async () => {
     try {
@@ -21,7 +23,17 @@ export const Home = () => {
     }
   }
 
+  const traerJugadores = async () => {
+    try {
+      const jugadores = await jugadorService.allInstances()
+      setJugadores(jugadores)
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
+  }
+
   useOnInit(traerDatos)
+  /* useOnInit(traerJugadores) */
 
   return (
     <>
@@ -64,6 +76,7 @@ export const Home = () => {
               <p>Usuarios Activos</p>
             </div>
           </div>
+          {/* <button onClick={console.log(jugadores)}></button> */}
         </div>
       </div>
     </>
