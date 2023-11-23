@@ -35,9 +35,9 @@ export default function App() {
         <Route path="/" element={<Login data={dataLogin} />} />
 
         <Route path="/plantilla" element={<Plantilla />}>
-         {/*  <Route path="Searchbar" element={<Searchbar data={CardPtoDeVenta}/>}/>
-          <Route path="Searchbar" element={<Searchbar data='cosa'/>}/>
-          <Route path="Searchbar" element={<Searchbar data='cosa'/>}/> */}
+           <Route path="cardJugador" element={<Searchbar data={CardJugador}/>}/>
+          <Route path="cardfigu" element={<Searchbar data={CardFigu}/>}/>
+          <Route path="seleccionmenu" element={<Searchbar data={SeleccionMenu}/>}/> 
           <Route path="ptoDeVenta" element={<Searchbar data= {CardPtoDeVenta} />}/>
           <Route path="Home" element={<Home data={dataHome} />} />
           <Route path="jugador-form" element={<JugadorForm />} />
