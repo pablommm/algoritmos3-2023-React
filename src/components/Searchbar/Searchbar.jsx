@@ -4,30 +4,12 @@ import { useNavigate, useLoaderData, useLocation } from 'react-router-dom'
 import '../../App.jsx'
 
 
-const titleMap = [
-  {
-    path: '/plantilla/searchbar/figu',
-    subRuta: '/plantilla/searchbar/figu/Figuritas',
-  },
-  {
-    path: '/plantilla/searchbar/jugador',
-    subRuta: '/plantilla/searchbar/jugador/jugadorFrom',
-  },
-  {
-    path: '/plantilla/searchbar/ptdeventa',
-    subRuta: '/plantilla/searchbar/ptdeventa/CardPtoVenta',
-  },
-  {
-    path: '/plantilla/searchbar/seleccionMenu',
-    subRuta: '/plantilla/searchbar/seleccionMenu',
-  },
-]
 
 function template({data}) {
 /*   const navigate = useNavigate()
   const location = useLocation() */
   const [dataBusquedaFigurita] = useOutletContext()
-
+  const ComponentToRender = data
   return (
     <>
       <section className="searchbar-container">
@@ -41,6 +23,7 @@ function template({data}) {
       <div>
         <span>{dataBusquedaFigurita.realizar()}</span>
         <Outlet></Outlet>
+        {ComponentToRender && <ComponentToRender />}
         <span
           id="id_add"
           className="material-symbols-outlined plus-icon"

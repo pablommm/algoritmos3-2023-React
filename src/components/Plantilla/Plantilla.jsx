@@ -16,11 +16,11 @@ import { useState } from 'react'
 function Template({data}) {
   const navigate = useNavigate()
 
-
   return (
     <>
       <div className="navbar-container">
-        <span className="navbar-title">{data.title()}</span>
+        {/* <span className="navbar-title">{data.title()}</span> */}
+        <span className="navbar-title">{}</span>
       </div>
 
       <Outlet context={[dataBusquedaFigurita]} ></Outlet>
