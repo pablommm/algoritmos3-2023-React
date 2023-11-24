@@ -18,9 +18,13 @@ function Template({ data }) {
         {/*  {<span className="navbar-title">{data.title}</span>} */}
         {<span className="navbar-title">{data.title()}</span>}
       </div>
-
       <Outlet></Outlet>
+      <div className='sub-main-container'>
+      
+    
 
+
+      </div>
       <footer className="footer">
         <span
           id="id_footer"
