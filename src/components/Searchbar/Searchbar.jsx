@@ -5,14 +5,12 @@ import { useNavigate, useLoaderData, useLocation } from 'react-router-dom'
 import '../../App.jsx'
 import Card from '../Card/Card.jsx'
 
-
-function template({ data, component }) {
-   // eslint-disable-next-line react-hooks/rules-of-hooks
-   const navigate = useNavigate()
+function Searchbar({ data, component }) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const navigate = useNavigate()
   /*  const location = useLocation() */
   return (
     <>
-  
       <div className="searchBar">
         {/* {<span>{data.accion()}</span>} */}
         <section className="searchbar-container">
@@ -23,12 +21,9 @@ function template({ data, component }) {
             </button>
           </div>
         </section>
-        <div className='sub-main-container'>
-      
-              {/* <Outlet></Outlet>  */}
-          <Card>
-            {component}
-          </Card>
+        <div className="sub-main-container">
+          {/* <Outlet></Outlet>  */}
+          <Card>{component}</Card>
           {/* <span>{data.component()}</span> */}
           {/* {data.title()} */}
 
@@ -36,14 +31,13 @@ function template({ data, component }) {
             id="id_add"
             className="material-symbols-outlined plus-icon"
             onClick={() => navigate(`/plantilla/${data.navegacion()}`)}
-            >
+          >
             add
           </span>
-      </div>
-
+        </div>
       </div>
     </>
   )
 }
 
-export default template
+export default Searchbar

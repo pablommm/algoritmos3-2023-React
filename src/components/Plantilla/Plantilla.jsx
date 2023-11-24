@@ -9,7 +9,7 @@ import '../../../Maquetado/CSS/button.css'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
-function Template({ data }) {
+function Plantilla({ data }) {
   const navigate = useNavigate()
 
   return (
@@ -19,7 +19,7 @@ function Template({ data }) {
         {<span className="navbar-title"> hola</span>}
       </div>
       <Outlet></Outlet>
-     
+
       <footer className="footer">
         <span
           id="id_footer"
@@ -72,4 +72,4 @@ export const dataBusquedaFigurita = {
   realizar: () => 'hola',
 }
 
-export default Template
+export default Plantilla

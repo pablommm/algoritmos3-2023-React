@@ -9,7 +9,7 @@ import '../../../Maquetado/CSS/button.css'
 import './CardFigu.css'
 //import React from "react"
 
-function template() {
+function CardFigu() {
   return (
     <>
       <div className="parteInferior">
@@ -30,4 +30,4 @@ function template() {
   )
 }
 
-export default template
+export default CardFigu

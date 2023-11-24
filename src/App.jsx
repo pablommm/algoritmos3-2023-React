@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import JugadorForm from './components/JugadorForm/JugadorForm.jsx'
 import Home from './components/Home/Home.jsx'
 import Plantilla from './components/Plantilla/Plantilla.jsx'
-import Login from './Login/Login.jsx'
+import Login from './components/Login/Login.jsx'
 import Searchbar from './components/Searchbar/Searchbar.jsx'
-import CardPtoDeVenta from './components/CardPtoDeVenta/CardPtoDeVenta.js'
+import CardPtoDeVenta from './components/CardPtoDeVenta/CardPtoDeVenta.jsx'
 import CardJugador from './components/CardJugador/CardJugador.jsx'
 import CardFigu from './components/CardFigu/CardFigu.jsx'
 import PuntoDeVentaForm from './components/PuntoDeVentaForm/PuntoDeVentaForm.jsx'
@@ -16,13 +16,13 @@ const dataJugador = {
   navegacion: () => 'jugador-form',
   title: () => 'Jugador',
 }
-const dataSeleccion= {
+const dataSeleccion = {
   navegacion: () => 'seleccion-form',
   title: () => 'Seleccion',
 }
 const dataPtoDeVenta = {
   navegacion: () => 'puntoVenta-form',
-  title: () => 'Punto de venta'
+  title: () => 'Punto de venta',
 }
 
 const dataLogin = { accion: () => 'prueba' }
@@ -44,21 +44,58 @@ export default function App() {
         <Route path="/" element={<Login data={dataLogin} />} />
 
         <Route path="/plantilla" element={<Plantilla />}>
-          <Route path="Home" element={<Home data={dataHome} component={<JugadorForm />}/>} />
-          <Route path="figuritas" element={<Searchbar data={dataPtoDeVenta} component={<CardFigu />}/>} />
-          <Route path="jugadores" element={<Searchbar data={dataJugador} component={<CardJugador />} />} />
-          <Route path="puntosDeVenta" element={<Searchbar data={dataPtoDeVenta} component={<CardPtoDeVenta />}/>} />
-          <Route path="selecciones" element={<Searchbar data={dataSeleccion} component={<JugadorForm />}/>} />
+          <Route
+            path="Home"
+            element={<Home data={dataHome} component={<JugadorForm />} />}
+          />
+          <Route
+            path="figuritas"
+            element={
+              <Searchbar data={dataPtoDeVenta} component={<CardFigu />} />
+            }
+          />
+          <Route
+            path="jugadores"
+            element={
+              <Searchbar data={dataJugador} component={<CardJugador />} />
+            }
+          />
+          <Route
+            path="puntosDeVenta"
+            element={
+              <Searchbar data={dataPtoDeVenta} component={<CardPtoDeVenta />} />
+            }
+          />
+          <Route
+            path="selecciones"
+            element={
+              <Searchbar data={dataSeleccion} component={<JugadorForm />} />
+            }
+          />
           <Route
             path="figu-form"
-            element={<FiguritasForm data={dataPtoDeVenta} component={<JugadorForm />}/> }
+            element={
+              <FiguritasForm
+                data={dataPtoDeVenta}
+                component={<JugadorForm />}
+              />
+            }
           />
 
-                    {/* FALTA FIGURITA FORM*/}
+          {/* FALTA FIGURITA FORM*/}
 
-          <Route path="jugador-form" element={<JugadorForm data={dataJugador}/>} />
-          <Route path="puntoVenta-form" element={<PuntoDeVentaForm data={dataPtoDeVenta}/>} />
-          <Route path="seleccion-form" element={<Seleccion data={dataSeleccion}/>} />
+          <Route
+            path="jugador-form"
+            element={<JugadorForm data={dataJugador} />}
+          />
+          <Route
+            path="puntoVenta-form"
+            element={<PuntoDeVentaForm data={dataPtoDeVenta} />}
+          />
+          <Route
+            path="seleccion-form"
+            element={<Seleccion data={dataSeleccion} />}
+          />
         </Route>
 
         <Route path="*" element={<h1>404</h1>} />

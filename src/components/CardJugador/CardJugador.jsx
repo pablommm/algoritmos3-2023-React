@@ -8,7 +8,7 @@ import '../../../Maquetado/CSS/home.css'
 import '../../../Maquetado/CSS/footer.css'
 import '../../../Maquetado/CSS/button.css'
 
-function template() {
+function CardJugador() {
   return (
     <>
       <div className="parteInferior">
@@ -36,4 +36,4 @@ function template() {
   )
 }
 
-export default template
+export default CardJugador

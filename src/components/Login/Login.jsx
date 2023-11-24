@@ -1,28 +1,27 @@
-import { useState/* , useEffect */ } from "react"
-import "../../Maquetado/CSS/input.css"
-import "../../Maquetado/CSS/button.css"
-import "../../Maquetado/CSS/general.css"
-import "../../Maquetado/CSS/login.css"
-import loginService from "../services/login.service"
-import { UsuarioLogin } from '../dominio/usuarioLogin'
-import { mostrarMensajeError } from "../util/error-handling"
+import { useState /* , useEffect */ } from 'react'
+import '../../../Maquetado/CSS/input.css'
+import '../../../Maquetado/CSS/button.css'
+import '../../../Maquetado/CSS/general.css'
+import '../../../Maquetado/CSS/login.css'
+import loginService from '../../services/login.service'
+import { UsuarioLogin } from '../../dominio/usuarioLogin'
+import { mostrarMensajeError } from '../../util/error-handling'
 import { Snackbar, Alert } from '@mui/material'
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
-export const Login = ({data}) => {
+export const Login = ({ data }) => {
   const navigate = useNavigate()
-  const [usuario, setUsuario] = useState("")
-  const [password, setPassword] = useState("")
+  const [usuario, setUsuario] = useState('')
+  const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
-  
+
   const getLoginUser = async () => {
     const usuarioLogin = new UsuarioLogin(usuario, password)
-    try{
+    try {
       await loginService.getUsuarioLogin(usuarioLogin)
       console.log(await loginService.getUsuarioLogin(usuarioLogin))
-      navigate("/plantilla/home")
-    }
-    catch(error){
+      navigate('/plantilla/home')
+    } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
@@ -51,7 +50,7 @@ export const Login = ({data}) => {
               />
             </div>
           </div>
-          {data.accion()} 
+          {data.accion()}
           <div className="login-item">
             <div className="login-info">
               <i className="fa-solid fa-key login-icon"></i>
@@ -65,18 +64,23 @@ export const Login = ({data}) => {
             </div>
           </div>
           <div>
-            <button onClick={getLoginUser} className="primary-button" data-testid="login" >
+            <button
+              onClick={getLoginUser}
+              className="primary-button"
+              data-testid="login"
+            >
               Ingresar
             </button>
           </div>
         </div>
         <Snackbar
-         open={snackbarOpen}
-         variant="error"
-         autoHideDuration={1800}
-         onClose={() => setErrorMessage(false)}>
-        <Alert severity="error">{errorMessage}</Alert>
-        </Snackbar>       
+          open={snackbarOpen}
+          variant="error"
+          autoHideDuration={1800}
+          onClose={() => setErrorMessage(false)}
+        >
+          <Alert severity="error">{errorMessage}</Alert>
+        </Snackbar>
       </div>
     </>
   )

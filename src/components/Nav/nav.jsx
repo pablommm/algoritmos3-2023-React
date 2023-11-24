@@ -8,11 +8,11 @@ import '../../../Maquetado/CSS/button.css'
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'
 import { useNavigate } from 'react-router-dom'
 
-function Template( ) {
+function Nav() {
   const navigate = useNavigate()
 
   return (
-    <> 
+    <>
       <footer className="footer">
         <span
           id="id_footer"
@@ -65,4 +65,4 @@ export const dataBusquedaFigurita = {
   realizar: () => 'hola',
 }
 
-export default Template
+export default Nav
