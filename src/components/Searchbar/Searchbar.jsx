@@ -3,10 +3,10 @@ import './Searchbar.css'
 import { Outlet, useOutletContext } from 'react-router-dom'
 import { useNavigate, useLoaderData, useLocation } from 'react-router-dom'
 import '../../App.jsx'
+import Card from '../Card/Card.jsx'
 
 
-
-function template({ data,component }) {
+function template({ data, component }) {
   /*   const navigate = useNavigate()
   const location = useLocation() */
   return (
@@ -22,13 +22,14 @@ function template({ data,component }) {
             </button>
           </div>
         </section>
-        <div>
-      
         <div className='sub-main-container'>
+      
               {/* <Outlet></Outlet>  */}
-     
-          {data.title()}
-          {data.title()}
+          <Card>
+            {component}
+          </Card>
+          {/* <span>{data.component()}</span> */}
+          {/* {data.title()} */}
 
           <span
             id="id_add"
@@ -37,7 +38,6 @@ function template({ data,component }) {
           >
             add
           </span>
-        </div>
       </div>
 
       </div>

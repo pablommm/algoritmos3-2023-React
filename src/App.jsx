@@ -12,6 +12,7 @@ import SeleccionMenu from './components/SeleccionMenu/SeleccionMenu.jsx'
 import PuntoDeVentaForm from './components/PuntoDeVentaForm/PuntoDeVentaForm.jsx'
 import FiguritasForm from './components/Figuritas/Figuritas.jsx'
 import Seleccion from './components/SeleccionForm/SeleccionForm.jsx'
+
 const dataJugador = {
   /* navegacion: () => navigate('plantilla/jugador-form'), */
   title: () => 'Jugador',
@@ -42,17 +43,19 @@ export default function App() {
         <Route path="/" element={<Login data={dataLogin} />} />
 
         <Route path="/plantilla" element={<Plantilla />}>
-          <Route path="figuritas" element={<Searchbar />} />
-          <Route path="jugadores" element={<Searchbar data={dataPtoDeVenta} component={<JugadorForm />} />} />
-          <Route path="selecciones" element={<Searchbar data="cosa" />} />
-          <Route path="Home" element={<Home data={dataHome} />} />
-          <Route path="jugador-form" element={<JugadorForm />} />
+          <Route path="Home" element={<Home data={dataHome} component={<JugadorForm />}/>} />
+          <Route path="figuritas" element={<Searchbar data={dataPtoDeVenta} component={<CardFigu />}/>} />
+          <Route path="jugadores" element={<Searchbar data={dataPtoDeVenta} component={<CardJugador />} />} />
+          <Route path="puntosDeVenta" element={<Searchbar data={dataPtoDeVenta} component={<CardPtoDeVenta />}/>} />
+          <Route path="selecciones" element={<Searchbar data={dataPtoDeVenta} component={<JugadorForm />}/>} />
           <Route
             path="figu-form"
-            element={<FiguritasForm data={dataBusquedaFigurita} />}
+            element={<FiguritasForm data={dataPtoDeVenta} component={<JugadorForm />}/> }
           />
-          <Route path="puntoVenta-form" element={<PuntoDeVentaForm />} />
-          <Route path="Seleccion" element={<Seleccion />} />
+          <Route path="jugador-form" element={<JugadorForm data={dataPtoDeVenta}/>} />
+          <Route path="puntoVenta-form" element={<PuntoDeVentaForm data={dataPtoDeVenta}/>} />
+          {/* SelecciónForm, cambiar nombre */}
+          <Route path="Seleccion" element={<Seleccion data={dataPtoDeVenta}/>} />
         </Route>
 
         <Route path="*" element={<h1>404</h1>} />

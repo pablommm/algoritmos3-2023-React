@@ -1,7 +1,7 @@
 import CardJugador from '../CardJugador/CardJugador'
 import './Card.css'
 
-export const Card = () => {
+export const Card = ({children}) => {
   /* const Componente = data.component */
   return (
     <>
@@ -21,6 +21,7 @@ export const Card = () => {
           </div>
         </div>
         {/* Aca tiene que ir el componente que se recibe por props, ya que este es variable */}
+        {children}
         {/* <Componente></Componente> */}
       </div>
     </>
