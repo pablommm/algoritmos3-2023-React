@@ -4,11 +4,28 @@ import { Outlet, useOutletContext } from 'react-router-dom'
 import { useNavigate, useLoaderData, useLocation } from 'react-router-dom'
 import '../../App.jsx'
 import Card from '../Card/Card.jsx'
+import { useOnInit } from '../../customHooks/hooks'
+import { useState } from 'react'
+import { mostrarMensajeError } from '../../util/error-handling.jsx'
 
 function Searchbar({ data, component }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
   /*  const location = useLocation() */
+  const [datos, setDatos] = useState([])
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const traerDatos = async () => {
+    try {
+      const datosCardsPtoDeVenta = await puntoDeVentaService.allInstances()
+      setDatos(datosCardsPtoDeVenta)
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
+  }
+
+  useOnInit(traerDatos)
+
   return (
     <>
       <div className="searchBar">
@@ -23,7 +40,13 @@ function Searchbar({ data, component }) {
         </section>
         <div className="sub-main-container">
           {/* <Outlet></Outlet>  */}
-          <Card>{component}</Card>
+          {datos.map((item) => (
+            <Card key={item.id} item={item}>
+              {component}
+            </Card>
+          ))}
+
+          {/* <Card>{component}</Card> */}
           {/* <span>{data.component()}</span> */}
           {/* {data.title()} */}
 

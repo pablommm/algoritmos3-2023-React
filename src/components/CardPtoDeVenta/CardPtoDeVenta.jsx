@@ -7,21 +7,23 @@ import '../../../Maquetado/CSS/home.css'
 import '../../../Maquetado/CSS/footer.css'
 import '../../../Maquetado/CSS/button.css'
 import './CardPtoDeVenta.css'
+import { puntoDeVentaService } from '../../services/puntoDeVenta.service'
 
-function CardPtoDeVenta() {
+function CardPtoDeVenta(item) {
   return (
     <>
       <div className="parteInferior">
         <div className="primeraFila">
           <div className="elemento1">
-            <i className="fa-solid fa-location-dot "></i> por ahi{' '}
+            <i className="fa-solid fa-location-dot "></i>
+            <span>{item.direccion()}</span>
           </div>
-          <div className="elemento3">
-            <i className="fa-regular fa-flag"></i>200 sobres
-          </div>
+          <div className="elemento3"></div>
+          <i className="fa-regular fa-flag"></i>
+          <span>{item.stockDeSobres()} sobres</span>
         </div>
-        <div className="terceraFila">TIPO KIOSCO</div>
       </div>
+      <span className="terceraFila">{item.tipo()}</span>
     </>
   )
 }

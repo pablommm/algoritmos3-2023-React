@@ -1,28 +1,20 @@
-import "./Figuritas.css"
+import './FiguritasForm.css'
 //import React from "react"
 
-
-import "../../../Maquetado/CSS/button.css"
-import "../../../Maquetado/CSS/general.css"
-import "../../../Maquetado/CSS/form.css"
-import "../../../Maquetado/CSS/input.css"
-
+import '../../../Maquetado/CSS/button.css'
+import '../../../Maquetado/CSS/general.css'
+import '../../../Maquetado/CSS/form.css'
+import '../../../Maquetado/CSS/input.css'
 
 function FiguritasForm() {
   return (
     <>
-     
       <main className="main-container">
-        <section className="sub-main-container">
+        <section className="sub-main-container form-container">
           <div className="formulario">
             <form action="/p" method="POST">
               <label htmlFor="numero_jugador">Número de Jugador:</label>
-              <input
-                type="number"
-                name="numero_jugador"
-                required
-                min="0"
-              />
+              <input type="number" name="numero_jugador" required min="0" />
 
               <label htmlFor="on_fire">Es On Fire:</label>
               <input type="checkbox" name="on_fire" />
@@ -35,11 +27,7 @@ function FiguritasForm() {
               </select>
 
               <label htmlFor="url_imagen">URL de la Imagen:</label>
-              <input
-                type="url"
-                name="url_imagen"
-                required
-              />
+              <input type="url" name="url_imagen" required />
 
               <button className="secondary-button">Volver</button>
               <button className="primary-button">Guardar</button>

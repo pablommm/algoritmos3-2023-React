@@ -1,4 +1,4 @@
-//import "./Plantilla.css"
+import './Plantilla.css'
 import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/searchbar.css'
 import '../../../Maquetado/CSS/nav.css'

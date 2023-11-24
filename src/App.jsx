@@ -9,8 +9,9 @@ import CardPtoDeVenta from './components/CardPtoDeVenta/CardPtoDeVenta.jsx'
 import CardJugador from './components/CardJugador/CardJugador.jsx'
 import CardFigu from './components/CardFigu/CardFigu.jsx'
 import PuntoDeVentaForm from './components/PuntoDeVentaForm/PuntoDeVentaForm.jsx'
-import FiguritasForm from './components/Figuritas/Figuritas.jsx'
-import Seleccion from './components/SeleccionForm/SeleccionForm.jsx'
+import FiguritasForm from './components/FiguritasForm/FiguritasForm.jsx'
+import SeleccionForm from './components/SeleccionForm/SeleccionForm.jsx'
+import SeleccionMenu from './components/SeleccionMenu/SeleccionMenu.jsx'
 
 const dataJugador = {
   navegacion: () => 'jugador-form',
@@ -23,6 +24,11 @@ const dataSeleccion = {
 const dataPtoDeVenta = {
   navegacion: () => 'puntoVenta-form',
   title: () => 'Punto de venta',
+}
+
+const dataFiguritas = {
+  navegacion: () => 'figuritas-form',
+  title: () => 'Figuritas',
 }
 
 const dataLogin = { accion: () => 'prueba' }
@@ -44,14 +50,11 @@ export default function App() {
         <Route path="/" element={<Login data={dataLogin} />} />
 
         <Route path="/plantilla" element={<Plantilla />}>
-          <Route
-            path="Home"
-            element={<Home data={dataHome} component={<JugadorForm />} />}
-          />
+          <Route path="Home" element={<Home data={dataHome} />} />
           <Route
             path="figuritas"
             element={
-              <Searchbar data={dataPtoDeVenta} component={<CardFigu />} />
+              <Searchbar data={dataFiguritas} component={<CardFigu />} />
             }
           />
           <Route
@@ -69,15 +72,15 @@ export default function App() {
           <Route
             path="selecciones"
             element={
-              <Searchbar data={dataSeleccion} component={<JugadorForm />} />
+              <Searchbar data={dataSeleccion} component={<SeleccionMenu />} />
             }
           />
           <Route
             path="figu-form"
             element={
               <FiguritasForm
-                data={dataPtoDeVenta}
-                component={<JugadorForm />}
+                data={dataFiguritas}
+                component={<FiguritasForm />}
               />
             }
           />
@@ -94,7 +97,11 @@ export default function App() {
           />
           <Route
             path="seleccion-form"
-            element={<Seleccion data={dataSeleccion} />}
+            element={<SeleccionForm data={dataSeleccion} />}
+          />
+          <Route
+            path="figuritas-form"
+            element={<FiguritasForm data={dataSeleccion} />}
           />
         </Route>
 

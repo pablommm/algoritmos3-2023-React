@@ -8,11 +8,11 @@ import { homeService } from '../../services/home.service'
 import { useOnInit } from '../../customHooks/hooks'
 import { useState } from 'react'
 import './Home.css'
-import { jugadorService } from '../../services/jugador.service'
+/* import { puntoDeVentaService } from '../../services/puntoDeVenta.service' */
 
 export const Home = () => {
   const [datos, setDatos] = useState([])
-  const [jugadores, setJugadores] = useState([])
+  /* const [puntosDeVenta, setPuntosDeVenta] = useState([]) */
   const [errorMessage, setErrorMessage] = useState('')
   const traerDatos = async () => {
     try {
@@ -23,17 +23,17 @@ export const Home = () => {
     }
   }
 
-  const traerJugadores = async () => {
+  /* const traerPuntosDeVenta = async () => {
     try {
-      const jugadores = await jugadorService.allInstances()
-      setJugadores(jugadores)
+      const datosCardsPtoDeVenta = await puntoDeVentaService.allInstances()
+      setPuntosDeVenta(datosCardsPtoDeVenta)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
-
+ */
   useOnInit(traerDatos)
-  /* useOnInit(traerJugadores) */
+  /* useOnInit(traerPuntosDeVenta) */
 
   return (
     <>
