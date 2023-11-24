@@ -7,8 +7,9 @@ import Card from '../Card/Card.jsx'
 
 
 function template({ data, component }) {
-  /*   const navigate = useNavigate()
-  const location = useLocation() */
+   // eslint-disable-next-line react-hooks/rules-of-hooks
+   const navigate = useNavigate()
+  /*  const location = useLocation() */
   return (
     <>
   
@@ -34,8 +35,8 @@ function template({ data, component }) {
           <span
             id="id_add"
             className="material-symbols-outlined plus-icon"
-            onClick={() => data.navegacion()}
-          >
+            onClick={() => navigate(data.navegacion())}
+            >
             add
           </span>
       </div>
@@ -46,7 +47,3 @@ function template({ data, component }) {
 }
 
 export default template
-
-function subRuta() {
-  return location
-}

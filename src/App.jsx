@@ -20,7 +20,7 @@ const dataJugador = {
 }
 
 const dataPtoDeVenta = {
-  navegacion: () => navigate('plantilla/jugador-form'),
+  navegacion: () => 'puntoVenta-form',
   title: () => 'Punto de venta',
   component: () => CardPtoDeVenta,
 }
