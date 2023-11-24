@@ -6,7 +6,7 @@ import '../../App.jsx'
 
 
 
-function template({ data }) {
+function template({ data,component }) {
   /*   const navigate = useNavigate()
   const location = useLocation() */
   return (
@@ -26,7 +26,8 @@ function template({ data }) {
       
         <div className='sub-main-container'>
               {/* <Outlet></Outlet>  */}
-
+     
+          {data.title()}
           {data.title()}
 
           <span

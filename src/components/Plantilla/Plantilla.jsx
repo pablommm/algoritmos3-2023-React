@@ -16,7 +16,7 @@ function Template({ data }) {
     <>
       <div className="navbar-container">
         {/*  {<span className="navbar-title">{data.title}</span>} */}
-        {<span className="navbar-title">{data.title()}</span>}
+        {<span className="navbar-title"> hola</span>}
       </div>
       <Outlet></Outlet>
      
