@@ -7,6 +7,7 @@ import Card from '../Card/Card.jsx'
 import { useOnInit } from '../../customHooks/hooks'
 import { useState } from 'react'
 import { mostrarMensajeError } from '../../util/error-handling.jsx'
+import { figuritaService } from '../../services/figurita.service.js'
 
 function Searchbar({ data, component }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -15,10 +16,20 @@ function Searchbar({ data, component }) {
   const [datos, setDatos] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
 
-  const traerDatos = async () => {
+  /* puntosDeVenta */
+  /* const traerDatos = async () => {
     try {
       const datosCardsPtoDeVenta = await puntoDeVentaService.allInstances()
       setDatos(datosCardsPtoDeVenta)
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
+  } */
+
+  const traerDatos = async () => {
+    try {
+      const datosCards = await figuritaService.allInstances()
+      setDatos(datosCards)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
@@ -40,13 +51,13 @@ function Searchbar({ data, component }) {
         </section>
         <div className="sub-main-container">
           {/* <Outlet></Outlet>  */}
-          {datos.map((item) => (
+          {/* {datos.map((item) => (
             <Card key={item.id} item={item}>
               {component}
             </Card>
-          ))}
+          ))} */}
 
-          {/* <Card>{component}</Card> */}
+          <Card item={datos[0]}>{component}</Card>
           {/* <span>{data.component()}</span> */}
           {/* {data.title()} */}
 
