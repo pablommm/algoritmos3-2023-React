@@ -35,7 +35,7 @@ function template({ data, component }) {
           <span
             id="id_add"
             className="material-symbols-outlined plus-icon"
-            onClick={() => navigate(data.navegacion())}
+            onClick={() => navigate(`/plantilla/${data.navegacion()}`)}
             >
             add
           </span>
