@@ -12,9 +12,6 @@ import SeleccionMenu from './components/SeleccionMenu/SeleccionMenu.jsx'
 import PuntoDeVentaForm from './components/PuntoDeVentaForm/PuntoDeVentaForm.jsx'
 import FiguritasForm from './components/Figuritas/Figuritas.jsx'
 import Seleccion from './components/SeleccionForm/SeleccionForm.jsx'
-import Card from './components/Card/card.jsx'
-import cardJugador from './components/CardJugador/CardJugador.js'
-
 const dataJugador = {
   /* navegacion: () => navigate('plantilla/jugador-form'), */
   title: () => 'Jugador',
@@ -44,7 +41,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login data={dataLogin} />} />
 
-        <Route path="/plantilla" element={<Plantilla data={dataJugador} />}>
+        <Route path="/plantilla" element={<Plantilla data={dataPtoDeVenta} />}>
           <Route path="figuritas" element={<Searchbar />} />
           <Route path="jugadores" element={<Searchbar data={dataJugador} />} />
           <Route path="selecciones" element={<Searchbar data="cosa" />} />
