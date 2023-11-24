@@ -43,12 +43,8 @@ export default function App() {
 
         <Route path="/plantilla" element={<Plantilla data={dataPtoDeVenta} />}>
           <Route path="figuritas" element={<Searchbar />} />
-          <Route path="jugadores" element={<Searchbar data={dataJugador} />} />
+          <Route path="jugadores" element={<Searchbar data={dataPtoDeVenta} />} />
           <Route path="selecciones" element={<Searchbar data="cosa" />} />
-          <Route
-            path="puntosDeVenta"
-            element={<Searchbar data={dataPtoDeVenta} />}
-          />
           <Route path="Home" element={<Home data={dataHome} />} />
           <Route path="jugador-form" element={<JugadorForm />} />
           <Route

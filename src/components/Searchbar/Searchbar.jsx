@@ -11,6 +11,7 @@ function template({ data }) {
   const location = useLocation() */
   return (
     <>
+  
       <div className="searchBar">
         {/* {<span>{data.accion()}</span>} */}
         <section className="searchbar-container">
@@ -22,9 +23,11 @@ function template({ data }) {
           </div>
         </section>
         <div>
-          {/* <Outlet></Outlet>  */}
+      
+        <div className='sub-main-container'>
+              {/* <Outlet></Outlet>  */}
 
-          {/* <Card prueba={data.title()} /> */}
+          {data.title()}
 
           <span
             id="id_add"
@@ -34,6 +37,8 @@ function template({ data }) {
             add
           </span>
         </div>
+      </div>
+
       </div>
     </>
   )
