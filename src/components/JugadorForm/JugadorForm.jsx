@@ -5,7 +5,12 @@ import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
 import '../../../Maquetado/CSS/footer.css'
 import './JugadorForm.css'
+
+/*  import { useHistory } from 'react-router-dom'  */
 function JugadorForm() {
+
+   /*  const history = useHistory() */
+
   return (
     <div className="sub-main-container  form-container">
       <title>Formulario Punto de Venta</title>
@@ -48,7 +53,8 @@ function JugadorForm() {
           <label htmlFor="pedidos_pendientes">Cotización :</label>
           <input type="number" name="pedidos_pendientes" required min="0" />
           <div className="buttonConteiner">
-            <button className="secondary-button">Volver</button>
+            <button className="secondary-button" onClick={() => history.back() }>Volver</button>
+            {/* <button className="secondary-button" >Volver</button> */}
             <button className="primary-button">Guardar</button>
           </div>
         </form>

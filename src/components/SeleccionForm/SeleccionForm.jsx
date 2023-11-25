@@ -26,7 +26,7 @@ function SeleccionForm() {
             <label htmlFor="copas_mundo">Cantidad de Copas del Mundo:</label>
             <input type="number" name="copas_mundo" required min="0" />
             <div className="buttonContainer">
-              <button className="secondary-button">Volver</button>
+              <button className="secondary-button" onClick={() => history.back()}>Volver</button>
               <button className="primary-button">Guardar</button>
             </div>
           </form>

@@ -35,7 +35,7 @@ function PuntoDeVentaForm() {
             <option value="Supermercado">Supermercado</option>
           </select>
 
-          <button className="secondary-button">Volver</button>
+          <button className="secondary-button" onClick={() => history.back()} >Volver</button>
           <button className="primary-button">Guardar</button>
         </form>
       </div>
