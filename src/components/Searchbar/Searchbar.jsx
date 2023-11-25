@@ -9,7 +9,7 @@ import { useState } from 'react'
 import { mostrarMensajeError } from '../../util/error-handling.jsx'
 import { figuritaService } from '../../services/figurita.service.js'
 
-function Searchbar({ data, component }) {
+function Searchbar({ data, component,actualizarTitulo }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
 
@@ -37,9 +37,13 @@ function Searchbar({ data, component }) {
   }
 
   useOnInit(traerDatos)
+/*
+  useEffect(() => {
+    actualizarTitulo(data.title())// Asumiendo que `data.title()` devuelve el nuevo título
+  }, [data, actualizarTitulo]) */
 
   return (
-    <>
+    <> 
       <div className="searchBar">
         {/* {<span>{data.accion()}</span>} */}
         <section className="searchbar-container">

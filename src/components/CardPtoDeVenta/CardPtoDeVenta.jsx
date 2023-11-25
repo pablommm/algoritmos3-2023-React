@@ -1,4 +1,4 @@
-//import React from "react"
+g//import React from "react"
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/searchbar.css'
