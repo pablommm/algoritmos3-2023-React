@@ -6,16 +6,24 @@ import '../../../Maquetado/CSS/button.css'
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import Searchbar from '../Searchbar/Searchbar'
+
+
+
+
 
 function Plantilla({ data }) {
   const navigate = useNavigate()
+  const [titulo, setTitulo] = useState('Mi título')
+
 
   return (
     <>
       <div className="navbar-container">
         {/*  {<span className="navbar-title">{data.title}</span>} */}
-        {<span className="navbar-title"> hola</span>}
+        {<span className="navbar-title"> {titulo}</span>}
       </div>
+
       <Outlet></Outlet>
 
       <footer className="footer">

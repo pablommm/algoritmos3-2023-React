@@ -12,6 +12,7 @@ import { figuritaService } from '../../services/figurita.service.js'
 function Searchbar({ data, component }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
+
   /*  const location = useLocation() */
   const [datos, setDatos] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
@@ -25,7 +26,7 @@ function Searchbar({ data, component }) {
       mostrarMensajeError(error, setErrorMessage)
     }
   } */
-
+ 
   const traerDatos = async () => {
     try {
       const datosCards = await figuritaService.allInstances()
