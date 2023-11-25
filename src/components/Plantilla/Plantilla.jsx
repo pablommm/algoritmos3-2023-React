@@ -1,8 +1,6 @@
 import './Plantilla.css'
 import '../../../Maquetado/CSS/general.css'
-import '../../../Maquetado/CSS/searchbar.css'
 import '../../../Maquetado/CSS/nav.css'
-import '../../../Maquetado/CSS/home.css'
 import '../../../Maquetado/CSS/footer.css'
 import '../../../Maquetado/CSS/button.css'
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'

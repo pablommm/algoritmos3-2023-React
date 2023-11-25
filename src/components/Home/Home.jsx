@@ -41,7 +41,7 @@ export const Home = () => {
         <title>Home</title>
         <div className="dashboard">
           <div className="box">
-            <span id="id_footer2" className="material-symbols-outlined">
+            <span id="icono_Faltantes" className="material-symbols-outlined">
               account_box
             </span>
             <div>
@@ -50,7 +50,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="box">
-            <span id="id_footer3" className="material-symbols-outlined">
+            <span id="icono_Repetidas" className="material-symbols-outlined">
               account_box
             </span>
             <div>
@@ -59,7 +59,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="box">
-            <span id="id_footer" className="material-symbols-outlined">
+            <span id="icono_box" className="material-symbols-outlined">
               storefront
             </span>
             <div>
@@ -68,7 +68,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="box">
-            <span id="id_footer" className="material-symbols-outlined">
+            <span id="icono_box" className="material-symbols-outlined">
               person
             </span>
             <div>
