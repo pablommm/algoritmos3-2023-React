@@ -5,12 +5,13 @@ import { useNavigate, useLoaderData, useLocation } from 'react-router-dom'
 import '../../App.jsx'
 import Card from '../Card/Card.jsx'
 import { useOnInit } from '../../customHooks/hooks'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { mostrarMensajeError } from '../../util/error-handling.jsx'
 
 function Searchbar({ setTitulo, data, component }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
+  const location = useLocation()
 
   /*  const location = useLocation() */
   const [datos, setDatos] = useState([])
@@ -26,7 +27,12 @@ function Searchbar({ setTitulo, data, component }) {
   }
 
   setTitulo(data.title())
-  useOnInit(traerDatos)
+  useEffect(() => {
+    setTitulo(data.title())
+    traerDatos()
+  }, [location.pathname])
+
+  /* useOnInit(traerDatos) */
 
   return (
     <>
