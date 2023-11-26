@@ -37,7 +37,8 @@ function Searchbar({ setTitulo, data, component}) {
   }
 
   useOnInit(traerDatos)
-  useOnInit(()=>setTitulo('SEARCH'))
+  setTitulo(data.title())
+  /* useOnInit(()=>setTitulo()) */
 /*
   useEffect(() => {
     actualizarTitulo(data.title())// Asumiendo que `data.title()` devuelve el nuevo título
@@ -62,7 +63,8 @@ function Searchbar({ setTitulo, data, component}) {
               {component}
             </Card>
           ))} */}
-
+          
+          
           <Card item={datos[0]}>{component}</Card>
           {/* <span>{data.component()}</span> */}
           {/* {data.title()} */}

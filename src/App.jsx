@@ -26,7 +26,6 @@ const dataPtoDeVenta = {
   navegacion: () => 'puntoVenta-form',
   title: () => 'Punto de venta',
 }
-
 const dataFiguritas = {
   navegacion: () => 'figuritas-form',
   title: () => 'Figuritas',
@@ -43,27 +42,29 @@ const dataBusquedaFigurita = {
 
 const dataHome = {
   accion: async (homeService) => homeService.getCantidadesHome(),
+  title: () => 'Home',
 }
 
 export default function App() {
+  
   const [titulo,setTitulo]= useState('')
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login data={dataLogin} />} />
-
-        <Route path="/plantilla" element={<Plantilla  titulo={titulo}/>}>
-          <Route path="Home" element={<Home data={dataHome} />} />
+        <Route path="/plantilla" element={<Plantilla titulo={titulo}/>}>
+          <Route path="Home" element={<Home setTitulo={setTitulo} data={dataHome} />} />
           <Route
             path="figuritas"
             element={
-              <Searchbar data={dataFiguritas} component={<CardFigu />} />
+              <Searchbar setTitulo={setTitulo} component={<CardFigu />} />
             }
           />
           <Route
             path="jugadores"
             element={
-              <Searchbar data={dataJugador} component={<CardJugador />} />
+              <Searchbar setTitulo={setTitulo} data={dataJugador} component={<CardJugador />} />
             }
           />
           <Route
@@ -75,7 +76,7 @@ export default function App() {
           <Route
             path="selecciones"
             element={
-              <Searchbar data={dataSeleccion} component={<SeleccionMenu />} />
+              <Searchbar setTitulo={setTitulo} component={<SeleccionMenu />} />
             }
           />
           <Route
@@ -92,19 +93,19 @@ export default function App() {
 
           <Route
             path="jugador-form"
-            element={<JugadorForm data={dataJugador} />}
+            element={<JugadorForm setTitulo={setTitulo} data={dataJugador} />}
           />
           <Route
             path="puntoVenta-form"
-            element={<PuntoDeVentaForm data={dataPtoDeVenta} />}
+            element={<PuntoDeVentaForm setTitulo={setTitulo} data={dataPtoDeVenta} />}
           />
           <Route
             path="seleccion-form"
-            element={<SeleccionForm data={dataSeleccion} />}
+            element={<SeleccionForm setTitulo={setTitulo} data={dataSeleccion} />}
           />
           <Route
             path="figuritas-form"
-            element={<FiguritasForm data={dataSeleccion} />}
+            element={<FiguritasForm  setTitulo={setTitulo} data={dataSeleccion} />}
           />
         </Route>
 

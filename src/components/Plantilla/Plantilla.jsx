@@ -14,7 +14,7 @@ import Searchbar from '../Searchbar/Searchbar.jsx'
 
 function Plantilla({ titulo,data }) {
   const navigate = useNavigate()
- 
+  
 
 
   return (
