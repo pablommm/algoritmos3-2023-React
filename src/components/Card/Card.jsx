@@ -1,7 +1,7 @@
 import CardJugador from '../CardJugador/CardJugador'
 import './Card.css'
 
-export const Card = ({children}) => {
+export const Card = ({ children, item }) => {
   /* const Componente = data.component */
   return (
     <>
@@ -10,6 +10,7 @@ export const Card = ({children}) => {
           <div className="jugadorIcon">
             <i className="fa-solid fa-person-running"></i>
           </div>
+          {item.nombre}
           {/* <div className="nombre">{prueba}</div> */}
           <div className="botonesEdicion">
             <div>

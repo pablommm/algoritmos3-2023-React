@@ -7,9 +7,8 @@ import Card from '../Card/Card.jsx'
 import { useOnInit } from '../../customHooks/hooks'
 import { useState } from 'react'
 import { mostrarMensajeError } from '../../util/error-handling.jsx'
-import { figuritaService } from '../../services/figurita.service.js'
 
-function Searchbar({ setTitulo, data, component}) {
+function Searchbar({ setTitulo, data, component }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
 
@@ -17,37 +16,21 @@ function Searchbar({ setTitulo, data, component}) {
   const [datos, setDatos] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
 
-  /* puntosDeVenta */
-  /* const traerDatos = async () => {
-    try {
-      const datosCardsPtoDeVenta = await puntoDeVentaService.allInstances()
-      setDatos(datosCardsPtoDeVenta)
-    } catch (error) {
-      mostrarMensajeError(error, setErrorMessage)
-    }
-  } */
- 
   const traerDatos = async () => {
     try {
-      const datosCards = await figuritaService.allInstances()
+      const datosCards = await data.datosService()
       setDatos(datosCards)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
 
-  useOnInit(traerDatos)
   setTitulo(data.title())
-  /* useOnInit(()=>setTitulo()) */
-/*
-  useEffect(() => {
-    actualizarTitulo(data.title())// Asumiendo que `data.title()` devuelve el nuevo título
-  }, [data, actualizarTitulo]) */
+  useOnInit(traerDatos)
 
   return (
-    <> 
+    <>
       <div className="searchBar">
-        {/* {<span>{data.accion()}</span>} */}
         <section className="searchbar-container">
           <div className="searchbar">
             <input type="text" placeholder="Buscar..." />
@@ -57,17 +40,11 @@ function Searchbar({ setTitulo, data, component}) {
           </div>
         </section>
         <div className="sub-main-container">
-          {/* <Outlet></Outlet>  */}
-          {/* {datos.map((item) => (
+          {datos.map((item) => (
             <Card key={item.id} item={item}>
               {component}
             </Card>
-          ))} */}
-          
-          
-          <Card item={datos[0]}>{component}</Card>
-          {/* <span>{data.component()}</span> */}
-          {/* {data.title()} */}
+          ))}
 
           <span
             id="id_add"
