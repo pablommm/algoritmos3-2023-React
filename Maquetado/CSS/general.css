@@ -3,8 +3,6 @@
 	
 }
 
-
-
 :root {
 	
 	--primary-color: #f6f1f1;
@@ -21,7 +19,7 @@
 }
 
 html {
-	font-size: 0.5rem;
+	font-size: 0.6rem;
 }
 
 body {

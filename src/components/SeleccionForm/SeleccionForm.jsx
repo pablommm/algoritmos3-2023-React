@@ -1,6 +1,6 @@
 import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/button.css'
-import '../../../Maquetado/CSS/jugador.css'
+
 import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
 

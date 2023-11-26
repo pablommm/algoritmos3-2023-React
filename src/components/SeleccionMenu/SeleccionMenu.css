@@ -1,6 +1,6 @@
 .pruebaCard {
     width: 80%;
-    height: 10%;
+    
     background-color: rgb(0, 109, 128);
     display: grid;
     grid-template-columns: 6fr 1fr 1fr;
@@ -10,7 +10,7 @@
     align-items: center;
     padding: 0.2em;
     margin-left: 2.5em;
-    
+    margin-top: 0.5em;
 }
 
 .botonesMenu {

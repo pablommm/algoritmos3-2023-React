@@ -1,8 +1,8 @@
 .card {
     background-color: var(--primary-color);
     border-radius: var(--border-radius);
-    font-size: 1em;
-    height: 30%;
+    font-size: 1.5rem;
+    /* height: 30%; */
     width: 80%;
     margin: 3em;
     border: 0.2em solid var(--fourth-color);
@@ -10,7 +10,7 @@
 }
 
 .nombre{
-    font-size: 1.4em;
+    font-size: 1.8em;
 }
 .parteSuperior{
     margin:0.2em;

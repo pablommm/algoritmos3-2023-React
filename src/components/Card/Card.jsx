@@ -1,5 +1,6 @@
-import CardJugador from '../CardJugador/CardJugador'
+
 import './Card.css'
+import CardJugador from '../CardJugador/CardJugador'
 
 export const Card = ({ children, item }) => {
   /* const Componente = data.component */
@@ -9,8 +10,10 @@ export const Card = ({ children, item }) => {
         <div className="parteSuperior">
           <div className="jugadorIcon">
             <i className="fa-solid fa-person-running"></i>
-          </div>
+          </div >
+          <div className='nombre'>
           {item.nombre}
+          </div>
           {/* <div className="nombre">{prueba}</div> */}
           <div className="botonesEdicion">
             <div>
