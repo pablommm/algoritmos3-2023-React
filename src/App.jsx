@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 import JugadorForm from './components/JugadorForm/JugadorForm.jsx'
 import Home from './components/Home/Home.jsx'
 import Plantilla from './components/Plantilla/Plantilla.jsx'
@@ -30,6 +31,7 @@ const dataFiguritas = {
   navegacion: () => 'figuritas-form',
   title: () => 'Figuritas',
 }
+
 
 const dataLogin = { accion: () => 'prueba' }
 
