@@ -46,9 +46,7 @@ const dataHome = {
 }
 
 export default function App() {
-  
   const [titulo,setTitulo]= useState('')
-
   return (
     <Router>
       <Routes>
@@ -58,7 +56,7 @@ export default function App() {
           <Route
             path="figuritas"
             element={
-              <Searchbar setTitulo={setTitulo} component={<CardFigu />} />
+              <Searchbar setTitulo={setTitulo} data={dataFiguritas} component={<CardFigu />} />
             }
           />
           <Route
@@ -76,7 +74,7 @@ export default function App() {
           <Route
             path="selecciones"
             element={
-              <Searchbar setTitulo={setTitulo} component={<SeleccionMenu />} />
+              <Searchbar setTitulo={setTitulo} data={dataSeleccion} component={<SeleccionMenu />} />
             }
           />
           <Route
@@ -105,7 +103,7 @@ export default function App() {
           />
           <Route
             path="figuritas-form"
-            element={<FiguritasForm  setTitulo={setTitulo} data={dataSeleccion} />}
+            element={<FiguritasForm  data={dataFiguritas} />}
           />
         </Route>
 
