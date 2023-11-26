@@ -44,12 +44,13 @@ const dataHome = {
 }
 
 export default function App() {
+  const [titulo,setTitulo]= useState('')
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login data={dataLogin} />} />
 
-        <Route path="/plantilla" element={<Plantilla />}>
+        <Route path="/plantilla" element={<Plantilla  titulo={titulo}/>}>
           <Route path="Home" element={<Home data={dataHome} />} />
           <Route
             path="figuritas"
@@ -66,7 +67,7 @@ export default function App() {
           <Route
             path="puntosDeVenta"
             element={
-              <Searchbar data={dataPtoDeVenta} component={<CardPtoDeVenta />} />
+              <Searchbar setTitulo={setTitulo} data={dataPtoDeVenta} component={<CardPtoDeVenta />} />
             }
           />
           <Route

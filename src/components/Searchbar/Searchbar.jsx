@@ -9,7 +9,7 @@ import { useState } from 'react'
 import { mostrarMensajeError } from '../../util/error-handling.jsx'
 import { figuritaService } from '../../services/figurita.service.js'
 
-function Searchbar({ data, component,actualizarTitulo }) {
+function Searchbar({ setTitulo, data, component}) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
 
@@ -37,6 +37,7 @@ function Searchbar({ data, component,actualizarTitulo }) {
   }
 
   useOnInit(traerDatos)
+  useOnInit(()=>setTitulo('SEARCH'))
 /*
   useEffect(() => {
     actualizarTitulo(data.title())// Asumiendo que `data.title()` devuelve el nuevo título

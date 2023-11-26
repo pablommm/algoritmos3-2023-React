@@ -12,14 +12,11 @@ import Searchbar from '../Searchbar/Searchbar.jsx'
 
 
 
-function Plantilla({ data }) {
+function Plantilla({ titulo,data }) {
   const navigate = useNavigate()
-  const [titulo, setTitulo] = useState('Mi título')
+ 
 
-  const actualizarTitulo = (nuevoTitulo) => {
-    setTitulo(nuevoTitulo)
-    
-  }
+
   return (
     <>
       <div className="navbar-container">
