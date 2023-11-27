@@ -6,7 +6,7 @@ import '../../../Maquetado/CSS/button.css'
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import Searchbar from '../Searchbar/Searchbar.jsx'
+import Plantilla_MainComponent from '../Plantilla_MainComponent/Plantilla_MainComponent.jsx'
 
 
 
@@ -24,7 +24,7 @@ function Plantilla({ titulo,data }) {
         {<span className="navbar-title"> {titulo} </span>}
       </div>
       {/*
-        <Searchbar data={data} actualizarTitulo={actualizarTitulo} />  
+        <Plantilla_MainComponent data={data} actualizarTitulo={actualizarTitulo} />  
       */}
       <Outlet></Outlet>
 

@@ -5,7 +5,7 @@ import JugadorForm from './components/JugadorForm/JugadorForm.jsx'
 import Home from './components/Home/Home.jsx'
 import Plantilla from './components/Plantilla/Plantilla.jsx'
 import Login from './components/Login/Login.jsx'
-import Searchbar from './components/Searchbar/Searchbar.jsx'
+import Plantilla_MainComponent from './components/Plantilla_MainComponent/Plantilla_MainComponent.jsx'
 import CardPtoDeVenta from './components/CardPtoDeVenta/CardPtoDeVenta.jsx'
 import CardJugador from './components/CardJugador/CardJugador.jsx'
 import CardFigu from './components/CardFigu/CardFigu.jsx'
@@ -21,7 +21,7 @@ import { mostrarMensajeError } from './util/error-handling.jsx'
 const dataJugador = {
   navegacion: () => 'jugador-form',
   title: () => 'Jugador',
-  datosService: () => jugadorService.allInstances(),
+  datosService: (campoBusqueda) => jugadorService.allInstances(campoBusqueda),
 }
 const dataSeleccion = {
   navegacion: () => 'seleccion-form',
@@ -104,7 +104,7 @@ export default function App() {
           <Route
             path="figuritas"
             element={
-              <Searchbar
+              <Plantilla_MainComponent
                 setTitulo={setTitulo}
                 data={dataFiguritas}
                 component={<CardFigu />}
@@ -114,7 +114,7 @@ export default function App() {
           <Route
             path="jugadores"
             element={
-              <Searchbar
+              <Plantilla_MainComponent
                 setTitulo={setTitulo}
                 data={dataJugador}
                 component={<CardJugador />}
@@ -124,7 +124,7 @@ export default function App() {
           <Route
             path="puntosDeVenta"
             element={
-              <Searchbar
+              <Plantilla_MainComponent
                 setTitulo={setTitulo}
                 data={dataPtoDeVenta}
                 component={<CardPtoDeVenta />}
@@ -134,7 +134,7 @@ export default function App() {
           <Route
             path="selecciones"
             element={
-              <Searchbar
+              <Plantilla_MainComponent
                 setTitulo={setTitulo}
                 data={dataSeleccion}
                 component={<SeleccionMenu />}
