@@ -30,12 +30,12 @@ const dataSeleccion = {
 const dataPtoDeVenta = {
   navegacion: () => 'puntoVenta-form',
   title: () => 'Punto de venta',
-  datosService: () => puntoDeVentaService.allInstances(),
+  datosService: (campoBusqueda) => puntoDeVentaService.allInstances(campoBusqueda),
 }
 const dataFiguritas = {
   navegacion: () => 'figuritas-form',
   title: () => 'Figuritas',
-  datosService: () => figuritaService.allInstances(),
+  datosService: (campoBusqueda) => figuritaService.allInstances(campoBusqueda),
 }
 
 /* const dataJugador = {
