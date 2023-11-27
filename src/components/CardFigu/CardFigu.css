@@ -1,0 +1,10 @@
+.parteInferior {
+    padding: 1em;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.1em;
+    text-align: center;
+}
+.parteSuperior {
+    background-color:var(--secondary-color);
+}

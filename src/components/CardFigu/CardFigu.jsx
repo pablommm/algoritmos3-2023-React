@@ -44,7 +44,7 @@ function CardFigu({ item }) {
             <span>{item.nivelDeImpresion}</span>
           </div>
         </div>
-        <div className="terceraFila">{item.valoracionFigurita}</div>
+        <div className="terceraFila">Valoracion {item.valoracionFigurita}</div>
       </div>
     </>
   )
