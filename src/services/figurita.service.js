@@ -5,7 +5,7 @@ import { Figurita } from '../dominio/figurita.js'
 class FiguritaService {
   async allInstances() {
     const figuritasJSON = await axios.get(
-      `${REST_SERVER_URL}/TodasLasFiguritas/`,
+      `${REST_SERVER_URL}/TodasLasFiguritas/`, {params: {campoDeBusqueda: ''}}
       /* { campoDeBusqueda: 'alejandro' }, */
     )
     const figuritas = figuritasJSON.data.map((figuritaJSON) =>
