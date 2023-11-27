@@ -3,8 +3,8 @@ import { REST_SERVER_URL } from './configuration.js'
 import { Jugador } from '../dominio/jugador.js'
 
 class JugadorService {
-  async allInstances() {
-    const jugadoresJSON = await axios.get(`${REST_SERVER_URL}/jugadores`)
+  async allInstances(campoDeBusqueda) {
+    const jugadoresJSON = await axios.get(`${REST_SERVER_URL}/jugadores`, {params: {campoDeBusqueda: campoDeBusqueda}})
     const jugadores = jugadoresJSON.data.map((jugadorJSON) =>
       Jugador.fromJson(jugadorJSON),
     )

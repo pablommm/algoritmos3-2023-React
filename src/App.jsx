@@ -38,52 +38,7 @@ const dataFiguritas = {
   datosService: (campoBusqueda) => figuritaService.allInstances(campoBusqueda),
 }
 
-/* const dataJugador = {
-  navegacion: () => 'jugador-form',
-  title: () => 'Jugador',
-  datosService: () => async () => {
-    try {
-      await jugadorService.allInstances()
-    } catch (error) {
-      mostrarMensajeError(error, setErrorMessage)
-    }
-  },
-}
-
-const dataSeleccion = {
-  navegacion: () => 'seleccion-form',
-  title: () => 'Seleccion',
-}
-const dataPtoDeVenta = {
-  navegacion: () => 'puntoVenta-form',
-  title: () => 'Punto de venta',
-  datosService: () => async () => {
-    try {
-      await puntoDeVentaService.allInstances()
-    } catch (error) {
-      mostrarMensajeError(error, setErrorMessage)
-    }
-  },
-}
-const dataFiguritas = {
-  navegacion: () => 'figuritas-form',
-  title: () => 'Figuritas',
-  datosService: () => async () => {
-    try {
-      await figuritaService.allInstances()
-    } catch (error) {
-      mostrarMensajeError(error, setErrorMessage)
-    }
-  },
-} */
-
 const dataLogin = { accion: () => 'prueba' }
-
-/* 
-const dataBusquedaFigurita = {
-  accion: async (figuritaService, filtro) =>
-    figuritaService.todasLasFiguritas(filtro),
-} */
 
 const dataHome = {
   accion: async (homeService) => homeService.getCantidadesHome(),

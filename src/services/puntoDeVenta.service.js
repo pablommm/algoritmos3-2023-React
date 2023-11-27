@@ -3,9 +3,9 @@ import { REST_SERVER_URL } from './configuration.js'
 import { PuntoDeVenta } from '../dominio/puntoDeVenta.js'
 
 class PuntoDeVentaService {
-  async allInstances() {
+  async allInstances(campoDeBusqueda) {
     const puntosDeVentaJSON = await axios.get(
-      `${REST_SERVER_URL}/puntoDeVentas/`,
+      `${REST_SERVER_URL}/puntoDeVentas/`, {params: {campoDeBusqueda: campoDeBusqueda}}
     )
     const puntosDeVenta = puntosDeVentaJSON.data.map((puntoDeVentaJSON) =>
       PuntoDeVenta.fromJson(puntoDeVentaJSON),
