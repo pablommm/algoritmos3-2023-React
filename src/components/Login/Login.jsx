@@ -9,7 +9,7 @@ import { mostrarMensajeError } from '../../util/error-handling'
 import { Snackbar, Alert } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
-export const Login = ({ data }) => {
+export const Login = () => {
   const navigate = useNavigate()
   const [usuario, setUsuario] = useState('')
   const [password, setPassword] = useState('')
@@ -43,7 +43,7 @@ export const Login = ({ data }) => {
       throw new Error('La contraseña no debe estar vacía')
     }
   } */
-  
+
   const snackbarOpen = !!errorMessage // O se puede usar Boolean(errorMessage)
 
   return (
@@ -63,7 +63,6 @@ export const Login = ({ data }) => {
               />
             </div>
           </div>
-          {data.accion()}
           <div className="login-item">
             <div className="login-info">
               <i className="fa-solid fa-key login-icon"></i>

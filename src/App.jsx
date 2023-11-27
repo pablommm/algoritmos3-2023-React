@@ -16,7 +16,7 @@ import SeleccionMenu from './components/SeleccionMenu/SeleccionMenu.jsx'
 import { puntoDeVentaService } from './services/puntoDeVenta.service.js'
 import { jugadorService } from './services/jugador.service.js'
 import { figuritaService } from './services/figurita.service.js'
-import { mostrarMensajeError } from './util/error-handling.jsx'
+import { seleccionService } from './services/seleccion.service.js'
 
 const dataJugador = {
   navegacion: () => 'jugador-form',
@@ -26,19 +26,19 @@ const dataJugador = {
 const dataSeleccion = {
   navegacion: () => 'seleccion-form',
   title: () => 'Seleccion',
+  datosService: (campoBusqueda) => seleccionService.allInstances(campoBusqueda),
 }
 const dataPtoDeVenta = {
   navegacion: () => 'puntoVenta-form',
   title: () => 'Punto de venta',
-  datosService: (campoBusqueda) => puntoDeVentaService.allInstances(campoBusqueda),
+  datosService: (campoBusqueda) =>
+    puntoDeVentaService.allInstances(campoBusqueda),
 }
 const dataFiguritas = {
   navegacion: () => 'figuritas-form',
   title: () => 'Figuritas',
   datosService: (campoBusqueda) => figuritaService.allInstances(campoBusqueda),
 }
-
-const dataLogin = { accion: () => 'prueba' }
 
 const dataHome = {
   accion: async (homeService) => homeService.getCantidadesHome(),
@@ -50,7 +50,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login data={dataLogin} />} />
+        <Route path="/" element={<Login />} />
         <Route path="/plantilla" element={<Plantilla titulo={titulo} />}>
           <Route
             path="Home"
@@ -92,7 +92,6 @@ export default function App() {
               <Plantilla_MainComponent
                 setTitulo={setTitulo}
                 data={dataSeleccion}
-                component={<SeleccionMenu />}
               />
             }
           />
