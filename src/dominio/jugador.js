@@ -13,7 +13,9 @@ export class Jugador {
   }
 
   static fromJson(jugadorJSON) {
-    const result = Object.assign(new Jugador(), jugadorJSON)
+    const result = Object.assign(new Jugador(), jugadorJSON, {
+      nombre: `${jugadorJSON.nombre} ${jugadorJSON.apellido}`,
+    })
     return result
   }
 }

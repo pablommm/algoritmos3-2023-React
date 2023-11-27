@@ -1,6 +1,11 @@
+import React from 'react'
 import './Card.css'
 
 export const Card = ({ children, item }) => {
+  const childrenWithProps = React.Children.map(children, (child) =>
+    React.cloneElement(child, { item }),
+  )
+
   return (
     <>
       <div className="card">
@@ -18,7 +23,7 @@ export const Card = ({ children, item }) => {
             </div>
           </div>
         </div>
-        {children}
+        {childrenWithProps}
       </div>
     </>
   )

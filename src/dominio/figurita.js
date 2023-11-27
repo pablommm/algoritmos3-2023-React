@@ -12,7 +12,9 @@ export class Figurita {
   }
 
   static fromJson(figuritaJSON) {
-    const result = Object.assign(new Figurita(), figuritaJSON)
+    const result = Object.assign(new Figurita(), figuritaJSON, {
+      nombre: `${figuritaJSON.nombre} ${figuritaJSON.apellido}`,
+    })
     return result
   }
 }
