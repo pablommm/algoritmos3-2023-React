@@ -8,7 +8,7 @@ import '../../../Maquetado/CSS/footer.css'
 import '../../../Maquetado/CSS/button.css'
 import './CardPtoDeVenta.css'
 
-function CardPtoDeVenta(item) {
+function CardPtoDeVenta({ item }) {
   return (
     <>
       <div className="parteInferior">
@@ -17,9 +17,10 @@ function CardPtoDeVenta(item) {
             <i className="fa-solid fa-location-dot "></i>
             <span>{item.direccion}</span>
           </div>
-          <div className="elemento3"></div>
-          <i className="fa-regular fa-flag"></i>
-          <span>{item.stockDeSobres} sobres</span>
+          <div className="elemento3">
+            <i className="fa-solid fa-clipboard-user"></i>
+            <span>{item.stockDeSobres} sobres</span>
+          </div>
         </div>
       </div>
       <span className="terceraFila">{item.tipo}</span>

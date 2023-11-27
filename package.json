@@ -20,6 +20,7 @@
     "@mui/material": "^5.14.17",
     "@mui/styled-engine-sc": "^6.0.0-alpha.5",
     "axios": "^1.6.1",
+    "flag-icons": "^7.0.2",
     "framer-motion": "^10.16.4",
     "node": "^21.1.0",
     "react": "^18.2.0",
