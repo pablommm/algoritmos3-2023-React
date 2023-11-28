@@ -1,11 +1,11 @@
 //import React from "react"
 import './SeleccionMenu.css'
-import '../CardJugador/CardJugador.css'
+/* import '../CardJugador/CardJugador.css' */
 
 function SeleccionMenu() {
   return (
-    <div className="pruebaCard">
-      <div>
+    <div className="selecionCard">
+      <div className='nombrePais'>
         <h2>Argentina</h2>
       </div>
       <div className="botonesMenu">
