@@ -40,6 +40,9 @@ const dataFiguritas = {
   datosService: (campoBusqueda) => figuritaService.allInstances(campoBusqueda),
 }
 
+const dataPrueba = {
+  title: () => 'Nuevo Punto de venta'
+}
 const dataHome = {
   accion: async (homeService) => homeService.getCantidadesHome(),
   title: () => 'Home',
@@ -51,7 +54,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/plantilla" element={<Plantilla titulo={titulo} />}>
+        <Route path="/plantilla" element={<Plantilla setTitulo={setTitulo} titulo={titulo} data={dataPrueba} />}>
           <Route
             path="Home"
             element={<Home setTitulo={setTitulo} data={dataHome} />}
@@ -59,7 +62,7 @@ export default function App() {
           <Route
             path="figuritas"
             element={
-              <Plantilla_MainComponent
+              <Plantilla_MainComponent // searchbar y boton aniadir
                 setTitulo={setTitulo}
                 data={dataFiguritas}
                 component={<CardFigu />}
@@ -114,7 +117,7 @@ export default function App() {
           <Route
             path="puntoVenta-form"
             element={
-              <PuntoDeVentaForm setTitulo={setTitulo} data={dataPtoDeVenta} />
+              <PuntoDeVentaForm setTitulo={setTitulo} data={dataPrueba} />
             }
           />
           <Route

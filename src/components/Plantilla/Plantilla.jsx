@@ -5,17 +5,19 @@ import '../../../Maquetado/CSS/footer.css'
 import '../../../Maquetado/CSS/button.css'
 //import SeleccionForm from '../SeleccionForm/SeleccionForm'
 import { Outlet, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+//import { useState } from 'react'
 import Plantilla_MainComponent from '../Plantilla_MainComponent/Plantilla_MainComponent.jsx'
+import { useEffect } from 'react'
 
 
 
 
 
-function Plantilla({ titulo,data }) {
+
+function Plantilla({ setTitulo, titulo,data }) {
   const navigate = useNavigate()
-  
 
+  setTitulo(data.title())
 
   return (
     <>
