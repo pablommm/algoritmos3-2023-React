@@ -33,6 +33,7 @@ const dataPtoDeVenta = {
   title: () => 'Punto de venta',
   datosService: (campoBusqueda) =>
     puntoDeVentaService.allInstances(campoBusqueda),
+  deleteService: (id) => puntoDeVentaService.delete(id),
 }
 const dataFiguritas = {
   navegacion: () => 'figuritas-form',
@@ -41,10 +42,9 @@ const dataFiguritas = {
 }
 
 const dataPrueba = {
-  title: () => 'Nuevo Punto de venta'
+  title: () => 'Nuevo Punto de venta',
 }
 const dataHome = {
-  accion: async (homeService) => homeService.getCantidadesHome(),
   title: () => 'Home',
 }
 
@@ -54,7 +54,16 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/plantilla" element={<Plantilla setTitulo={setTitulo} titulo={titulo} data={dataPrueba} />}>
+        <Route
+          path="/plantilla"
+          element={
+            <Plantilla
+              /* setTitulo={setTitulo} */
+              titulo={titulo}
+              /* data={dataPrueba} */
+            />
+          }
+        >
           <Route
             path="Home"
             element={<Home setTitulo={setTitulo} data={dataHome} />}
@@ -107,8 +116,6 @@ export default function App() {
               />
             }
           />
-
-          {/* FALTA FIGURITA FORM*/}
 
           <Route
             path="jugador-form"

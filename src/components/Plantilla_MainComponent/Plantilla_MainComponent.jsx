@@ -13,8 +13,6 @@ function Plantilla_MainComponent({ setTitulo, data, component }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
   const location = useLocation()
-
-  /*  const location = useLocation() */
   const [datos, setDatos] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -27,35 +25,35 @@ function Plantilla_MainComponent({ setTitulo, data, component }) {
     }
   }
 
-  setTitulo(data.title())
+  const deleteCard = async (id) => {
+    await data.deleteService(id)
+    await traerDatos()
+  }
+
   useEffect(() => {
     setTitulo(data.title())
     traerDatos()
   }, [location.pathname])
 
-  /* useOnInit(traerDatos) */
-
   return (
+    <>
+      <Searchbar traerDatosService={traerDatos}></Searchbar>
+      <div className="sub-main-container">
+        {datos.map((item) => (
+          <Card key={item.id} item={item} deleteCard={deleteCard}>
+            {component}
+          </Card>
+        ))}
 
-      <>
-        <Searchbar traerDatosService={traerDatos}></Searchbar>
-        <div className="sub-main-container">
-          {datos.map((item) => (
-            <Card key={item.id} item={item}>
-              {component}
-            </Card>
-          ))}
-
-          <span
-            id="id_add"
-            className="material-symbols-outlined plus-icon"
-            onClick={() => navigate(`/plantilla/${data.navegacion()}`)}
-          >
-            add
-          </span>
-        </div>
-      </>
-
+        <span
+          id="id_add"
+          className="material-symbols-outlined plus-icon"
+          onClick={() => navigate(`/plantilla/${data.navegacion()}`)}
+        >
+          add
+        </span>
+      </div>
+    </>
   )
 }
 

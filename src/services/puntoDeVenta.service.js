@@ -5,12 +5,19 @@ import { PuntoDeVenta } from '../dominio/puntoDeVenta.js'
 class PuntoDeVentaService {
   async allInstances(campoDeBusqueda) {
     const puntosDeVentaJSON = await axios.get(
-      `${REST_SERVER_URL}/puntoDeVentas/`, {params: {campoDeBusqueda: campoDeBusqueda}}
+      `${REST_SERVER_URL}/puntoDeVentas/`,
+      { params: { campoDeBusqueda: campoDeBusqueda } },
     )
     const puntosDeVenta = puntosDeVentaJSON.data.map((puntoDeVentaJSON) =>
       PuntoDeVenta.fromJson(puntoDeVentaJSON),
     )
     return puntosDeVenta
+  }
+
+  async delete(idPuntoDeVentas) {
+    await axios.delete(`${REST_SERVER_URL}/deletePuntoDeVentas`, {
+      params: { idPuntoDeVentas: idPuntoDeVentas },
+    })
   }
 }
 
