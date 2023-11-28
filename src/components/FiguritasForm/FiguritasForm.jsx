@@ -28,9 +28,10 @@ function FiguritasForm() {
 
               <label htmlFor="url_imagen">URL de la Imagen:</label>
               <input type="url" name="url_imagen" required />
-
-              <button className="secondary-button" onClick={() => history.back()}>Volver</button>
-              <button className="primary-button">Guardar</button>
+              <div className='buttonConteiner'>
+                <button className="secondary-button" onClick={() => history.back()}>Volver</button>
+                <button className="primary-button">Guardar</button>
+              </div>
             </form>
           </div>
         </section>
