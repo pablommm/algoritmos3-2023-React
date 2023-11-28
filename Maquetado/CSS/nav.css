@@ -38,3 +38,12 @@ a {
     font-family:  sans-serif;
 }
 
+.active {
+    color: #10238b;
+    text-shadow: 
+    -1px -1px 0 #2c43c7,
+     1px -1px 0 #2c43c7,
+    -1px  1px 0 #2c43c7,
+     1px  1px 0 #2c43c7;
+  }
+

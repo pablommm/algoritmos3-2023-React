@@ -18,35 +18,45 @@ function Plantilla({ titulo }) {
       <footer className="footer">
         <span
           id="id_footer"
-          className="material-symbols-outlined hover-click"
+          className={`material-symbols-outlined hover-click ${
+            location.pathname === '/plantilla/Home' ? 'active' : ''
+          }`}
           onClick={() => navigate('/plantilla/Home')}
         >
           home
         </span>
         <span
           id="id_footer"
-          className="material-symbols-outlined hover-click"
+          className={`material-symbols-outlined hover-click ${
+            location.pathname === '/plantilla/figuritas' ? 'active' : ''
+          }`}
           onClick={() => navigate('/plantilla/figuritas')}
         >
           account_box
         </span>
         <span
           id="id_footer"
-          className="material-symbols-outlined hover-click"
+          className={`material-symbols-outlined hover-click ${
+            location.pathname === '/plantilla/jugadores' ? 'active' : ''
+          }`}
           onClick={() => navigate('/plantilla/jugadores')}
         >
           directions_run
         </span>
         <span
           id="id_footer"
-          className="material-symbols-outlined hover-click"
+          className={`material-symbols-outlined hover-click ${
+            location.pathname === '/plantilla/puntosDeVenta' ? 'active' : ''
+          }`}
           onClick={() => navigate('/plantilla/puntosDeVenta')}
         >
           storefront
         </span>
         <span
           id="id_footer"
-          className="material-symbols-outlined hover-click"
+          className={`material-symbols-outlined hover-click ${
+            location.pathname === '/plantilla/selecciones' ? 'active' : ''
+          }`}
           onClick={() => navigate('/plantilla/selecciones')}
         >
           flag
