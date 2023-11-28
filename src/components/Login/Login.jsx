@@ -18,7 +18,6 @@ export const Login = () => {
   const getLoginUser = async () => {
     const usuarioLogin = new UsuarioLogin(usuario, password)
     try {
-      /* validateLogin() */
       await loginService.getUsuarioLogin(usuarioLogin)
       console.log(await loginService.getUsuarioLogin(usuarioLogin))
       navigate('/plantilla/home')
@@ -27,24 +26,7 @@ export const Login = () => {
     }
   }
 
-  /* const validateLogin = () => {
-    validateUser()
-    validatePass()
-  }
-
-  const validateUser = () => {
-    if(usuario.includes('@')){
-      throw new Error('El usuario no debe contener @')
-    }
-  }
-
-  const validatePass = () => {
-    if (password == '') {
-      throw new Error('La contraseña no debe estar vacía')
-    }
-  } */
-
-  const snackbarOpen = !!errorMessage // O se puede usar Boolean(errorMessage)
+  const snackbarOpen = !!errorMessage
 
   return (
     <>

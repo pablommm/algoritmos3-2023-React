@@ -22,11 +22,13 @@ const dataJugador = {
   navegacion: () => 'jugador-form',
   title: () => 'Jugador',
   datosService: (campoBusqueda) => jugadorService.allInstances(campoBusqueda),
+  deleteService: (id) => jugadorService.delete(id),
 }
 const dataSeleccion = {
   navegacion: () => 'seleccion-form',
   title: () => 'Seleccion',
   datosService: (campoBusqueda) => seleccionService.allInstances(campoBusqueda),
+  deleteService: (id) => seleccionService.delete(id),
 }
 const dataPtoDeVenta = {
   navegacion: () => 'puntoVenta-form',
@@ -39,6 +41,7 @@ const dataFiguritas = {
   navegacion: () => 'figuritas-form',
   title: () => 'Figuritas',
   datosService: (campoBusqueda) => figuritaService.allInstances(campoBusqueda),
+  deleteService: (id) => figuritaService.delete(id),
 }
 
 const dataPrueba = {

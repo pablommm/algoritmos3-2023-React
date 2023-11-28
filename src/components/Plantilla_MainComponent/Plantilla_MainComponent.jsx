@@ -1,12 +1,11 @@
 import './Plantilla_MainComponent.css'
-/* import '../../../Maquetado/CSS/searchbar.css' */
-import { Outlet, useOutletContext } from 'react-router-dom'
-import { useNavigate, useLoaderData, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import '../../App.jsx'
 import Card from '../Card/Card.jsx'
-import { useOnInit } from '../../customHooks/hooks.js'
+/* import { useOnInit } from '../../customHooks/hooks.js' */
 import { useEffect, useState } from 'react'
 import { mostrarMensajeError } from '../../util/error-handling.jsx'
+import { Snackbar, Alert } from '@mui/material'
 import Searchbar from '../Searchbar/Searchbar.jsx'
 
 function Plantilla_MainComponent({ setTitulo, data, component }) {
@@ -26,14 +25,20 @@ function Plantilla_MainComponent({ setTitulo, data, component }) {
   }
 
   const deleteCard = async (id) => {
-    await data.deleteService(id)
-    await traerDatos()
+    try {
+      await data.deleteService(id)
+      await traerDatos()
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
   }
 
   useEffect(() => {
     setTitulo(data.title())
     traerDatos()
   }, [location.pathname])
+
+  const snackbarOpen = !!errorMessage
 
   return (
     <>
@@ -52,6 +57,15 @@ function Plantilla_MainComponent({ setTitulo, data, component }) {
         >
           add
         </span>
+        <Snackbar
+          open={snackbarOpen}
+          variant="error"
+          autoHideDuration={1800}
+          onClose={() => setErrorMessage(false)}
+          style={{ marginBottom: '8rem', fontSize: '400rem' }}
+        >
+          <Alert severity="error">{errorMessage}</Alert>
+        </Snackbar>
       </div>
     </>
   )

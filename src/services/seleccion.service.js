@@ -12,6 +12,12 @@ class SeleccionService {
     )
     return selecciones
   }
+
+  async delete(idSeleccion) {
+    await axios.delete(`${REST_SERVER_URL}/deleteSeleccion`, {
+      params: { idSeleccion: idSeleccion },
+    })
+  }
 }
 
 export const seleccionService = new SeleccionService()

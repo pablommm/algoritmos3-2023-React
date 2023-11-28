@@ -12,6 +12,12 @@ class FiguritaService {
     )
     return figuritas
   }
+
+  async delete(idFigurita) {
+    await axios.delete(`${REST_SERVER_URL}/deleteFigurita`, {
+      params: { idFigurita: idFigurita },
+    })
+  }
 }
 
 export const figuritaService = new FiguritaService()
