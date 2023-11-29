@@ -11,7 +11,10 @@ export class Jugador {
     this.cotizacion = 0
     this.id = 0
   }
-
+/* get eee(){
+  return this.apellido 
+}
+ */
   static fromJson(jugadorJSON) {
     const result = Object.assign(new Jugador(), jugadorJSON, {
       nombre: `${jugadorJSON.nombre} ${jugadorJSON.apellido}`,
