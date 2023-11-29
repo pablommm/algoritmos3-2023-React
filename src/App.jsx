@@ -48,10 +48,6 @@ const dataFiguritas = {
   deleteService: (id) => figuritaService.delete(id),
 }
 
-const dataHome = {
-  title: 'Home',
-}
-
 export default function App() {
   const [titulo, setTitulo] = useState('')
   return (
@@ -68,10 +64,7 @@ export default function App() {
             />
           }
         >
-          <Route
-            path="Home"
-            element={<Home setTitulo={setTitulo} data={dataHome} />}
-          />
+          <Route path="Home" element={<Home setTitulo={setTitulo} />} />
           <Route
             path="figuritas"
             element={

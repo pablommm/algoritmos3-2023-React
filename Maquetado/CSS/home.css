@@ -27,21 +27,3 @@ h2{
     border-radius: 1.5em;
     align-items: center; 
 }
-.icon {
-    font-size: 48px;
-}
- #icono_box {
-    font-size: 8em;
-    
-    color:black;
-}
-#icono_Repetidas {
-    color: red;
-    font-size: 8em;
-    
-}
-#icono_Faltantes {
-    font-size: 8em;
-    
-    color: rgb(24, 159, 203);
-} 

@@ -1,0 +1,16 @@
+#icono {
+    font-size: 6em;
+}
+
+.icono-repetidas {
+    color: #FF0000;
+    
+}
+
+.icono-faltantes {
+    color: rgb(24, 159, 203);
+} 
+
+.icono-general {
+    color: rgb(0, 0, 0);
+} 

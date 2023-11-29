@@ -38,12 +38,21 @@ a {
     font-family:  sans-serif;
 }
 
-.active {
-    color: #10238b;
-    text-shadow: 
-    -1px -1px 0 #2c43c7,
-     1px -1px 0 #2c43c7,
-    -1px  1px 0 #2c43c7,
-     1px  1px 0 #2c43c7;
+.selectedRoute {
+    color: #8b2910;
+    /* text-shadow: 
+    -1px -1px 0 #810c25,
+     1px -1px 0 #810c25,
+    -1px  1px 0 #810c25,
+     1px  1px 0 #810c25; */
   }
+
+.hover-click{
+    cursor: pointer;
+}
+
+.hover-click:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 

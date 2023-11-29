@@ -8,8 +8,9 @@ import { homeService } from '../../services/home.service'
 import { useOnInit } from '../../customHooks/hooks'
 import { useState } from 'react'
 import './Home.css'
+import CardHome from '../CardHome/CardHome'
 
-export const Home = ({ setTitulo, data }) => {
+export const Home = ({ setTitulo }) => {
   const [datos, setDatos] = useState([])
   /* const [puntosDeVenta, setPuntosDeVenta] = useState([]) */
   const [errorMessage, setErrorMessage] = useState('')
@@ -23,56 +24,37 @@ export const Home = ({ setTitulo, data }) => {
   }
 
   const init = async () => {
-    setTitulo("Home")
+    setTitulo('Home')
     traerDatos()
   }
 
   useOnInit(init)
-
-
 
   return (
     <>
       <div className="home">
         <title>Home</title>
         <div className="dashboard">
-          <div className="box">
-            <span id="icono_Faltantes" className="material-symbols-outlined">
-              account_box
-            </span>
-            <div>
-              {<h2>{datos.cantidadFiguritasFaltantes}</h2>}
-              <p>Figuritas Faltantes</p>
-            </div>
-          </div>
-          <div className="box">
-            <span id="icono_Repetidas" className="material-symbols-outlined">
-              account_box
-            </span>
-            <div>
-              <h2>{datos.cantidadFiguritasRepetidas}</h2>
-              <p>Figuritas Repetidas</p>
-            </div>
-          </div>
-          <div className="box">
-            <span id="icono_box" className="material-symbols-outlined">
-              storefront
-            </span>
-            <div>
-              <h2>{datos.cantidadPuntosDeVentas}</h2>
-              <p>Punto de Ventas</p>
-            </div>
-          </div>
-          <div className="box">
-            <span id="icono_box" className="material-symbols-outlined">
-              person
-            </span>
-            <div>
-              <h2>{datos.cantidadUsuarios}</h2>
-              <p>Usuarios Activos</p>
-            </div>
-          </div>
-          {/* <button onClick={console.log(jugadores)}></button> */}
+          <CardHome
+            icon={'fa-solid fa-clipboard-user icono-faltantes'}
+            cantidad={datos.cantidadFiguritasFaltantes}
+            leyenda={'Figuritas Faltantes'}
+          ></CardHome>
+          <CardHome
+            icon={'fa-solid fa-clipboard-user icono-repetidas'}
+            cantidad={datos.cantidadFiguritasRepetidas}
+            leyenda={'Figuritas Repetidas'}
+          ></CardHome>
+          <CardHome
+            icon={'fa-solid fa-store icono-general'}
+            cantidad={datos.cantidadPuntosDeVentas}
+            leyenda={'Puntos de Venta'}
+          ></CardHome>
+          <CardHome
+            icon={'fa-solid fa-user icono-general'}
+            cantidad={datos.cantidadUsuarios}
+            leyenda={'Usuarios Activos'}
+          ></CardHome>
         </div>
       </div>
     </>
