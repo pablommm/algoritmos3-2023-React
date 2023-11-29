@@ -11,14 +11,13 @@ export class Jugador {
     this.cotizacion = 0
     this.id = 0
   }
-  /* get eee(){
-  return this.apellido 
-}
- */
+
+  get titulo() {
+    return `${this.nombre} ${this.apellido}`
+  }
+
   static fromJson(jugadorJSON) {
-    const result = Object.assign(new Jugador(), jugadorJSON, {
-      nombre: `${jugadorJSON.nombre} ${jugadorJSON.apellido}`,
-    })
+    const result = Object.assign(new Jugador(), jugadorJSON)
     return result
   }
 }

@@ -3,13 +3,15 @@ export class Seleccion {
     this.id = 0
     this.confederacion = ''
     this.copasDelMundo = 0
-    this.nombre = ''
+    this.pais = ''
+  }
+
+  get titulo() {
+    return this.pais
   }
 
   static fromJson(seleccionJSON) {
-    const result = Object.assign(new Seleccion(), seleccionJSON, {
-      nombre: seleccionJSON.pais,
-    })
+    const result = Object.assign(new Seleccion(), seleccionJSON)
     return result
   }
 }

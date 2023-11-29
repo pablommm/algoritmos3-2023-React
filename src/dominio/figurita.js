@@ -11,10 +11,12 @@ export class Figurita {
     this.id = 0
   }
 
+  get titulo() {
+    return `${this.nombre} ${this.apellido}`
+  }
+
   static fromJson(figuritaJSON) {
-    const result = Object.assign(new Figurita(), figuritaJSON, {
-      nombre: `${figuritaJSON.nombre} ${figuritaJSON.apellido}`,
-    })
+    const result = Object.assign(new Figurita(), figuritaJSON)
     return result
   }
 }

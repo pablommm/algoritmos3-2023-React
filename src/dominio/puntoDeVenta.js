@@ -10,6 +10,10 @@ export class PuntoDeVenta {
     this.pedidosPendientes = 0
   }
 
+  get titulo() {
+    return this.nombre
+  }
+
   static fromJson(puntoDeVentaJSON) {
     const result = Object.assign(new PuntoDeVenta(), puntoDeVentaJSON)
     return result

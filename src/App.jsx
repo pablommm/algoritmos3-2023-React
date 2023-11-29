@@ -12,7 +12,6 @@ import CardFigu from './components/CardFigu/CardFigu.jsx'
 import PuntoDeVentaForm from './components/PuntoDeVentaForm/PuntoDeVentaForm.jsx'
 import FiguritasForm from './components/FiguritasForm/FiguritasForm.jsx'
 import SeleccionForm from './components/SeleccionForm/SeleccionForm.jsx'
-import SeleccionMenu from './components/SeleccionMenu/SeleccionMenu.jsx'
 import { puntoDeVentaService } from './services/puntoDeVenta.service.js'
 import { jugadorService } from './services/jugador.service.js'
 import { figuritaService } from './services/figurita.service.js'
@@ -22,6 +21,7 @@ const dataJugador = {
   navegacion: 'jugador-form',
   title: 'Jugador',
   icon: 'fa-person-running',
+  component: (item) => <CardJugador item={item}></CardJugador>,
   datosService: (campoBusqueda) => jugadorService.allInstances(campoBusqueda),
   deleteService: (id) => jugadorService.delete(id),
 }
@@ -29,6 +29,7 @@ const dataSeleccion = {
   navegacion: 'seleccion-form',
   title: 'Seleccion',
   icon: 'fa-flag',
+  component: () => null,
   datosService: (campoBusqueda) => seleccionService.allInstances(campoBusqueda),
   deleteService: (id) => seleccionService.delete(id),
 }
@@ -36,6 +37,7 @@ const dataPtoDeVenta = {
   navegacion: 'puntoVenta-form',
   title: 'Punto de venta',
   icon: 'fa-store',
+  component: (item) => <CardPtoDeVenta item={item}></CardPtoDeVenta>,
   datosService: (campoBusqueda) =>
     puntoDeVentaService.allInstances(campoBusqueda),
   deleteService: (id) => puntoDeVentaService.delete(id),
@@ -44,6 +46,7 @@ const dataFiguritas = {
   navegacion: 'figuritas-form',
   title: 'Figuritas',
   icon: 'fa-clipboard-user',
+  component: (item) => <CardFigu item={item}></CardFigu>,
   datosService: (campoBusqueda) => figuritaService.allInstances(campoBusqueda),
   deleteService: (id) => figuritaService.delete(id),
 }
@@ -54,46 +57,19 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route
-          path="/plantilla"
-          element={
-            <Plantilla
-              /* setTitulo={setTitulo} */
-              titulo={titulo}
-              /* data={dataPrueba} */
-            />
-          }
-        >
+        <Route path="/plantilla" element={<Plantilla titulo={titulo} />}>
           <Route path="Home" element={<Home setTitulo={setTitulo} />} />
           <Route
             path="figuritas"
-            element={
-              <Buscador // searchbar y boton aniadir
-                setTitulo={setTitulo}
-                data={dataFiguritas}
-                component={<CardFigu />}
-              />
-            }
+            element={<Buscador setTitulo={setTitulo} data={dataFiguritas} />}
           />
           <Route
             path="jugadores"
-            element={
-              <Buscador
-                setTitulo={setTitulo}
-                data={dataJugador}
-                component={<CardJugador />}
-              />
-            }
+            element={<Buscador setTitulo={setTitulo} data={dataJugador} />}
           />
           <Route
             path="puntosDeVenta"
-            element={
-              <Buscador
-                setTitulo={setTitulo}
-                data={dataPtoDeVenta}
-                component={<CardPtoDeVenta />}
-              />
-            }
+            element={<Buscador setTitulo={setTitulo} data={dataPtoDeVenta} />}
           />
           <Route
             path="selecciones"

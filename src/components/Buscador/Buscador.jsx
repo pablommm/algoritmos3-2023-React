@@ -8,7 +8,7 @@ import { mostrarMensajeError } from '../../util/error-handling.jsx'
 import { Snackbar, Alert } from '@mui/material'
 import Searchbar from '../Searchbar/Searchbar.jsx'
 
-function Buscador({ setTitulo, data, component }) {
+function Buscador({ setTitulo, data }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
   const location = useLocation()
@@ -58,7 +58,7 @@ function Buscador({ setTitulo, data, component }) {
             icon={data.icon}
             deleteCard={deleteCard}
           >
-            {component}
+            {data.component(item)}
           </Card>
         ))}
 
