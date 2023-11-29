@@ -2,7 +2,7 @@ import React from 'react'
 import './Card.css'
 /* import '/node_modules/flag-icons/css/flag-icons.min.css' */
 
-export const Card = ({ children, item, deleteCard }) => {
+export const Card = ({ children, item, deleteCard, icon }) => {
   const childrenWithProps = React.Children.map(children, (child) =>
     React.cloneElement(child, { item }),
   )
@@ -17,7 +17,7 @@ export const Card = ({ children, item, deleteCard }) => {
       <div className="card">
         <div className="parteSuperior">
           <div className="jugadorIcon">
-            <i className="fa-solid fa-person-running"></i>
+            <i className={`fa-solid ${icon}`}></i>
             {/* <i className="flag-icon flag-icon-ad flag-icon-squared"></i> */}
           </div>
           <div className="nombre">{item.nombre}</div>

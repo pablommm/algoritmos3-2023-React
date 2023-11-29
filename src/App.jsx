@@ -5,7 +5,7 @@ import JugadorForm from './components/JugadorForm/JugadorForm.jsx'
 import Home from './components/Home/Home.jsx'
 import Plantilla from './components/Plantilla/Plantilla.jsx'
 import Login from './components/Login/Login.jsx'
-import Plantilla_MainComponent from './components/Plantilla_MainComponent/Plantilla_MainComponent.jsx'
+import Buscador from './components/Buscador/Buscador.jsx'
 import CardPtoDeVenta from './components/CardPtoDeVenta/CardPtoDeVenta.jsx'
 import CardJugador from './components/CardJugador/CardJugador.jsx'
 import CardFigu from './components/CardFigu/CardFigu.jsx'
@@ -19,33 +19,37 @@ import { figuritaService } from './services/figurita.service.js'
 import { seleccionService } from './services/seleccion.service.js'
 
 const dataJugador = {
-  navegacion: () => 'jugador-form',
-  title: () => 'Jugador',
+  navegacion: 'jugador-form',
+  title: 'Jugador',
+  icon: 'fa-person-running',
   datosService: (campoBusqueda) => jugadorService.allInstances(campoBusqueda),
   deleteService: (id) => jugadorService.delete(id),
 }
 const dataSeleccion = {
-  navegacion: () => 'seleccion-form',
-  title: () => 'Seleccion',
+  navegacion: 'seleccion-form',
+  title: 'Seleccion',
+  icon: 'fa-flag',
   datosService: (campoBusqueda) => seleccionService.allInstances(campoBusqueda),
   deleteService: (id) => seleccionService.delete(id),
 }
 const dataPtoDeVenta = {
-  navegacion: () => 'puntoVenta-form',
-  title: () => 'Punto de venta',
+  navegacion: 'puntoVenta-form',
+  title: 'Punto de venta',
+  icon: 'fa-store',
   datosService: (campoBusqueda) =>
     puntoDeVentaService.allInstances(campoBusqueda),
   deleteService: (id) => puntoDeVentaService.delete(id),
 }
 const dataFiguritas = {
-  navegacion: () => 'figuritas-form',
-  title: () => 'Figuritas',
+  navegacion: 'figuritas-form',
+  title: 'Figuritas',
+  icon: 'fa-clipboard-user',
   datosService: (campoBusqueda) => figuritaService.allInstances(campoBusqueda),
   deleteService: (id) => figuritaService.delete(id),
 }
 
 const dataHome = {
-  title: () => 'Home',
+  title: 'Home',
 }
 
 export default function App() {
@@ -71,7 +75,7 @@ export default function App() {
           <Route
             path="figuritas"
             element={
-              <Plantilla_MainComponent // searchbar y boton aniadir
+              <Buscador // searchbar y boton aniadir
                 setTitulo={setTitulo}
                 data={dataFiguritas}
                 component={<CardFigu />}
@@ -81,7 +85,7 @@ export default function App() {
           <Route
             path="jugadores"
             element={
-              <Plantilla_MainComponent
+              <Buscador
                 setTitulo={setTitulo}
                 data={dataJugador}
                 component={<CardJugador />}
@@ -91,7 +95,7 @@ export default function App() {
           <Route
             path="puntosDeVenta"
             element={
-              <Plantilla_MainComponent
+              <Buscador
                 setTitulo={setTitulo}
                 data={dataPtoDeVenta}
                 component={<CardPtoDeVenta />}
@@ -100,12 +104,7 @@ export default function App() {
           />
           <Route
             path="selecciones"
-            element={
-              <Plantilla_MainComponent
-                setTitulo={setTitulo}
-                data={dataSeleccion}
-              />
-            }
+            element={<Buscador setTitulo={setTitulo} data={dataSeleccion} />}
           />
           <Route
             path="figu-form"
@@ -119,19 +118,15 @@ export default function App() {
 
           <Route
             path="jugador-form"
-            element={<JugadorForm setTitulo={setTitulo}/>}
+            element={<JugadorForm setTitulo={setTitulo} />}
           />
           <Route
             path="puntoVenta-form"
-            element={
-              <PuntoDeVentaForm setTitulo={setTitulo}/>
-            }
+            element={<PuntoDeVentaForm setTitulo={setTitulo} />}
           />
           <Route
             path="seleccion-form"
-            element={
-              <SeleccionForm setTitulo={setTitulo} />
-            }
+            element={<SeleccionForm setTitulo={setTitulo} />}
           />
           <Route
             path="figuritas-form"

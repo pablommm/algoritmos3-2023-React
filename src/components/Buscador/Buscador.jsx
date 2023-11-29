@@ -1,4 +1,4 @@
-import './Plantilla_MainComponent.css'
+import './Buscador.css'
 import { useNavigate, useLocation } from 'react-router-dom'
 import '../../App.jsx'
 import Card from '../Card/Card.jsx'
@@ -8,7 +8,7 @@ import { mostrarMensajeError } from '../../util/error-handling.jsx'
 import { Snackbar, Alert } from '@mui/material'
 import Searchbar from '../Searchbar/Searchbar.jsx'
 
-function Plantilla_MainComponent({ setTitulo, data, component }) {
+function Buscador({ setTitulo, data, component }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate()
   const location = useLocation()
@@ -34,9 +34,16 @@ function Plantilla_MainComponent({ setTitulo, data, component }) {
   }
 
   useEffect(() => {
-    setTitulo(data.title())
+    setTitulo(data.title)
     traerDatos()
   }, [location.pathname])
+
+  /* const onInit = async () => {
+    traerDatos()
+    setTitulo(data.title)
+  }
+
+  useOnInit(onInit) */
 
   const snackbarOpen = !!errorMessage
 
@@ -45,7 +52,12 @@ function Plantilla_MainComponent({ setTitulo, data, component }) {
       <Searchbar traerDatosService={traerDatos}></Searchbar>
       <div className="sub-main-container">
         {datos.map((item) => (
-          <Card key={item.id} item={item} deleteCard={deleteCard}>
+          <Card
+            key={item.id}
+            item={item}
+            icon={data.icon}
+            deleteCard={deleteCard}
+          >
             {component}
           </Card>
         ))}
@@ -53,7 +65,7 @@ function Plantilla_MainComponent({ setTitulo, data, component }) {
         <span
           id="id_add"
           className="material-symbols-outlined plus-icon"
-          onClick={() => navigate(`/plantilla/${data.navegacion()}`)}
+          onClick={() => navigate(`/plantilla/${data.navegacion}`)}
         >
           add
         </span>
@@ -71,4 +83,4 @@ function Plantilla_MainComponent({ setTitulo, data, component }) {
   )
 }
 
-export default Plantilla_MainComponent
+export default Buscador

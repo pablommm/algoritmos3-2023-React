@@ -11,7 +11,7 @@ export class Jugador {
     this.cotizacion = 0
     this.id = 0
   }
-/* get eee(){
+  /* get eee(){
   return this.apellido 
 }
  */
