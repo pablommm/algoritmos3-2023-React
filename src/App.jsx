@@ -44,9 +44,6 @@ const dataFiguritas = {
   deleteService: (id) => figuritaService.delete(id),
 }
 
-const dataPrueba = {
-  title: () => 'Nuevo Punto de venta',
-}
 const dataHome = {
   title: () => 'Home',
 }
@@ -122,23 +119,23 @@ export default function App() {
 
           <Route
             path="jugador-form"
-            element={<JugadorForm setTitulo={setTitulo} data={dataJugador} />}
+            element={<JugadorForm setTitulo={setTitulo}/>}
           />
           <Route
             path="puntoVenta-form"
             element={
-              <PuntoDeVentaForm setTitulo={setTitulo} data={dataPrueba} />
+              <PuntoDeVentaForm setTitulo={setTitulo}/>
             }
           />
           <Route
             path="seleccion-form"
             element={
-              <SeleccionForm setTitulo={setTitulo} data={dataSeleccion} />
+              <SeleccionForm setTitulo={setTitulo} />
             }
           />
           <Route
             path="figuritas-form"
-            element={<FiguritasForm data={dataFiguritas} />}
+            element={<FiguritasForm setTitulo={setTitulo} />}
           />
         </Route>
 

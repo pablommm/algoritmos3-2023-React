@@ -5,8 +5,13 @@ import '../../../Maquetado/CSS/button.css'
 import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/form.css'
 import '../../../Maquetado/CSS/input.css'
+import { useOnInit } from '../../customHooks/hooks'
 
-function FiguritasForm() {
+
+function FiguritasForm({setTitulo}) {
+
+  useOnInit(() => setTitulo('Nueva Figurita'))
+
   return (
     <>
       <main className="main-container">

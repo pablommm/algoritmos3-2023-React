@@ -23,11 +23,13 @@ export const Home = ({ setTitulo, data }) => {
   }
 
   const init = async () => {
-    setTitulo(data.title())
+    setTitulo("Home")
     traerDatos()
   }
 
   useOnInit(init)
+
+
 
   return (
     <>

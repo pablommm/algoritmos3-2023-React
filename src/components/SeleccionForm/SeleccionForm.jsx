@@ -3,8 +3,13 @@ import '../../../Maquetado/CSS/button.css'
 
 import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
+import { useOnInit } from '../../customHooks/hooks'
 
-function SeleccionForm() {
+
+function SeleccionForm({setTitulo}) {
+
+
+useOnInit(()=> setTitulo("Nueva Seleccion"))
   return (
     <div className="main-container">
       <div className="sub-main-container form-container">

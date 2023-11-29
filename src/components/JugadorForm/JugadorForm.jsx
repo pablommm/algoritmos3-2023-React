@@ -5,9 +5,13 @@ import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
 import '../../../Maquetado/CSS/footer.css'
 import './JugadorForm.css'
+import { useOnInit } from '../../customHooks/hooks'
+
 
 /*  import { useHistory } from 'react-router-dom'  */
-function JugadorForm() {
+function JugadorForm({setTitulo}) {
+
+  useOnInit(()=> setTitulo("Nuevo Jugador"))
 
    /*  const history = useHistory() */
 

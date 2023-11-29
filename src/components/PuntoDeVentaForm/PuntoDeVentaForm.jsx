@@ -5,8 +5,13 @@ import '../../../Maquetado/CSS/button.css'
 
 import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
+import { useOnInit } from '../../customHooks/hooks'
 
-function PuntoDeVentaForm() {
+function PuntoDeVentaForm({setTitulo}) {
+
+
+  useOnInit(()=> setTitulo("Nuevo Punto De Venta"))
+
   return (
     <div className="sub-main-container form-container">
       <div className="formulario">
