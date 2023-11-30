@@ -1,13 +1,16 @@
 import { render, screen } from "@testing-library/react"
 import { Login } from "./Login"
 
+import { expect } from 'vitest'
+
 describe('Login', () => {
-    it('Cuando se loguea un usuario existente, se recibe el valor correspondiente', () => {
-        //Arrange
+    it('Cuando se loguea un usuario existente, se navega a home', async () => {
+        //Arrange       
         render(<Login/>)
         const botonLogin = screen.getByTestID('login')
         //Act
-        botonLogin.click()
+        act(() => { botonLogin.click()})
         //Assert
+        expect(navigateMock).toHaveBeenCalledWith('/plantilla/home')
     })
 })
