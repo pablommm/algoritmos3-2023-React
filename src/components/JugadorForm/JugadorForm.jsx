@@ -40,7 +40,7 @@ function JugadorForm({setTitulo}) {
           <input type="number" name="sobres_disponibles" required min="0" />
 
           <label htmlFor="pedidos_pendientes">Seleccion :</label>
-          <input type="number" name="pedidos_pendientes" required min="0" />
+          <input type="text" name="pedidos_pendientes" required min="0" />
 
           <label htmlFor="nombre">Año de debut en la seleccion:</label>
           <input type="date" name="nombre" required />
