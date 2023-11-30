@@ -18,6 +18,10 @@ class FiguritaService {
       params: { idFigurita: idFigurita },
     })
   }
+
+  async create(figurita) {
+    return axios.post(`${REST_SERVER_URL}/crearFigurita`, figurita)
+  }
 }
 
 export const figuritaService = new FiguritaService()

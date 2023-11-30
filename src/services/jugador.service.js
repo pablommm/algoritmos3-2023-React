@@ -18,6 +18,16 @@ class JugadorService {
       params: { idJugador: idJugador },
     })
   }
+
+  async jugadoresCrearFigurita() {
+    const jugadoresJSON = await axios.get(
+      `${REST_SERVER_URL}/jugadores/createFigurita`,
+    )
+    const jugadores = jugadoresJSON.data.map((jugadorJSON) =>
+      Jugador.fromJson(jugadorJSON),
+    )
+    return jugadores
+  }
 }
 
 export const jugadorService = new JugadorService()
