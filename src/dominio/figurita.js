@@ -24,7 +24,7 @@ export class Figurita {
   toJSON() {
     return {
       numero: this.numero,
-      idJugador: this.idJugador,
+      id: this.idJugador,
       onFire: this.onFire,
       nivelDeImpresion: this.nivelDeImpresion,
       imagen: this.imagen,

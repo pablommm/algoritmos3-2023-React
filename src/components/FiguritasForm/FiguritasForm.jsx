@@ -43,6 +43,7 @@ function FiguritasForm({ setTitulo }) {
   const create = async () => {
     try {
       await figuritaService.create(figurita)
+      history.back()
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
