@@ -28,6 +28,10 @@ class JugadorService {
     )
     return jugadores
   }
+
+  async create(jugador) {
+    return axios.post(`${REST_SERVER_URL}/crearJugador`, jugador)
+  }
 }
 
 export const jugadorService = new JugadorService()

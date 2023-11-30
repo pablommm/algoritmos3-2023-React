@@ -20,14 +20,4 @@ export class Figurita {
     const result = Object.assign(new Figurita(), figuritaJSON)
     return result
   }
-
-  toJSON() {
-    return {
-      numero: this.numero,
-      id: this.idJugador,
-      onFire: this.onFire,
-      nivelDeImpresion: this.nivelDeImpresion,
-      imagen: this.imagen,
-    }
-  }
 }

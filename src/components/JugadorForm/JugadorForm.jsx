@@ -5,15 +5,49 @@ import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
 import '../../../Maquetado/CSS/footer.css'
 import './JugadorForm.css'
-import { useOnInit } from '../../customHooks/hooks'
+/* import { useOnInit } from '../../customHooks/hooks' */
+import { mostrarMensajeError } from '../../util/error-handling'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { Snackbar, Alert } from '@mui/material'
+import { Jugador } from '../../dominio/jugador'
+import { jugadorService } from '../../services/jugador.service'
+import { seleccionService } from '../../services/seleccion.service'
 
+function JugadorForm({ setTitulo }) {
+  const location = useLocation()
+  const [selecciones, setSelecciones] = useState([])
+  const [jugador, setJugador] = useState(new Jugador())
+  const [errorMessage, setErrorMessage] = useState('')
+  const snackbarOpen = !!errorMessage
 
-/*  import { useHistory } from 'react-router-dom'  */
-function JugadorForm({setTitulo}) {
+  const actualizar = (referencia, valor) => {
+    jugador[referencia] = valor
+    setJugador({ ...jugador })
+  }
 
-  useOnInit(()=> setTitulo("Nuevo Jugador"))
+  useEffect(() => {
+    setTitulo('Nuevo Jugador')
+    traerSelecciones()
+  }, [location.pathname])
 
-   /*  const history = useHistory() */
+  const traerSelecciones = async () => {
+    try {
+      const selecciones = await seleccionService.allInstances()
+      setSelecciones(selecciones)
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
+  }
+
+  const create = async () => {
+    try {
+      await jugadorService.create(jugaor)
+      history.back()
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
+  }
 
   return (
     <div className="sub-main-container  form-container">
@@ -22,10 +56,26 @@ function JugadorForm({setTitulo}) {
       <div className="formulario">
         <form action="p" method="POST">
           <label htmlFor="nombre">Nombre:</label>
-          <input type="text" name="nombre" required />
+          <input
+            onChange={(event) => {
+              actualizar('nombre', event.target.value)
+            }}
+            value={jugador.nombre}
+            type="text"
+            name="nombre"
+            required
+          />
 
           <label htmlFor="apellido">Apellido:</label>
-          <input type="text" name="apellido" required />
+          <input
+            onChange={(event) => {
+              actualizar('apellido', event.target.value)
+            }}
+            value={jugador.apellido}
+            type="text"
+            name="apellido"
+            required
+          />
 
           <label htmlFor="fecha_nacimiento">Fecha de nacimiento:</label>
           <input type="date" name="fecha_nacimiento" required />
@@ -40,7 +90,19 @@ function JugadorForm({setTitulo}) {
           <input type="number" name="sobres_disponibles" required min="0" />
 
           <label htmlFor="pedidos_pendientes">Seleccion :</label>
-          <input type="text" name="pedidos_pendientes" required min="0" />
+          <select
+            className="select"
+            value={jugador.idSeleccion}
+            onChange={(event) => {
+              actualizar('idSeleccion', event.target.value)
+            }}
+          >
+            {selecciones.map((seleccion) => (
+              <option key={seleccion.id} value={seleccion.id}>
+                {seleccion.titulo}
+              </option>
+            ))}
+          </select>
 
           <label htmlFor="nombre">Año de debut en la seleccion:</label>
           <input type="date" name="nombre" required />
@@ -57,12 +119,23 @@ function JugadorForm({setTitulo}) {
           <label htmlFor="pedidos_pendientes">Cotización :</label>
           <input type="number" name="pedidos_pendientes" required min="0" />
           <div className="buttonConteiner">
-            <button className="secondary-button" onClick={() => history.back() }>Volver</button>
+            <button className="secondary-button" onClick={() => history.back()}>
+              Volver
+            </button>
             {/* <button className="secondary-button" >Volver</button> */}
             <button className="primary-button">Guardar</button>
           </div>
         </form>
       </div>
+      <Snackbar
+        open={snackbarOpen}
+        variant="error"
+        autoHideDuration={1800}
+        onClose={() => setErrorMessage(false)}
+        style={{ marginBottom: '8rem', fontSize: '400rem' }}
+      >
+        <Alert severity="error">{errorMessage}</Alert>
+      </Snackbar>
     </div>
   )
 }

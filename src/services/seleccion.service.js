@@ -18,6 +18,20 @@ class SeleccionService {
       params: { idSeleccion: idSeleccion },
     })
   }
+
+  /* async seleccionesCrearJugador() {
+    const seleccionesJSON = await axios.get(
+      `${REST_SERVER_URL}/selecciones/createJugador`,
+    )
+    const selecciones = seleccionesJSON.data.map((seleccionJSON) =>
+      Seleccion.fromJson(seleccionJSON),
+    )
+    return selecciones
+  } */
+
+  async create(seleccion) {
+    return axios.post(`${REST_SERVER_URL}/crearSeleccion`, seleccion)
+  }
 }
 
 export const seleccionService = new SeleccionService()

@@ -10,6 +10,7 @@ export class Jugador {
     this.pais = ''
     this.cotizacion = 0
     this.id = 0
+    this.idSeleccion = 0
   }
 
   get titulo() {

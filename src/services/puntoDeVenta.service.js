@@ -19,6 +19,10 @@ class PuntoDeVentaService {
       params: { idPuntoDeVentas: idPuntoDeVentas },
     })
   }
+
+  async create(puntoDeVenta) {
+    return axios.post(`${REST_SERVER_URL}/crearPuntoDeVenta`, jugador)
+  }
 }
 
 export const puntoDeVentaService = new PuntoDeVentaService()
