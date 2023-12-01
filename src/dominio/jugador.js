@@ -9,7 +9,7 @@ export class Jugador {
     this.peso = 0
     this.lider = false
     this.posicion = ''
-    this.pais = ''
+    this.pais = 'canada'
     this.cotizacion = 0
     this.id = 0
     this.idSeleccion = 0
