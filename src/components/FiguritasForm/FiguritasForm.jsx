@@ -54,7 +54,7 @@ function FiguritasForm({ setTitulo }) {
       <main className="main-container">
         <section className="sub-main-container form-container">
           <div className="formulario">
-            <form action="/p" method="POST">
+            <form /* action="/p" method="POST" */>
               <label htmlFor="numero">Número:</label>
               <input
                 onChange={(event) => {

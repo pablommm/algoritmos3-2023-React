@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom'
 import { PuntoDeVenta } from '../../dominio/puntoDeVenta'
 import { puntoDeVentaService } from '../../services/puntoDeVenta.service'
 import { Snackbar, Alert } from '@mui/material'
+import { useState, useEffect } from 'react'
 
 function PuntoDeVentaForm({ setTitulo }) {
   const location = useLocation()
@@ -23,7 +24,6 @@ function PuntoDeVentaForm({ setTitulo }) {
 
   useEffect(() => {
     setTitulo('Nuevo Punto De Venta')
-    traerPuntosDeVenta()
   }, [location.pathname])
 
   const create = async () => {
