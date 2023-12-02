@@ -31,6 +31,7 @@ function PuntoDeVentaForm({ setTitulo }) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
+    
 
   useEffect(() => {
     setTitulo('Nuevo Punto De Venta')

@@ -22,33 +22,36 @@ const dataJugador = {
   title: 'Jugador',
   icon: 'fa-person-running',
   component: (item) => <CardJugador item={item}></CardJugador>,
-  datosService: (campoBusqueda) => jugadorService.allInstances(campoBusqueda),
-  deleteService: (id) => jugadorService.delete(id),
+  datosService: async (campoBusqueda) =>
+    jugadorService.allInstances(campoBusqueda),
+  deleteService: async (id) => jugadorService.delete(id),
 }
 const dataSeleccion = {
   navegacion: 'seleccion-form',
   title: 'Seleccion',
   icon: 'fa-flag',
   component: () => null,
-  datosService: (campoBusqueda) => seleccionService.allInstances(campoBusqueda),
-  deleteService: (id) => seleccionService.delete(id),
+  datosService: async (campoBusqueda) =>
+    seleccionService.allInstances(campoBusqueda),
+  deleteService: async (id) => seleccionService.delete(id),
 }
 const dataPtoDeVenta = {
   navegacion: 'puntoVenta-form',
   title: 'Punto de venta',
   icon: 'fa-store',
   component: (item) => <CardPtoDeVenta item={item}></CardPtoDeVenta>,
-  datosService: (campoBusqueda) =>
+  datosService: async (campoBusqueda) =>
     puntoDeVentaService.allInstances(campoBusqueda),
-  deleteService: (id) => puntoDeVentaService.delete(id),
+  deleteService: async (id) => puntoDeVentaService.delete(id),
 }
 const dataFiguritas = {
   navegacion: 'figuritas-form',
   title: 'Figuritas',
   icon: 'fa-clipboard-user',
   component: (item) => <CardFigu item={item}></CardFigu>,
-  datosService: (campoBusqueda) => figuritaService.allInstances(campoBusqueda),
-  deleteService: (id) => figuritaService.delete(id),
+  datosService: async (campoBusqueda) =>
+    figuritaService.allInstances(campoBusqueda),
+  deleteService: async (id) => figuritaService.delete(id),
 }
 
 export default function App() {

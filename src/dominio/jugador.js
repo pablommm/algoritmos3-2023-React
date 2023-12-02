@@ -4,10 +4,12 @@ export class Jugador {
     this.apellido = ''
     this.fechaDeNacimiento = ''
     this.nroDeCamiseta = 0
+    this.anioDebut = ''
     this.altura = 0
     this.peso = 0
+    this.lider = false
     this.posicion = ''
-    this.pais = ''
+    this.pais = 'canada'
     this.cotizacion = 0
     this.id = 0
     this.idSeleccion = 0
