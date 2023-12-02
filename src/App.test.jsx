@@ -1,6 +1,5 @@
 import { render} from '@testing-library/react'
-import Component from './components/Home/Home.jsx'
-
+import Home from './components/Home/Home.jsx'
 /*
 import { render, screen, waitFor } from '@testing-library/react'
 
@@ -16,10 +15,10 @@ describe('smoke test de la app', () => {
 
 */
 
-describe('Componente', () => {
+describe('Home', () => {
   it('should validate the current page', () => {
     // Renderiza el componente
-    const { getByText } = render(<Component />)
+    const { getByText } = render(<Home setTitulo={'Home'}/>)
 
     // Obtiene el elemento HTML para el título de la página
     const titulo = getByText('Home')
@@ -27,4 +26,11 @@ describe('Componente', () => {
     // Verifica que el título de la página sea correcto
     expect(titulo).toBeInTheDocument()
   })
+  
+})
+describe('Componente', () => {
+  it('should not have any tests', () => {
+    expect(true).toBe(true)
+  })
+  
 })
