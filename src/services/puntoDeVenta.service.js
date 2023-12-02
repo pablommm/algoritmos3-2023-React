@@ -20,9 +20,18 @@ class PuntoDeVentaService {
     })
   }
 
+  // async create(puntoDeVenta) {
+  //   return axios.post(`${REST_SERVER_URL}/crearPuntoDeVenta`, jugador)
+  // }
+
   async create(puntoDeVenta) {
-    return axios.post(`${REST_SERVER_URL}/crearPuntoDeVenta`, jugador)
+    return axios.post(`${REST_SERVER_URL}/crearPuntoDeVenta`, puntoDeVenta)
   }
+
+  async update(puntoDeVenta) {
+    return axios.put(`${REST_SERVER_URL}/updatePuntoDeVenta`, puntoDeVenta)
+  }
+
 }
 
 export const puntoDeVentaService = new PuntoDeVentaService()
