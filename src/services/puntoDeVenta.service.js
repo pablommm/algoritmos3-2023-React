@@ -20,10 +20,10 @@ class PuntoDeVentaService {
     })
   }
 
-  // async create(puntoDeVenta) {
-  //   return axios.post(`${REST_SERVER_URL}/crearPuntoDeVenta`, jugador)
-  // }
-
+/*   async create(puntoDeVenta) {
+    return axios.post(`${REST_SERVER_URL}/crearPuntoDeVenta`, jugador)
+  }
+ */
   async create(puntoDeVenta) {
     return axios.post(`${REST_SERVER_URL}/crearPuntoDeVenta`, puntoDeVenta)
   }

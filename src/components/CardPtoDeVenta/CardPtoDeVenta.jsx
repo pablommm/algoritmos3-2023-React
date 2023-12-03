@@ -21,7 +21,9 @@ function CardPtoDeVenta({ item }) {
             <span>{item.stockDeSobres} sobres</span>
           </div>
         </div>
-        <span className="terceraFila">{item.tipo}</span>
+        <div className="terceraFila">
+          <span className="terceraFila">{item.tipo}</span>
+        </div>
       </div>
       
     </>

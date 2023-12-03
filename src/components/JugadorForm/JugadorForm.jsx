@@ -44,7 +44,7 @@ function JugadorForm({ setTitulo }) {
     try {
       await jugadorService.create(jugador)
       history.back()
-      console.log('pepe')
+      
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }

@@ -4,6 +4,7 @@ import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/button.css'
 import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
+import './PuntoDeVentaForm.css'
 /* import { useOnInit } from '../../customHooks/hooks' */
 import { useLocation } from 'react-router-dom'
 import { PuntoDeVenta } from '../../dominio/puntoDeVenta'
@@ -22,6 +23,10 @@ function PuntoDeVentaForm({ setTitulo }) {
     puntoDeVenta[referencia] = valor
     setPuntoDeVenta({ ...puntoDeVenta })
   }
+  useEffect(() => {
+    setTitulo('Nuevo Punto De Venta')
+    traerPuntosDeVenta()
+  }, [location.pathname])
 
   const traerPuntosDeVenta = async () => {
     try {
@@ -31,13 +36,6 @@ function PuntoDeVentaForm({ setTitulo }) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
-
-
-  useEffect(() => {
-    setTitulo('Nuevo Punto De Venta')
-    traerPuntosDeVenta()
-  }, [location.pathname])
-
   const create = async () => {
     try {
       await puntoDeVentaService.create(puntoDeVenta)
@@ -124,11 +122,11 @@ function PuntoDeVentaForm({ setTitulo }) {
               actualizar('tipo_negocio',event.target.value)
             }}
             >
-              {puntoDeVenta.map((ptoDeVta) =>(
+          {/*     {puntoDeVenta.map((ptoDeVta) =>(
                 <option key={ptoDeVta.tipo} value={ptoDeVta.tipo}>
                   {ptoDeVta.tipo}
                 </option>
-              ))}
+              ))} */}
             {/* <option value="Kiosko">Kiosko</option>
             <option value="Supermercado">Supermercado</option> */}
           </select>
