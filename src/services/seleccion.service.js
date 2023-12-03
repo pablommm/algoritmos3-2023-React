@@ -13,11 +13,21 @@ class SeleccionService {
     return selecciones
   }
 
+/*   async getConfederaciones(){
+    const confederacionesJSON = await axios.get(`${REST_SERVER_URL}/confederaciones`)
+    const confederaciones = confederacionesJSON.data.map((confederacionesJSON)
+    => 
+    )
+  } */
+
   async delete(idSeleccion) {
     await axios.delete(`${REST_SERVER_URL}/deleteSeleccion`, {
       params: { idSeleccion: idSeleccion },
     })
   }
+
+
+
 
   /* async seleccionesCrearJugador() {
     const seleccionesJSON = await axios.get(
