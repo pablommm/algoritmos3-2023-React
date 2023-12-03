@@ -41,7 +41,7 @@ class SeleccionService {
   } */
 
   async create(seleccion) {
-    return axios.post(`${REST_SERVER_URL}/crearSeleccion`, seleccion)
+    return axios.post(`${REST_SERVER_URL}/nuevaSeleccion`, seleccion)
   }
 }
 
