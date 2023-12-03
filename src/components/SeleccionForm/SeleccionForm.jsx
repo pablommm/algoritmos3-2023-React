@@ -12,6 +12,7 @@ function SeleccionForm({ setTitulo }) {
 
   const[confederaciones,setConfederaciones] = useState([])
   const[seleccion,setSelecion] = useState(new Seleccion())
+  const [errorMessage, setErrorMessage] = useState('')
 
   const actualizar = (referencia, valor) => {
     seleccion[referencia] = valor
@@ -32,6 +33,16 @@ function SeleccionForm({ setTitulo }) {
     traerConfederaciones()
   })
 
+  const create = async () => {
+    try {
+      await seleccionService.create(seleccion)
+      history.back()
+      console.log('pepe')
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
+  }
+
   return (
     <div className="main-container">
       <div className="sub-main-container form-container">
@@ -40,13 +51,14 @@ function SeleccionForm({ setTitulo }) {
             <label htmlFor="pais">Pais:</label>
             <input
               onChange={(event) => {
-                actualizar("nombre_seleccion", event.target.value)
+                actualizar("pais", event.target.value)
               }}
               value={seleccion.pais}            
               type="text"
-              name="nombre_seleccion"
+              name="pais"
               required
             />
+            <span>{seleccion.pais}</span>
             <label htmlFor="confederacion">Confederación:</label>
             <select
               className="select"
@@ -59,21 +71,15 @@ function SeleccionForm({ setTitulo }) {
                   {confederacion}
                 </option>
               ))}
-             {/*  <option value="CONMEBOL">CONMEBOL</option>
-              <option value="UEFA">UEFA</option>
-              <option value="CAF">CAF</option>
-              <option value="AFC">AFC</option>
-              <option value="CONCACAF">CONCACAF</option>
-              <option value="OFC">OFC</option> */}
+            
             </select>
              <span>{seleccion.confederacion}</span> 
-
 
             <label htmlFor="copas_mundo">Cantidad de Copas del Mundo:</label>
             <input type="number" name="copas_mundo" required min="0" />
             <div className="buttonContainer">
               <button className="secondary-button" onClick={() => history.back()}>Volver</button>
-              <button className="primary-button">Guardar</button>
+              <button className="primary-button" onClick={create}>Guardar</button>
             </div>
           </form>
         </div>

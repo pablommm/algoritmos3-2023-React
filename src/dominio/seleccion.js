@@ -15,3 +15,15 @@ export class Seleccion {
     return result
   }
 }
+
+export class Confederacion{
+  constructor(){
+    this.name=''
+  }
+
+ static fromJson(confederacionesJSON) {
+    const result = Object.assign(new Confederacion(), confederacionesJSON)
+    return result
+  }
+
+}

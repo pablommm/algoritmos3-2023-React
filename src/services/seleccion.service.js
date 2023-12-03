@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { REST_SERVER_URL } from './configuration.js'
-import { Seleccion } from '../dominio/seleccion.js'
+import { Confederacion, Seleccion } from '../dominio/seleccion.js'
 
 class SeleccionService {
   async allInstances(campoDeBusqueda) {
@@ -13,12 +13,13 @@ class SeleccionService {
     return selecciones
   }
 
-/*   async getConfederaciones(){
+   async getConfederaciones(){
     const confederacionesJSON = await axios.get(`${REST_SERVER_URL}/confederaciones`)
-    const confederaciones = confederacionesJSON.data.map((confederacionesJSON)
-    => 
-    )
-  } */
+
+    const confederaciones = confederacionesJSON.data
+    
+    return confederaciones
+  }  
 
   async delete(idSeleccion) {
     await axios.delete(`${REST_SERVER_URL}/deleteSeleccion`, {
