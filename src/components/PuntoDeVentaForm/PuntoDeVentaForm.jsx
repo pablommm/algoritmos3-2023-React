@@ -31,7 +31,7 @@ function PuntoDeVentaForm({ setTitulo }) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
-    
+
 
   useEffect(() => {
     setTitulo('Nuevo Punto De Venta')
@@ -52,33 +52,91 @@ function PuntoDeVentaForm({ setTitulo }) {
       <div className="formulario">
         <form action="p" method="POST">
           <label htmlFor="nombre">Nombre del Punto de Venta:</label>
-          <input type="text" name="nombre" required />
+          <input
+            onChange={(event) => {
+              actualizar('nombre', event.target.value)
+            }}
+            value={puntoDeVenta.nombre}
+            type="text"
+            name="nombre"
+            required />
 
           <label htmlFor="direccion">Dirección:</label>
-          <input type="text" name="direccion" required />
+          <input
+            onChange={(event) => {
+              actualizar('direccion', event.target.value)
+            }}
+            value={puntoDeVenta.direccion}
+            type="text"
+            name="direccion"
+            required />
 
           <label htmlFor="coordenada_x">Coordenada X:</label>
-          <input type="number" name="coordenada_x" step="any" required />
+          <input
+            onChange={(event) => {
+              actualizar('coordenada_x', event.target.value)
+            }}
+            value={puntoDeVenta.coordenada_x}
+            type="number"
+            name="coordenada_x"
+            step="any"
+            required />
 
           <label htmlFor="coordenada_y">Coordenada Y:</label>
-          <input type="number" name="coordenada_y" step="any" required />
+          <input
+            onChange={(event) => {
+              actualizar('coordenada_y', event.target.value)
+            }}
+            value={puntoDeVenta.coordenada_y}
+            type="number"
+            name="coordenada_y"
+            step="any"
+            required />
 
           <label htmlFor="sobres_disponibles">Sobres Disponibles:</label>
-          <input type="number" name="sobres_disponibles" required min="0" />
+          <input
+            onChange={(event) => {
+              actualizar('sobres_disponibles', event.target.value)
+            }}
+            value={puntoDeVenta.sobres_disponibles}
+            type="number"
+            name="sobres_disponibles"
+            required
+            min="0" />
 
           <label htmlFor="pedidos_pendientes">Pedidos Pendientes:</label>
-          <input type="number" name="pedidos_pendientes" required min="0" />
+          <input
+            onChange={(event) => {
+              actualizar('pedidos_pendientes', event.target.value)
+            }}
+            value={puntoDeVenta.pedidos_pendientes}
+            type="number"
+            name="pedidos_pendientes"
+            required
+            min="0" />
 
           <label htmlFor="tipo_negocio">Tipo de Negocio:</label>
-          <select name="tipo_negocio" className="select">
-            <option value="Kiosko">Kiosko</option>
-            <option value="Supermercado">Supermercado</option>
+          <select 
+            name="tipo_negocio"
+            className="select"
+            value={puntoDeVenta.tipo}
+            onChange={(event) => {
+              actualizar('tipo_negocio',event.target.value)
+            }}
+            >
+              {puntoDeVenta.map((ptoDeVta) =>(
+                <option key={ptoDeVta.tipo} value={ptoDeVta.tipo}>
+                  {ptoDeVta.tipo}
+                </option>
+              ))}
+            {/* <option value="Kiosko">Kiosko</option>
+            <option value="Supermercado">Supermercado</option> */}
           </select>
           <div className="buttonConteiner">
             <button className="secondary-button" onClick={() => history.back()}>
               Volver
             </button>
-            <button className="primary-button">Guardar</button>
+            <button className="primary-button" onClick={create}>Guardar</button>
           </div>
         </form>
       </div>
