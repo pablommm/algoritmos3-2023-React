@@ -10,8 +10,8 @@ import { seleccionService } from '../../services/seleccion.service'
 
 function SeleccionForm({ setTitulo }) {
 
-  const[confederaciones,setConfederaciones] = useState([])
-  const[seleccion,setSelecion] = useState(new Seleccion())
+  const [confederaciones, setConfederaciones] = useState([])
+  const [seleccion, setSelecion] = useState(new Seleccion())
   const [errorMessage, setErrorMessage] = useState('')
 
   const actualizar = (referencia, valor) => {
@@ -20,15 +20,15 @@ function SeleccionForm({ setTitulo }) {
   }
 
   const traerConfederaciones = async () => {
-    try{
+    try {
       const confederaciones = await seleccionService.getConfederaciones()
       setConfederaciones(confederaciones)
-    }catch (error){
+    } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
 
-  useOnInit(() => { 
+  useOnInit(() => {
     setTitulo("Nueva Seleccion")
     traerConfederaciones()
   })
@@ -53,7 +53,7 @@ function SeleccionForm({ setTitulo }) {
               onChange={(event) => {
                 actualizar("pais", event.target.value)
               }}
-              value={seleccion.pais}            
+              value={seleccion.pais}
               type="text"
               name="pais"
               required
@@ -64,19 +64,28 @@ function SeleccionForm({ setTitulo }) {
               className="select"
               name="confederacion"
               value={seleccion.confederacion}
-              onChange={(event =>{actualizar('confederacion', event.target.value)})}
+              onChange={(event => { actualizar('confederacion', event.target.value) })}
             >
               {confederaciones.map((confederacion) => (
                 <option key={confederacion} value={confederacion}>
                   {confederacion}
                 </option>
               ))}
-            
-            </select>
-             <span>{seleccion.confederacion}</span> 
 
-            <label htmlFor="copas_mundo">Cantidad de Copas del Mundo:</label>
-            <input type="number" name="copas_mundo" required min="0" />
+            </select>
+            <span>{seleccion.confederacion}</span>
+
+            <label htmlFor="copasDelMundo">Cantidad de Copas del Mundo:</label>
+            <input
+              onChange={(event) => {
+                actualizar('copasDelMundo', event.target.value)
+              }}
+              value={seleccion.copasDelMundo}
+              type="number"
+              name="copasDelMundo"
+              required min="0" />
+              <span>{seleccion.copasDelMundo}</span>
+
             <div className="buttonContainer">
               <button className="secondary-button" onClick={() => history.back()}>Volver</button>
               <button className="primary-button" onClick={create}>Guardar</button>
