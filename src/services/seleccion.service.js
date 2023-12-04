@@ -27,22 +27,22 @@ class SeleccionService {
     })
   }
 
-
-
-
-  /* async seleccionesCrearJugador() {
-    const seleccionesJSON = await axios.get(
-      `${REST_SERVER_URL}/selecciones/createJugador`,
-    )
-    const selecciones = seleccionesJSON.data.map((seleccionJSON) =>
-      Seleccion.fromJson(seleccionJSON),
-    )
-    return selecciones
-  } */
-
   async create(seleccion) {
     return axios.post(`${REST_SERVER_URL}/nuevaSeleccion`, seleccion)
   }
+
+  async getById(id) {
+    const seleccionJSON = await axios.get(
+      `${REST_SERVER_URL}/editarSeleccion/${id}`,
+    )
+    const seleccion = Seleccion.fromJson(seleccionJSON.data)
+    return seleccion
+  }
+
+  async update(seleccion) {
+    return axios.put(`${REST_SERVER_URL}/updateSeleccion`, seleccion)
+  }
+
 }
 
 export const seleccionService = new SeleccionService()

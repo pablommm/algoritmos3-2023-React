@@ -32,6 +32,18 @@ class JugadorService {
   async create(jugador) {
     return axios.post(`${REST_SERVER_URL}/crearJugador`, jugador)
   }
+
+  async getById(id) {
+    const jugadorJSON = await axios.get(
+      `${REST_SERVER_URL}/editarJugador/${id}`,
+    )
+    const jugador = Jugador.fromJson(jugadorJSON.data)
+    return jugador
+  }
+
+  async update(jugador) {
+    return axios.put(`${REST_SERVER_URL}/updateJugador`, jugador)
+  }
 }
 
 export const jugadorService = new JugadorService()

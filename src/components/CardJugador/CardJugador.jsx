@@ -19,7 +19,7 @@ function CardJugador({ item }) {
           </div>
           <div className="elemento3">
             <i className="fa-regular fa-flag"></i>
-            {item.pais}
+            {item.seleccion.pais}
           </div>
         </div>
         <div className="segundaFila">

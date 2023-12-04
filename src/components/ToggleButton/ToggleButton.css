@@ -25,9 +25,9 @@
 
 .toggle-container {
   position: fixed;
-  bottom: 10rem; 
+  bottom: 10rem;
+  margin-right: 50rem;
 }
-
 
 .toggle-span:before {
   position: absolute;

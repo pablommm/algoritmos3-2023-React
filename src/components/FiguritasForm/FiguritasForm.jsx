@@ -30,9 +30,8 @@ function FiguritasForm({ setTitulo }) {
   const traerFigurita = async () => {
     try {
       const figurita = await figuritaService.getById(id)
-      /* console.log(figurita) */
       setFigurita(figurita)
-    } catch {
+    } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
@@ -49,13 +48,12 @@ function FiguritasForm({ setTitulo }) {
   const actualizar = (referencia, valor) => {
     figurita[referencia] = valor
     setFigurita({ ...figurita })
-    /* console.log(figurita) */
   }
 
   const create = async () => {
     try {
       await figuritaService.create(figurita)
-      history.back()
+      navigate(`/plantilla/figuritas`)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
@@ -64,7 +62,7 @@ function FiguritasForm({ setTitulo }) {
   const guardar = async () => {
     try {
       await figuritaService.update(figurita)
-      history.back()
+      navigate(`/plantilla/figuritas`)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
@@ -85,7 +83,6 @@ function FiguritasForm({ setTitulo }) {
     if (editar) {
       setTitulo('Editar Figurita')
       traerFigurita()
-      /* console.log(figurita) */
     } else {
       setTitulo('Nueva Figurita')
     }
@@ -182,7 +179,6 @@ function FiguritasForm({ setTitulo }) {
                   <option value="ALTA">ALTA</option>
                 </select>
 
-                {/* <span>On Fire: {figurita.onFire ? 'true' : 'false'}</span> */}
                 <label htmlFor="url_imagen">URL de la Imagen:</label>
                 <input
                   onChange={(event) => {
