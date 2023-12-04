@@ -24,4 +24,14 @@ describe('Login', () => {
 
         expect(loginElement).toBeInTheDocument()
     })
+
+    it('test de renderizado de placeholder', () => {
+        render(
+            <MemoryRouter>
+                <Login />
+            </MemoryRouter>
+        )
+        expect(screen.getByRole('textbox', { name: 'Usuario' })).toBeInTheDocument()
+        expect(screen.getByPlaceholderText('Usuario')).toBeInTheDocument()
+    })
 })
