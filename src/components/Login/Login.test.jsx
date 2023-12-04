@@ -14,14 +14,14 @@ describe('Login', () => {
        }) */
 
 
-    it('test de renderizado de login', async () => {
+    it('test de renderizado de login', () => {
         render(
             <MemoryRouter>
                 <Login />
             </MemoryRouter>
         )
-        const loginElement = getByText("WorldCApp")
+        const loginElement = screen.getByText(/WorldCApp/i)
 
-        expect (loginElement).toBeInTheDocument()
+        expect(loginElement).toBeInTheDocument()
     })
 })
