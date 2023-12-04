@@ -1,6 +1,9 @@
 import './Card.css'
+import { useNavigate } from 'react-router-dom'
 
-export const Card = ({ children, item, deleteCard, icon }) => {
+export const Card = ({ children, item, deleteCard, icon, ruta }) => {
+  const navigate = useNavigate()
+
   const handleClick = (event) => {
     event.preventDefault()
     deleteCard(item.id)
@@ -8,7 +11,10 @@ export const Card = ({ children, item, deleteCard, icon }) => {
 
   return (
     <>
-      <div className="card">
+      <div
+        className="card"
+        onClick={() => navigate(`/plantilla/${ruta}/editar/${item.id}`)}
+      >
         <div className="parteSuperior">
           <div className="jugadorIcon">
             <i className={`fa-solid ${icon}`}></i>

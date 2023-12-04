@@ -22,6 +22,15 @@ class FiguritaService {
   async create(figurita) {
     return axios.post(`${REST_SERVER_URL}/crearFigurita`, figurita)
   }
+
+  async getById(id) {
+    const figuritaJSON = await axios.get(
+      `${REST_SERVER_URL}/editarFigurita/${id}`
+    )
+    const figurita = Figurita.fromJson(figuritaJSON.data)
+    /* console.log(figurita) */
+    return figurita
+  }
 }
 
 export const figuritaService = new FiguritaService()

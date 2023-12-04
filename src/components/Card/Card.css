@@ -1,24 +1,25 @@
 .card {
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius);
-    font-size: 1.5rem;
-    /* height: 30%; */
-    width: 80%;
-    margin: 3em;
-    border: 0.2em solid var(--fourth-color);
-    overflow: visible;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  font-size: 1.5rem;
+  /* height: 30%; */
+  width: 80%;
+  margin: 3em;
+  border: 0.2em solid var(--fourth-color);
+  overflow: visible;
+  cursor: pointer;
 }
 
-.nombre{
-    font-size: 1.8em;
+.nombre {
+  font-size: 1.8em;
 }
-.parteSuperior{
-    margin:0.2em;
-    padding: 1em;
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    gap: 0.1em;
-    background-color: #b0736f;
-    text-align: center;
-    border-bottom: 2px solid var(--text-color);
+.parteSuperior {
+  margin: 0.2em;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  gap: 0.1em;
+  background-color: #b0736f;
+  text-align: center;
+  border-bottom: 2px solid var(--text-color);
 }

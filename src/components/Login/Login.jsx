@@ -32,7 +32,9 @@ export const Login = () => {
     <>
       <div className="main-container">
         <div className="sub-main-container">
-          <span className="login-title" data-testid="tituloLogin" >WorldCApp</span>
+          <span className="login-title" data-testid="tituloLogin">
+            WorldCApp
+          </span>
           <div className="login-item">
             <div className="login-info">
               <i className="fa-solid fa-user login-icon"></i>

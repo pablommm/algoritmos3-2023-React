@@ -9,7 +9,6 @@ import { Seleccion } from '../../dominio/seleccion'
 import { seleccionService } from '../../services/seleccion.service'
 
 function SeleccionForm({ setTitulo }) {
-
   const [confederaciones, setConfederaciones] = useState([])
   const [seleccion, setSelecion] = useState(new Seleccion())
   const [errorMessage, setErrorMessage] = useState('')
@@ -29,7 +28,7 @@ function SeleccionForm({ setTitulo }) {
   }
 
   useOnInit(() => {
-    setTitulo("Nueva Seleccion")
+    setTitulo('Nueva Seleccion')
     traerConfederaciones()
   })
 
@@ -51,7 +50,7 @@ function SeleccionForm({ setTitulo }) {
             <label htmlFor="pais">Pais:</label>
             <input
               onChange={(event) => {
-                actualizar("pais", event.target.value)
+                actualizar('pais', event.target.value)
               }}
               value={seleccion.pais}
               type="text"
@@ -64,14 +63,15 @@ function SeleccionForm({ setTitulo }) {
               className="select"
               name="confederacion"
               value={seleccion.confederacion}
-              onChange={(event => { actualizar('confederacion', event.target.value) })}
+              onChange={(event) => {
+                actualizar('confederacion', event.target.value)
+              }}
             >
               {confederaciones.map((confederacion) => (
                 <option key={confederacion} value={confederacion}>
                   {confederacion}
                 </option>
               ))}
-
             </select>
             <span>{seleccion.confederacion}</span>
 
@@ -83,12 +83,21 @@ function SeleccionForm({ setTitulo }) {
               value={seleccion.copasDelMundo}
               type="number"
               name="copasDelMundo"
-              required min="0" />
-              <span>{seleccion.copasDelMundo}</span>
+              required
+              min="0"
+            />
+            <span>{seleccion.copasDelMundo}</span>
 
             <div className="buttonContainer">
-              <button className="secondary-button" onClick={() => history.back()}>Volver</button>
-              <button className="primary-button" onClick={create}>Guardar</button>
+              <button
+                className="secondary-button"
+                onClick={() => history.back()}
+              >
+                Volver
+              </button>
+              <button className="primary-button" onClick={create}>
+                Guardar
+              </button>
             </div>
           </form>
         </div>

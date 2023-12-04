@@ -104,6 +104,11 @@ export default function App() {
             path="figuritas-form"
             element={<FiguritasForm setTitulo={setTitulo} />}
           />
+
+          <Route
+            path="figuritas-form/editar/:id"
+            element={<FiguritasForm setTitulo={setTitulo} />}
+          />
         </Route>
 
         <Route path="*" element={<h1>404</h1>} />
