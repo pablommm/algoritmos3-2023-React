@@ -58,7 +58,6 @@ function Buscador({ setTitulo, data }) {
             icon={data.icon}
             ruta={data.navegacion}
             deleteCard={deleteCard}
-            onClick={() => console.log('XD')}
           >
             {data.component(item)}
           </Card>

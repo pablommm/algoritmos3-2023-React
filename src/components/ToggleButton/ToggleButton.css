@@ -23,6 +23,12 @@
   border-radius: 30px;
 }
 
+.toggle-container {
+  position: fixed;
+  bottom: 10rem; 
+}
+
+
 .toggle-span:before {
   position: absolute;
   content: '';

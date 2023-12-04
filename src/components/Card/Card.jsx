@@ -11,10 +11,7 @@ export const Card = ({ children, item, deleteCard, icon, ruta }) => {
 
   return (
     <>
-      <div
-        className="card"
-        onClick={() => navigate(`/plantilla/${ruta}/editar/${item.id}`)}
-      >
+      <div className="card">
         <div className="parteSuperior">
           <div className="jugadorIcon">
             <i className={`fa-solid ${icon}`}></i>
@@ -25,7 +22,10 @@ export const Card = ({ children, item, deleteCard, icon, ruta }) => {
               <i className="fa-solid fa-trash" onClick={handleClick}></i>
             </div>
             <div>
-              <i className="fa-solid fa-pencil"></i>
+              <i
+                className="fa-solid fa-pencil"
+                onClick={() => navigate(`/plantilla/${ruta}/editar/${item.id}`)}
+              ></i>
             </div>
           </div>
         </div>

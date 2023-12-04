@@ -25,11 +25,14 @@ class FiguritaService {
 
   async getById(id) {
     const figuritaJSON = await axios.get(
-      `${REST_SERVER_URL}/editarFigurita/${id}`
+      `${REST_SERVER_URL}/editarFigurita/${id}`,
     )
     const figurita = Figurita.fromJson(figuritaJSON.data)
-    /* console.log(figurita) */
     return figurita
+  }
+
+  async update(figurita) {
+    return axios.put(`${REST_SERVER_URL}/updateFigurita`, figurita)
   }
 }
 

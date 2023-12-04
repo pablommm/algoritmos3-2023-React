@@ -21,7 +21,7 @@ function FiguritasForm({ setTitulo }) {
   const navigate = useNavigate()
   const { id } = useParams()
   const editar = location.pathname.includes('editar')
-  const [visualizar, setVisualizar] = useState([])
+  const [visualizar, setVisualizar] = useState(false)
   const [jugadores, setJugadores] = useState([])
   const [figurita, setFigurita] = useState(new Figurita())
   const [errorMessage, setErrorMessage] = useState('')
@@ -63,7 +63,7 @@ function FiguritasForm({ setTitulo }) {
 
   const guardar = async () => {
     try {
-      await figuritaService.create(figurita)
+      await figuritaService.update(figurita)
       history.back()
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
@@ -72,6 +72,12 @@ function FiguritasForm({ setTitulo }) {
 
   const logState = (state) => {
     console.log('Toggled:', state)
+  }
+
+  const isOnFireLabel = () => {
+    if (!figurita.onFire) {
+      return 'line-through'
+    }
   }
 
   useEffect(() => {
@@ -90,10 +96,39 @@ function FiguritasForm({ setTitulo }) {
       <main className="main-container">
         <section className="sub-main-container form-container">
           {visualizar ? (
-            <p>This content will be rendered if the condition is true.</p>
+            <div className="visualizacion">
+              <div className="visualizacion-item">
+                <label htmlFor="numero">Número:</label>
+                <span>{figurita.numero}</span>
+              </div>
+              <div className="visualizacion-item">
+                <label htmlFor="jugador">Jugador:</label>
+                <span>{figurita.titulo}</span>
+              </div>
+              <div className="visualizacion-item">
+                <span style={{ textDecoration: isOnFireLabel() }}>On Fire</span>
+              </div>
+              <div className="visualizacion-item">
+                <label htmlFor="nivelDeImpresion">Nivel De Impresión:</label>
+                <span>{figurita.nivelDeImpresion}</span>
+              </div>
+              <div className="visualizacion-item-imagen">
+                <img
+                  className="visualizacion-imagen"
+                  src={figurita.imagen}
+                  alt="Jugador"
+                />
+              </div>
+              <button
+                className="secondary-button"
+                onClick={() => navigate(`/plantilla/figuritas`)}
+              >
+                Volver
+              </button>
+            </div>
           ) : (
             <div className="formulario">
-              <form /* action="/p" method="POST" */>
+              <form>
                 <label htmlFor="numero">Número:</label>
                 <input
                   onChange={(event) => {
@@ -177,7 +212,16 @@ function FiguritasForm({ setTitulo }) {
             </div>
           )}
         </section>
-        <Toggle label="Toggle me" toggled={visualizar} onClick={logState} />
+        {editar ? (
+          <Toggle
+            label="Toggle me"
+            toggled={visualizar}
+            onClick={logState}
+            setVisualizar={setVisualizar}
+          />
+        ) : (
+          <></>
+        )}
         <Snackbar
           open={snackbarOpen}
           variant="error"
