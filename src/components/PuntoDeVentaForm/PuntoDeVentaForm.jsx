@@ -11,6 +11,8 @@ import { PuntoDeVenta } from '../../dominio/puntoDeVenta'
 import { puntoDeVentaService } from '../../services/puntoDeVenta.service'
 import { Snackbar, Alert } from '@mui/material'
 import { useState, useEffect } from 'react'
+import { Toggle } from '../ToggleButton/ToggleButton'
+
 
 
 function PuntoDeVentaForm({ setTitulo }) {
@@ -18,14 +20,30 @@ function PuntoDeVentaForm({ setTitulo }) {
   const [puntoDeVenta, setPuntoDeVenta] = useState(new PuntoDeVenta())
   const [errorMessage, setErrorMessage] = useState('')
   const snackbarOpen = !!errorMessage
+  const editar = location.pathname.includes('editar')
+  const [visualizar, setVisualizar] = useState(false)
 
   const actualizar = (referencia, valor) => {
     puntoDeVenta[referencia] = valor
     setPuntoDeVenta({ ...puntoDeVenta })
   }
-  useEffect(() => {
+  const logState = (state) => {
+    console.log('Toggled:', state)
+  }
+
+  /*useEffect(() => {
     setTitulo('Nuevo Punto De Venta')
     traerPuntosDeVenta()
+  }, [location.pathname])
+*/
+  useEffect(() => {
+    traerPuntosDeVenta()
+    if (editar) {
+      setTitulo('Editar Punto De Venta')
+      traerPuntosDeVenta()
+    } else {
+      setTitulo('Nuevo Punto De Venta')
+    }
   }, [location.pathname])
 
   const traerPuntosDeVenta = async () => {
@@ -44,11 +62,53 @@ function PuntoDeVentaForm({ setTitulo }) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
+  const guardar = async () => {
+    try {
+      await puntoDeVentaService.update(puntoDeVenta)
+      navigate(`/plantilla/puntoVenta-form`)
+    } catch (error) {
+      mostrarMensajeError(error, setErrorMessage)
+    }
+  }
+
 
   return (
     <div className="sub-main-container form-container">
-      <div className="formulario">
-        <form action="p" method="POST">
+        {visualizar ? (
+          <div className="visualizacion">
+            <><div className="visualizacion-item">
+              <label htmlFor="nombre">Nombre Punto:</label>
+              <span>{puntoDeVenta.nombre}</span>
+            </div><div className="visualizacion-item">
+                <label htmlFor="direccion">direccion:</label>
+                <span>{puntoDeVenta.direccion}</span>
+              </div><div className="visualizacion-item">
+                <label htmlFor="coordenada_X">coordenada X</label>
+                <span>{puntoDeVenta.coordenada_X}</span>
+              </div><div className="visualizacion-item">
+                <label htmlFor="altura">coordenada_y:</label>
+                <span>{puntoDeVenta.coordenada_y}</span>
+              </div><div className="visualizacion-item">
+                <label htmlFor="sobres_dispobiles">sobres_dispobiles:</label>
+                <span>{puntoDeVenta.sobres_dispobiles}</span>
+              </div><div className="visualizacion-item">
+                <label htmlFor="pedidos_pendientes">Nro de Camiseta:</label>
+                <span>{puntoDeVenta.pedidos_pendientes}</span>
+              </div><div className="visualizacion-item">
+                <label htmlFor="seleccion">Tipo de negocio:</label>
+                <span>
+                  {puntoDeVenta.find((it) => it.id == puntoDeVenta.tipo_negocio.id)}
+                </span>
+              </div><button
+                className="secondary-button"
+                onClick={() => navigate(`/plantilla/puntoDeVentaes`)}
+              >
+                Volver
+              </button></>
+          </div>
+        ) : (
+          <div className="formulario">
+          <form action="p" method="POST">
           <label htmlFor="nombre">Nombre del Punto de Venta:</label>
           <input
             onChange={(event) => {
@@ -134,10 +194,21 @@ function PuntoDeVentaForm({ setTitulo }) {
             <button className="secondary-button" onClick={() => history.back()}>
               Volver
             </button>
-            <button className="primary-button" onClick={create}>Guardar</button>
+            <button className="primary-button" onClick={editar ? guardar : create}>Guardar</button>
           </div>
         </form>
       </div>
+      )}
+      {editar ? (
+        <Toggle
+          label="Toggle me"
+          toggled={visualizar}
+          onClick={logState}
+          setVisualizar={setVisualizar}
+        />
+      ) : (
+        <></>
+      )}
       <Snackbar
         open={snackbarOpen}
         variant="error"
