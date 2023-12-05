@@ -37,6 +37,7 @@ class PuntoDeVentaService {
       `${REST_SERVER_URL}/editarPuntoDeVentas/${id}`,
     )
     const puntoDeVenta = PuntoDeVenta.fromJson(puntoDeVentaJSON.data)
+    console.log(puntoDeVenta)
     return puntoDeVenta
   }
 

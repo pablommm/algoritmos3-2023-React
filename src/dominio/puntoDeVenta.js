@@ -3,11 +3,12 @@ export class PuntoDeVenta {
     this.id = 0
     this.nombre = ''
     this.direccion = ''
-    this.ubicacionGeograficaX = 0
-    this.ubicacionGeograficaY = 0
+    /* this.ubicacionGeograficaX = 0
+    this.ubicacionGeograficaY = 0 */
+    this.ubicacionGeografica = new UbicacionGeografica()
     this.stockDeSobres = 0
     this.tipo = ''
-    this.pedidosPendientes = 0
+    this.cantidadPedidosPendientes = 0
   }
 
   get titulo() {
@@ -17,5 +18,12 @@ export class PuntoDeVenta {
   static fromJson(puntoDeVentaJSON) {
     const result = Object.assign(new PuntoDeVenta(), puntoDeVentaJSON)
     return result
+  }
+}
+
+class UbicacionGeografica {
+  constructor() {
+    this.x = 0
+    this.y = 0
   }
 }
