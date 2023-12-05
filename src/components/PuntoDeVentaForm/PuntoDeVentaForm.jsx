@@ -96,9 +96,9 @@ function PuntoDeVentaForm({ setTitulo }) {
                 <span>{puntoDeVenta.pedidos_pendientes}</span>
               </div><div className="visualizacion-item">
                 <label htmlFor="seleccion">Tipo de negocio:</label>
-                <span>
+                {/* <span>
                   {puntoDeVenta.find((it) => it.id == puntoDeVenta.tipo_negocio.id)}
-                </span>
+                </span> */}
               </div><button
                 className="secondary-button"
                 onClick={() => navigate(`/plantilla/puntoDeVentaes`)}
