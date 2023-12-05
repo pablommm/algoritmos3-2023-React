@@ -3,15 +3,27 @@ import { Login } from "./Login"
 import { expect } from 'vitest'
 
 describe('Login', () => {
-    /*    it('Cuando se loguea un usuario existente, se navega a home', async () => {
-           //Arrange       
-           render(<Login/>)
-           const botonLogin = screen.getByTestID('login')
-           //Act
+       it('Cuando se loguea un usuario existente, se navega a home', async () => {
+                 
+        render(
+            <MemoryRouter>
+                <Login />
+            </MemoryRouter>
+        )
+
+        const usernameInput = screen.getByPlaceholderText('Usuario')
+        const passwordInput = screen.getByPlaceholderText('Contraseña')
+        //const loginButton = screen.getByRole('button', { name: 'Ingresar' })
+
+        await userEvent.type(usernameInput, 'JMartinez')
+        await userEvent.type(passwordInput, '1234')
+        
+        const botonLogin = screen.getByTestID('login')
+           
            act(() => { botonLogin.click()})
-           //Assert
+           
            expect(navigateMock).toHaveBeenCalledWith('/plantilla/home')
-       }) */
+       }) 
 
 
     it('test de renderizado de login', () => {

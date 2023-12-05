@@ -1,5 +1,4 @@
 //import React from "react"
-
 import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/button.css'
 import '../../../Maquetado/CSS/input.css'
@@ -44,7 +43,7 @@ function PuntoDeVentaForm({ setTitulo }) {
   const create = async () => {
     try {
       await puntoDeVentaService.create(puntoDeVenta)
-      history.back()
+      navigate(`/plantilla/puntosDeVenta`)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
@@ -53,7 +52,7 @@ function PuntoDeVentaForm({ setTitulo }) {
   const guardar = async () => {
     try {
       await puntoDeVentaService.update(puntoDeVenta)
-      navigate(`/plantilla/puntoVenta-form`)
+      navigate(`/plantilla/puntosDeVenta`)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
     }
@@ -86,11 +85,11 @@ function PuntoDeVentaForm({ setTitulo }) {
             </div>
             <div className="visualizacion-item">
               <label htmlFor="ubicacionGeograficaX">Coordenada X</label>
-              <span>{puntoDeVenta.ubicacionGeograficaX}</span>
+              <span>{puntoDeVenta.ubicacionGeografica.x}</span>
             </div>
             <div className="visualizacion-item">
               <label htmlFor="ubicacionGeograficaY">Coordenada Y:</label>
-              <span>{puntoDeVenta.ubicacionGeograficaY}</span>
+              <span>{puntoDeVenta.ubicacionGeografica.y}</span>
             </div>
             <div className="visualizacion-item">
               <label htmlFor="stockDeSbores">Sobres dispobiles:</label>
@@ -98,15 +97,16 @@ function PuntoDeVentaForm({ setTitulo }) {
             </div>
             <div className="visualizacion-item">
               <label htmlFor="pedidosPendientes">Pedidos pendientes:</label>
-              <span>{puntoDeVenta.pedidosPendientes}</span>
+              <span>{puntoDeVenta.cantidadPedidosPendientes}</span>
             </div>
             <div className="visualizacion-item">
-              <label htmlFor="seleccion">Tipo de negocio:</label>
-              {/* <span>
-                  {puntoDeVenta.find((it) => it.id == puntoDeVenta.tipo_negocio.id)}
-                </span> */}
+              <label htmlFor="tipo">Tipo de negocio:</label>
+              <span>{puntoDeVenta.tipo}</span>
             </div>
-            <button className="secondary-button" onClick={() => history.back()}>
+            <button
+              className="secondary-button"
+              onClick={() => navigate(`/plantilla/puntosDeVenta`)}
+            >
               Volver
             </button>
           </>
@@ -202,7 +202,7 @@ function PuntoDeVentaForm({ setTitulo }) {
             <div className="buttonConteiner">
               <button
                 className="secondary-button"
-                onClick={() => history.back()}
+                onClick={() => navigate(`/plantilla/puntosDeVenta`)}
               >
                 Volver
               </button>
