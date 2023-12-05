@@ -32,6 +32,20 @@ class PuntoDeVentaService {
     return axios.put(`${REST_SERVER_URL}/updatePuntoDeVenta`, puntoDeVenta)
   }
 
+  async getById(id) {
+    const puntoDeVentaJSON = await axios.get(
+      `${REST_SERVER_URL}/editarPuntoDeVentas/${id}`,
+    )
+    const puntoDeVenta = PuntoDeVenta.fromJson(puntoDeVentaJSON.data)
+    return puntoDeVenta
+  }
+
+ /*  async update(puntoDeVenta) {
+    return axios.put(`${REST_SERVER_URL}/puntoVenta-form/editar`, puntoDeVenta)
+  }
+ */
+
+
 }
 
 export const puntoDeVentaService = new PuntoDeVentaService()
