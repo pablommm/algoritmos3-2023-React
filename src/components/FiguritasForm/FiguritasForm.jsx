@@ -38,7 +38,7 @@ function FiguritasForm({ setTitulo }) {
 
   const traerJugadores = async () => {
     try {
-      const jugadores = await jugadorService.jugadoresCrearFigurita()
+      const jugadores = await jugadorService.allInstances()
       setJugadores(jugadores)
     } catch (error) {
       mostrarMensajeError(error, setErrorMessage)
