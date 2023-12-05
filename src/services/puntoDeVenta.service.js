@@ -45,7 +45,7 @@ class PuntoDeVentaService {
   }
  */
 
-
+  
 }
 
 export const puntoDeVentaService = new PuntoDeVentaService()

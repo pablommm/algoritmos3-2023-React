@@ -16,8 +16,9 @@ import { Toggle } from '../ToggleButton/ToggleButton'
 
 
 function PuntoDeVentaForm({ setTitulo }) {
- 
+  //const { id } = useParams()
   const location = useLocation()
+  const [unPuntoDeVenta, setunPuntoDeVenta] = useState("")
   const [puntoDeVenta, setPuntoDeVenta] = useState(new PuntoDeVenta())
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -32,8 +33,6 @@ function PuntoDeVentaForm({ setTitulo }) {
   const logState = (state) => {
     console.log('Toggled:', state)
   }
-  
-  const { id } = location.state || { id: null }
 
   /*useEffect(() => {
     setTitulo('Nuevo Punto De Venta')
@@ -43,22 +42,21 @@ function PuntoDeVentaForm({ setTitulo }) {
 
   const traerUnPuntoDeVenta = async () => {
     try {
-      const puntoDeVenta = await puntoDeVentaService.getById(id)
-      setPuntoDeVenta(puntoDeVenta)
-      console.log(puntoDeVenta)
+      const unPuntoDeVenta = await puntoDeVentaService.getById(id)
+      setunPuntoDeVenta(unPuntoDeVenta)
+      
     } catch (error) {
+      console.log(unPuntoDeVenta)
       mostrarMensajeError(error, setErrorMessage)
     }
   }
-
-
-
   const traerPuntosDeVenta = async () => {
     try {
       const puntosDeVenta = await puntoDeVentaService.allInstances()
       
       setPuntoDeVenta(puntosDeVenta)
     } catch (error) {
+      console.log("error:" + puntosDeVenta)
       mostrarMensajeError(error, setErrorMessage)
     }
   }
@@ -95,8 +93,8 @@ function PuntoDeVentaForm({ setTitulo }) {
         <div className="visualizacion">
           <><div className="visualizacion-item">
             <label htmlFor="nombre">Nombre Punto:</label>
-            <span>{puntoDeVenta.nombre}</span>
-          {/* </div><div className="visualizacion-item">
+            <span>{unPuntoDeVenta.nombre}</span>
+           </div><div className="visualizacion-item">
               <label htmlFor="direccion">direccion:</label>
               <span>{puntoDeVenta.direccion}</span>
             </div><div className="visualizacion-item">
@@ -112,7 +110,7 @@ function PuntoDeVentaForm({ setTitulo }) {
               <label htmlFor="pedidos_pendientes">Nro de Camiseta:</label>
               <span>{puntoDeVenta.pedidos_pendientes}</span>
             </div><div className="visualizacion-item">
-              <label htmlFor="seleccion">Tipo de negocio:</label> */}
+              <label htmlFor="seleccion">Tipo de negocio:</label> 
               {/* <span>
                   {puntoDeVenta.find((it) => it.id == puntoDeVenta.tipo_negocio.id)}
                 </span> */}
