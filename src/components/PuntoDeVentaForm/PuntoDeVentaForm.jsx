@@ -20,6 +20,7 @@ function PuntoDeVentaForm({ setTitulo }) {
   const location = useLocation()
   const [puntoDeVenta, setPuntoDeVenta] = useState(new PuntoDeVenta())
   const [errorMessage, setErrorMessage] = useState('')
+
   const snackbarOpen = !!errorMessage
   const editar = location.pathname.includes('editar')
   const [visualizar, setVisualizar] = useState(false)
@@ -31,6 +32,8 @@ function PuntoDeVentaForm({ setTitulo }) {
   const logState = (state) => {
     console.log('Toggled:', state)
   }
+  
+  const { id } = location.state || { id: null }
 
   /*useEffect(() => {
     setTitulo('Nuevo Punto De Venta')
@@ -47,6 +50,8 @@ function PuntoDeVentaForm({ setTitulo }) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
+
+
 
   const traerPuntosDeVenta = async () => {
     try {
@@ -120,7 +125,7 @@ function PuntoDeVentaForm({ setTitulo }) {
         </div>
       ) : (
         <div className="formulario">
-          <form action="p" method="POST">
+          <form>
             <label htmlFor="nombre">Nombre del Punto de Venta:</label>
             <input
               onChange={(event) => {
