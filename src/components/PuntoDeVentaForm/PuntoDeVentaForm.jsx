@@ -1,12 +1,13 @@
 //import React from "react"
-
 import '../../../Maquetado/CSS/general.css'
 import '../../../Maquetado/CSS/button.css'
 import '../../../Maquetado/CSS/input.css'
 import '../../../Maquetado/CSS/form.css'
 import './PuntoDeVentaForm.css'
 /* import { useOnInit } from '../../customHooks/hooks' */
-import { useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { mostrarMensajeError } from '../../util/error-handling'
+import { useLocation,useParams } from 'react-router-dom'
 import { PuntoDeVenta } from '../../dominio/puntoDeVenta'
 import { puntoDeVentaService } from '../../services/puntoDeVenta.service'
 import { Snackbar, Alert } from '@mui/material'
@@ -16,15 +17,16 @@ import { Toggle } from '../ToggleButton/ToggleButton'
 
 
 function PuntoDeVentaForm({ setTitulo }) {
-  //const { id } = useParams()
+  const navigate = useNavigate()
+  const { id } = useParams()
   const location = useLocation()
   const [unPuntoDeVenta, setunPuntoDeVenta] = useState("")
   const [puntoDeVenta, setPuntoDeVenta] = useState(new PuntoDeVenta())
   const [errorMessage, setErrorMessage] = useState('')
-
+  const [visualizar, setVisualizar] = useState(false)
   const snackbarOpen = !!errorMessage
   const editar = location.pathname.includes('editar')
-  const [visualizar, setVisualizar] = useState(false)
+  
 
   const actualizar = (referencia, valor) => {
     puntoDeVenta[referencia] = valor
@@ -34,11 +36,6 @@ function PuntoDeVentaForm({ setTitulo }) {
     console.log('Toggled:', state)
   }
 
-  /*useEffect(() => {
-    setTitulo('Nuevo Punto De Venta')
-    traerPuntosDeVenta()
-  }, [location.pathname])
-*/
 
   const traerUnPuntoDeVenta = async () => {
     try {
@@ -76,6 +73,8 @@ function PuntoDeVentaForm({ setTitulo }) {
       mostrarMensajeError(error, setErrorMessage)
     }
   }
+
+
   useEffect(() => {
     traerPuntosDeVenta()
     if (editar) {
@@ -87,6 +86,7 @@ function PuntoDeVentaForm({ setTitulo }) {
   }, [location.pathname])
 
 
+
   return (
     <div className="sub-main-container form-container">
       {visualizar ? (
@@ -96,24 +96,25 @@ function PuntoDeVentaForm({ setTitulo }) {
             <span>{unPuntoDeVenta.nombre}</span>
            </div><div className="visualizacion-item">
               <label htmlFor="direccion">direccion:</label>
-              <span>{puntoDeVenta.direccion}</span>
+              <span>{unPuntoDeVenta.direccion}</span>
             </div><div className="visualizacion-item">
               <label htmlFor="coordenada_X">coordenada X</label>
-              <span>{puntoDeVenta.coordenada_X}</span>
+              <span>{unPuntoDeVenta.ubicacionGeograficaX}</span>
             </div><div className="visualizacion-item">
               <label htmlFor="altura">coordenada_y:</label>
-              <span>{puntoDeVenta.coordenada_y}</span>
+              <span>{unPuntoDeVenta.ubicacionGeograficaY}</span>
             </div><div className="visualizacion-item">
               <label htmlFor="sobres_dispobiles">sobres_dispobiles:</label>
-              <span>{puntoDeVenta.sobres_dispobiles}</span>
+              <span>{unPuntoDeVenta.stockDeSobres}</span>
             </div><div className="visualizacion-item">
-              <label htmlFor="pedidos_pendientes">Nro de Camiseta:</label>
-              <span>{puntoDeVenta.pedidos_pendientes}</span>
+              <label htmlFor="pedidos_pendientes">pedidos_pendientes:</label>
+              <span>{unPuntoDeVenta.pedidosPendientes}</span>
             </div><div className="visualizacion-item">
               <label htmlFor="seleccion">Tipo de negocio:</label> 
-              {/* <span>
-                  {puntoDeVenta.find((it) => it.id == puntoDeVenta.tipo_negocio.id)}
-                </span> */}
+              <span>{unPuntoDeVenta.tipo}</span>
+               {/* <span>
+                  {unPuntoDeVenta.find((it) => it.id == unPuntoDeVenta.tipo_negocio.id)}
+                </span>  */}
             </div><button
               className="secondary-button"
               onClick={()  => history.back()}
@@ -129,7 +130,7 @@ function PuntoDeVentaForm({ setTitulo }) {
               onChange={(event) => {
                 actualizar('nombre', event.target.value)
               }}
-              value={puntoDeVenta.nombre}
+              value={unPuntoDeVenta.nombre}
               type="text"
               name="nombre"
               required />
@@ -139,7 +140,7 @@ function PuntoDeVentaForm({ setTitulo }) {
               onChange={(event) => {
                 actualizar('direccion', event.target.value)
               }}
-              value={puntoDeVenta.direccion}
+              value={unPuntoDeVenta.direccion}
               type="text"
               name="direccion"
               required />
@@ -149,7 +150,7 @@ function PuntoDeVentaForm({ setTitulo }) {
               onChange={(event) => {
                 actualizar('coordenada_x', event.target.value)
               }}
-              value={puntoDeVenta.coordenada_x}
+              value={unPuntoDeVenta.ubicacionGeograficaX}
               type="number"
               name="coordenada_x"
               step="any"
@@ -160,7 +161,7 @@ function PuntoDeVentaForm({ setTitulo }) {
               onChange={(event) => {
                 actualizar('coordenada_y', event.target.value)
               }}
-              value={puntoDeVenta.coordenada_y}
+              value={unPuntoDeVenta.ubicacionGeograficaY}
               type="number"
               name="coordenada_y"
               step="any"
@@ -171,7 +172,7 @@ function PuntoDeVentaForm({ setTitulo }) {
               onChange={(event) => {
                 actualizar('sobres_disponibles', event.target.value)
               }}
-              value={puntoDeVenta.sobres_disponibles}
+              value={unPuntoDeVenta.stockDeSobres}
               type="number"
               name="sobres_disponibles"
               required
@@ -182,7 +183,7 @@ function PuntoDeVentaForm({ setTitulo }) {
               onChange={(event) => {
                 actualizar('pedidos_pendientes', event.target.value)
               }}
-              value={puntoDeVenta.pedidos_pendientes}
+              value={unPuntoDeVenta.pedidosPendientes}
               type="number"
               name="pedidos_pendientes"
               required
@@ -192,7 +193,7 @@ function PuntoDeVentaForm({ setTitulo }) {
             <select
               name="tipo_negocio"
               className="select"
-              value={puntoDeVenta.tipo}
+              value={unPuntoDeVenta.tipo}
               onChange={(event) => {
                 actualizar('tipo_negocio', event.target.value)
               }}
