@@ -30,7 +30,7 @@ class PuntoDeVentaService {
   }
 
   async update(puntoDeVenta) {
-    return axios.put(`${REST_SERVER_URL}/updatePuntoDeVenta`,
+    return axios.put(`${REST_SERVER_URL}/editarPuntoDeVentas`,
      puntoDeVenta)
   }
 
