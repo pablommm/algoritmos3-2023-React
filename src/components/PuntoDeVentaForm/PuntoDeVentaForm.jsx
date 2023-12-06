@@ -195,6 +195,7 @@ function PuntoDeVentaForm({ setTitulo }) {
                 actualizar('tipo', event.target.value)
               }}
             >
+              <option value="-">-</option>
               <option value="kiosco">kiosco</option>
               <option value="supermercado">supermercado</option>
               <option value="libreria">librería</option>

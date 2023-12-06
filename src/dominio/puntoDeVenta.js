@@ -1,7 +1,7 @@
 export class PuntoDeVenta {
   constructor() {
     this.tipo 
-    this.id = null
+    this.id 
     this.nombre = ''
     this.direccion = ''
     // this.ubicacionGeograficaX = 0
