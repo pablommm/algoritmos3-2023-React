@@ -1,10 +1,11 @@
 export class PuntoDeVenta {
   constructor() {
-    this.id = 0
+    this.tipo 
+    this.id = null
     this.nombre = ''
     this.direccion = ''
-    /* this.ubicacionGeograficaX = 0
-    this.ubicacionGeograficaY = 0 */
+    // this.ubicacionGeograficaX = 0
+    // this.ubicacionGeograficaY = 0 
     this.ubicacionGeografica = new UbicacionGeografica()
     this.stockDeSobres = 0
     this.tipo = ''

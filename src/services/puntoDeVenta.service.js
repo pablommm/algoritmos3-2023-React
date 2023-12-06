@@ -25,11 +25,13 @@ class PuntoDeVentaService {
   }
  */
   async create(puntoDeVenta) {
-    return axios.post(`${REST_SERVER_URL}/crearPuntoDeVenta`, puntoDeVenta)
+    return axios.post(`${REST_SERVER_URL}/nuevoPuntoDeVentas/`,
+     puntoDeVenta)
   }
 
   async update(puntoDeVenta) {
-    return axios.put(`${REST_SERVER_URL}/updatePuntoDeVenta`, puntoDeVenta)
+    return axios.put(`${REST_SERVER_URL}/updatePuntoDeVenta`,
+     puntoDeVenta)
   }
 
   async getById(id) {
