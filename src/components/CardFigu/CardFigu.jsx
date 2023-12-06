@@ -34,6 +34,7 @@ function CardFigu({ item }) {
             <i
               className="fa-solid fa-fire-flame-curved"
               style={{ color: isOnFireIcon() }}
+              data-testid="onFireIcon"
             ></i>
             <span> </span>
             <span style={{ textDecoration: isOnFireLabel() }}>On Fire</span>
