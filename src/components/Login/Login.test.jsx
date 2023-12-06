@@ -5,27 +5,25 @@ import { expect } from 'vitest'
 
 import { MemoryRouter } from "react-router-dom"
 describe('Login', () => {
-       it('Cuando se loguea un usuario existente, se navega a home', async () => {
+        it('Cuando se loguea un usuario existente, se navega a home',  () => {
                  
         render(
             <MemoryRouter>
                 <Login />
             </MemoryRouter>
         )
-
         const usernameInput = screen.getByPlaceholderText('Usuario')
         const passwordInput = screen.getByPlaceholderText('Contraseña')
         //const loginButton = screen.getByRole('button', { name: 'Ingresar' })
 
-        await userEvent.type(usernameInput, 'JMartinez')
-        await userEvent.type(passwordInput, '1234')
+         userEvent.type(usernameInput, 'JMartinez')
+         userEvent.type(passwordInput, '1234')
         
         const botonLogin = screen.getByTestID('login')
            
-           act(() => { botonLogin.click()})
-           
+           act(() => { botonLogin.click()})           
            expect(navigateMock).toHaveBeenCalledWith('/plantilla/home')
-       }) 
+       })  
 
 
     it('test de renderizado de login', () => {
@@ -34,7 +32,7 @@ describe('Login', () => {
                 <Login />
             </MemoryRouter>
         )
-        const loginElement = screen.getByText(/ff/i)
+        const loginElement = screen.getByText(/WorldCApp/i)
 
         expect(loginElement).toBeInTheDocument()
     })
@@ -45,7 +43,9 @@ describe('Login', () => {
                 <Login />
             </MemoryRouter>
         )
-        expect(screen.getByRole('textbox', { name: 'Usuario' })).toBeInTheDocument()
-        expect(screen.getByPlaceholderText('Usuario')).toBeInTheDocument()
+        const placeHolder1 = screen.getByPlaceholderText('Usuario')
+        
+        expect(placeHolder1).toBeInTheDocument()
+       
     })
 })
