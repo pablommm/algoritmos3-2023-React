@@ -32,7 +32,7 @@ class FiguritaService {
   }
 
   async update(figurita) {
-    return axios.put(`${REST_SERVER_URL}/updateFigurita`, figurita)
+    await axios.put(`${REST_SERVER_URL}/updateFigurita`, figurita)
   }
 }
 

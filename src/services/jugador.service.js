@@ -30,7 +30,7 @@ class JugadorService {
   }
 
   async create(jugador) {
-    return axios.post(`${REST_SERVER_URL}/crearJugador`, jugador)
+    return await axios.post(`${REST_SERVER_URL}/crearJugador`, jugador)
   }
 
   async getById(id) {
@@ -42,7 +42,7 @@ class JugadorService {
   }
 
   async update(jugador) {
-    return axios.put(`${REST_SERVER_URL}/updateJugador`, jugador)
+    return await axios.put(`${REST_SERVER_URL}/updateJugador`, jugador)
   }
 }
 

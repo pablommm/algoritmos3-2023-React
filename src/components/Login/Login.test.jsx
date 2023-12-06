@@ -1,7 +1,9 @@
-import { render, screen, MemoryRouter } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import { Login } from "./Login"
 import { expect } from 'vitest'
 
+
+import { MemoryRouter } from "react-router-dom"
 describe('Login', () => {
        it('Cuando se loguea un usuario existente, se navega a home', async () => {
                  
@@ -32,7 +34,7 @@ describe('Login', () => {
                 <Login />
             </MemoryRouter>
         )
-        const loginElement = screen.getByText(/WorldCApp/i)
+        const loginElement = screen.getByText(/ff/i)
 
         expect(loginElement).toBeInTheDocument()
     })
