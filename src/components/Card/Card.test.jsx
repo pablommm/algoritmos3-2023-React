@@ -31,7 +31,7 @@ describe('Card', () => {
     console.log('mock')
   }
 
-  it('renderiza el título correctamente', () => {
+  it('renderiza el título y el icono correctamente según el data que le paso', () => {
     render(
       <MemoryRouter>
         <Card
@@ -47,5 +47,7 @@ describe('Card', () => {
     )
     const titulo = screen.getByTestId('card-titulo')
     expect(titulo.textContent).toBe('Cristiano Ronaldo')
+    const icono = screen.getByTestId('card-icon')
+    expect(icono).toHaveClass('fa-person-running')
   })
 })
