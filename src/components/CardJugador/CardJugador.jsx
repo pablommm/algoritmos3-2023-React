@@ -17,10 +17,12 @@ function CardJugador({ item }) {
           <div className="elemento2">
             <i className="fa-solid fa-shirt "></i> {item.nroDeCamiseta}
           </div>
-          <div className="elemento3">
-            <i className="fa-regular fa-flag"></i>
-            {item.seleccion.pais}
-          </div>
+          {
+            <div className="elemento3">
+              <i className="fa-regular fa-flag"></i>
+              {item.pais}
+            </div>
+          }
         </div>
         <div className="segundaFila">
           <div className="elemento1">{item.posicion}</div>

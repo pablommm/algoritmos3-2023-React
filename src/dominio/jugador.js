@@ -1,5 +1,3 @@
-import { Seleccion } from './seleccion'
-
 export class Jugador {
   constructor() {
     this.nombre = ''
@@ -11,10 +9,9 @@ export class Jugador {
     this.peso = 0
     this.lider = false
     this.posicion = ''
-    this.pais = 'Pais'
+    this.pais = ''
     this.cotizacion = 0
     this.id = 0
-    this.seleccion = new Seleccion()
     this.idSeleccion = 0
   }
 
@@ -25,6 +22,7 @@ export class Jugador {
   static fromJson(jugadorJSON) {
     const result = Object.assign(new Jugador(), jugadorJSON, {
       idSeleccion: jugadorJSON.seleccion.id,
+      pais: jugadorJSON.seleccion.pais,
     })
     return result
   }
