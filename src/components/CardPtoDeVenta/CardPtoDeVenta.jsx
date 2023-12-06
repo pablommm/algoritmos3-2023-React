@@ -14,7 +14,7 @@ function CardPtoDeVenta({ item }) {
         <div className="primeraFila">
           <div className="elemento1">
             <i className="fa-solid fa-location-dot "></i>
-            <span>{item.direccion}</span>
+            <span>{item.ubicacion.calle}</span>
           </div>
           <div className="elemento3">
             <i className="fa-solid fa-clipboard-user"></i>
