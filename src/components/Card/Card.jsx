@@ -14,9 +14,11 @@ export const Card = ({ children, item, deleteCard, icon, ruta }) => {
       <div className="card">
         <div className="parteSuperior">
           <div className="jugadorIcon">
-            <i className={`fa-solid ${icon}`}></i>
+            <i className={`fa-solid ${icon}`} data-testid="card-icon"></i>
           </div>
-          <div className="nombre">{item.titulo}</div>
+          <div className="nombre" data-testid="card-titulo">
+            {item.titulo}
+          </div>
           <div className="botonesEdicion">
             <div>
               <i className="fa-solid fa-trash" onClick={handleClick}></i>

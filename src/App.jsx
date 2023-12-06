@@ -17,7 +17,7 @@ import { jugadorService } from './services/jugador.service.js'
 import { figuritaService } from './services/figurita.service.js'
 import { seleccionService } from './services/seleccion.service.js'
 
-const dataJugador = {
+export const dataJugador = {
   navegacion: 'jugador-form',
   title: 'Jugador',
   icon: 'fa-person-running',
@@ -26,7 +26,7 @@ const dataJugador = {
     jugadorService.allInstances(campoBusqueda),
   deleteService: async (id) => jugadorService.delete(id),
 }
-const dataSeleccion = {
+export const dataSeleccion = {
   navegacion: 'seleccion-form',
   title: 'Seleccion',
   icon: 'fa-flag',
@@ -35,7 +35,7 @@ const dataSeleccion = {
     seleccionService.allInstances(campoBusqueda),
   deleteService: async (id) => seleccionService.delete(id),
 }
-const dataPtoDeVenta = {
+export const dataPtoDeVenta = {
   navegacion: 'puntoVenta-form',
   title: 'Punto de venta',
   icon: 'fa-store',
@@ -44,7 +44,7 @@ const dataPtoDeVenta = {
     puntoDeVentaService.allInstances(campoBusqueda),
   deleteService: async (id) => puntoDeVentaService.delete(id),
 }
-const dataFiguritas = {
+export const dataFiguritas = {
   navegacion: 'figuritas-form',
   title: 'Figuritas',
   icon: 'fa-clipboard-user',
