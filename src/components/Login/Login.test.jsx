@@ -1,8 +1,6 @@
 import { render, screen,act,waitFor } from "@testing-library/react"
 import { Login } from "./Login"
 import { expect } from 'vitest'
-import { useNavigate } from 'react-router-dom'
-
 import { MemoryRouter } from "react-router-dom"
 describe('Login', () => {
         
