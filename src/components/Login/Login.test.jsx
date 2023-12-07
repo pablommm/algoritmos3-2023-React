@@ -28,6 +28,7 @@ describe('Login', () => {
     })
 
     it('debería mostrar el mensaje de error al no ingresar ningun usuario e intentar loguear', async () => {
+        // este test solo funciona si el backend esta levantado
         render(
         <MemoryRouter>
             <Login />
