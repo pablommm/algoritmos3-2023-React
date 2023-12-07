@@ -43,7 +43,8 @@ export const Login = () => {
                 value={usuario}
                 type="text"
                 placeholder="Usuario"
-                className="login-input"
+                className="login_input"
+                data-testid="input_username"
               />
             </div>
           </div>
@@ -55,15 +56,16 @@ export const Login = () => {
                 value={password}
                 type="password"
                 placeholder="Contraseña"
-                className="login-input"
+                className="login_input"
+                data-testid="input_pass"
               />
             </div>
           </div>
           <div>
             <button
               onClick={getLoginUser}
-              className="primary-button"
-              data-testid="login"
+              className="primary-button"              
+              data-testid="Ingresar"
             >
               Ingresar
             </button>
