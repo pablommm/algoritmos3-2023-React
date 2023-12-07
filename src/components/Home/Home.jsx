@@ -24,7 +24,7 @@ export const Home = ({ setTitulo }) => {
   }
 
   const init = async () => {
-    setTitulo('Home')
+    //setTitulo('Home')
     traerDatos()
   }
 

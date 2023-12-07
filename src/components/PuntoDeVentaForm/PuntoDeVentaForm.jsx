@@ -104,7 +104,8 @@ function PuntoDeVentaForm({ setTitulo }) {
               <span>{puntoDeVenta.tipo}</span>
             </div>
             <button
-              className="secondary-button"
+              data-testid="boton_volver"
+              className="secondary_button"
               onClick={() => navigate(`/plantilla/puntosDeVenta`)}
             >
               Volver
@@ -202,7 +203,8 @@ function PuntoDeVentaForm({ setTitulo }) {
             </select>
             <div className="buttonConteiner">
               <button
-                className="secondary-button"
+                data-testid="boton_volver"
+                className="secondary_button"
                 onClick={() => navigate(`/plantilla/puntosDeVenta`)}
               >
                 Volver

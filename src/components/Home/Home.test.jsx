@@ -7,11 +7,15 @@ import { Home } from './Home.jsx'
 
 
 describe('Home', () => {
-
+    
     it('test de renderizado de Home', () => {
+
+        const setTitulo = () => {
+            // ...
+          }
         render(
             <MemoryRouter>
-                <Home />
+                <Home setTitulo={setTitulo}/>
             </MemoryRouter>
         )
         const loginElement = screen.getByText("Home")
