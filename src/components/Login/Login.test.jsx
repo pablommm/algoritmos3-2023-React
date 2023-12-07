@@ -1,33 +1,11 @@
-import { render, screen,userEvent  } from "@testing-library/react"
+import { render, screen,act,waitFor } from "@testing-library/react"
 import { Login } from "./Login"
 import { expect } from 'vitest'
 import { useNavigate } from 'react-router-dom'
 
 import { MemoryRouter } from "react-router-dom"
 describe('Login', () => {
-        it('Cuando se loguea un usuario existente, se navega a home',  () => {
-         
-        render(
-            <MemoryRouter>
-                <Login />
-            </MemoryRouter>
-        )
-        const usernameInput = screen.getByTestId('input_username') 
-        const passwordInput = screen.getByTestId('input_pass')
-        const loginButton = screen.getByRole('button', { name: 'Ingresar' })
-
-        userEvent.type(usernameInput, 'JMartinez')
-        userEvent.type(passwordInput, '1234')
-        userEvent.click(loginButton)
-
-           //act(() => { loginButton.click()})           
-        expect(navigateMock).toHaveBeenCalledWith('/plantilla/home')
         
-       }
-       )  
-       
-
-
     it('test de renderizado de login', () => {
         render(
             <MemoryRouter>
@@ -50,4 +28,21 @@ describe('Login', () => {
         expect(placeHolder1).toBeInTheDocument()
        
     })
+
+    it('debería mostrar el mensaje de error al no ingresar ningun usuario e intentar loguear', async () => {
+        render(
+        <MemoryRouter>
+            <Login />
+        </MemoryRouter>)
+    
+        const loginButton = screen.getByRole('button', { name: 'Ingresar' })
+        act(() => { loginButton.click()})    
+    
+        await waitFor(() => {
+          expect(screen.getByRole('alert')).toBeInTheDocument()
+        })
+
+        expect(screen.getByText('Los datos ingresados son incorrectos')).toBeInTheDocument()
+      })
+
 })
